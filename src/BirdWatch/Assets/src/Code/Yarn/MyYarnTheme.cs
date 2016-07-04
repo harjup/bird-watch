@@ -149,6 +149,8 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
     // Yay we're done. Called when the dialogue system has finished running.
     public override IEnumerator DialogueComplete()
     {
+        yield return StartCoroutine(TextDisplayGui.HideDialogWindow());
+
         yield return null;
     }
 }

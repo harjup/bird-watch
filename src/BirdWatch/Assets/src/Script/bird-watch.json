@@ -2,7 +2,7 @@
 	{
 		"title": "Start",
 		"tags": "",
-		"body": "This is a test!!!",
+		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
 			"x": 501,
 			"y": 260
