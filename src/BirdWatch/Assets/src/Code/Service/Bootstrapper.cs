@@ -18,10 +18,17 @@ public class Bootstrapper : MonoBehaviour
         {
             ServiceRoot = new GameObject("ServiceRoot");
             DontDestroyOnLoad(ServiceRoot);
-            
+
+            GeneratePrefabs();
+
             GenerateServices();
             _initialized = true;
         }
+    }
+
+    private void GeneratePrefabs()
+    {
+        SpawnPersistentPrefab("Prefabs/Canvas");
     }
 
     // Make sure these are all monobehaviors or bad things will happen
@@ -38,7 +45,7 @@ public class Bootstrapper : MonoBehaviour
             ServiceRoot.AddComponent(expectedService);
         }
         
-        var singlePrefabs = Resources.LoadAll<GameObject>("ServicePrefabs");
+        var singlePrefabs = Resources.LoadAll<GameObject>("Prefabs/Services");
         
         foreach (var singlePrefab in singlePrefabs)
         {
@@ -46,5 +53,15 @@ public class Bootstrapper : MonoBehaviour
             result.transform.parent = ServiceRoot.transform;
             DontDestroyOnLoad(result);
         }
+    }
+
+    private GameObject SpawnPersistentPrefab(string path)
+    {
+
+        var prefab = Resources.Load<GameObject>(path);
+        var newInstance = Instantiate(prefab);
+        newInstance.name = prefab.name;
+        DontDestroyOnLoad(newInstance);
+        return newInstance;
     }
 }
