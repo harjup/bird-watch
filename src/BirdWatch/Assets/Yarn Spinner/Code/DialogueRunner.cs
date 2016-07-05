@@ -118,7 +118,18 @@ namespace Yarn.Unity
 			StartDialogue(startNode);
 		}
 
-		public void StartDialogue (string startNode)
+        public void StartDialogue(string startNode)
+        {
+
+            // Stop any processes that might be running already
+            StopAllCoroutines();
+            dialogueUI.StopAllCoroutines();
+
+            // Get it going
+            StartCoroutine(RunDialogue(startNode));
+        }
+
+        public IEnumerator StartAwaitableDialogue (string startNode)
 		{
 
 			// Stop any processes that might be running already
@@ -126,7 +137,7 @@ namespace Yarn.Unity
 			dialogueUI.StopAllCoroutines ();
 
 			// Get it going
-			StartCoroutine (RunDialogue (startNode));
+			yield return StartCoroutine (RunDialogue (startNode));
 		}
 
 		IEnumerator RunDialogue (string startNode = "Start")

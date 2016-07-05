@@ -4,8 +4,28 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": 501,
-			"y": 260
+			"x": 201,
+			"y": 209
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Example_Encounter",
+		"tags": "",
+		"body": "No birds yet.",
+		"position": {
+			"x": 442,
+			"y": 214
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Example_SmallTalk",
+		"tags": "",
+		"body": "Example Dialog",
+		"position": {
+			"x": 668,
+			"y": 219
 		},
 		"colorID": 0
 	}
