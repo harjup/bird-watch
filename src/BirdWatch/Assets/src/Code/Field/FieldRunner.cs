@@ -27,18 +27,37 @@ public class FieldRunner : MonoBehaviour
 
     }
 
+    // 1 -> dialog
+    // 2 -> dialog
+    // 3 -> bird found
+    
     IEnumerator WalkTheField()
     {
+        var index = 0;
+
+        var nodes = new[] 
+        {
+            "Field-Day-01",
+            "Field-Day-02",
+            "Bird-Encounter-01"
+        };
+
+
         while (true)
         {
             yield return new WaitForSeconds(2f);
             var runner = FindObjectOfType<DialogueRunner>();
             BackgroundScroller.Pause();
-            yield return StartCoroutine(runner.StartAwaitableDialogue("Example_Encounter"));
+            yield return StartCoroutine(runner.StartAwaitableDialogue(nodes[index]));
             BackgroundScroller.Resume();
+            
+            index++;
+            if (index > 2)
+            {
+                index = 0;
+            }
+
+
         }
     }
-
-
-
 }

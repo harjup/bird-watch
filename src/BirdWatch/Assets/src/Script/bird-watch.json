@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": 201,
-			"y": 209
+			"x": 128,
+			"y": -116
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": 442,
-			"y": 214
+			"x": 369,
+			"y": -111
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,38 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": 668,
-			"y": 219
+			"x": 595,
+			"y": -106
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Field-Day-01",
+		"tags": "",
+		"body": "Well, here we are.\n\nNice trees, right?",
+		"position": {
+			"x": 429,
+			"y": 138
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Field-Day-02",
+		"tags": "",
+		"body": "Yup. Nice woods.",
+		"position": {
+			"x": 428,
+			"y": 354
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Bird-Encounter-01",
+		"tags": "",
+		"body": "Oh! A bird!",
+		"position": {
+			"x": 430,
+			"y": 569
 		},
 		"colorID": 0
 	}
