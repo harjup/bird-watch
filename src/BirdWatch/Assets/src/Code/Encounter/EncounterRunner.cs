@@ -2,14 +2,14 @@
 using System.Collections;
 using Yarn.Unity;
 
-public class EncounterStarter : Singleton<EncounterStarter>
+public class EncounterRunner : MonoBehaviour
 {
-    public string Bird = "None";
     
-    public void Init(string bird)
-    {
-        Bird = bird;
-        LevelLoader.Instance.LoadLevel(Level.Encounter);
+	void Start ()
+	{
+	    var bird = EncounterStarter.Instance.Bird;
+        Debug.Log("RUNNING ENCOUNTER FOR BIRD " + bird);
+        StartCoroutine(RunIntro());
     }
 
     IEnumerator RunIntro()
