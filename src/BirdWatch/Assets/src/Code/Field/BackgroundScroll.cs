@@ -9,7 +9,7 @@ public class BackgroundScroll : MonoBehaviour
     void Start()
     {
         // -13.5
-        var moveTarget = Vector3.zero.SetX(-13.5f);
+        var moveTarget = transform.position.SetX(-13.5f);
 
         Tween = transform.DOMove(moveTarget, 1f)
             .SetEase(Ease.Linear)

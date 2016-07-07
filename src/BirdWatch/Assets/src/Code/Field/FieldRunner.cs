@@ -4,11 +4,27 @@ using Yarn.Unity;
 
 public class FieldRunner : MonoBehaviour
 {
-    private enum FieldEvent 
+    private class ShowTextEvent : FieldEvent
     {
-        Unknown,
-        Talk,
-        Encounter
+        public ShowTextEvent(string startNode) 
+            : base(startNode) {}
+    }
+
+    private class BirdEncounterEvent : FieldEvent
+    {
+        public BirdEncounterEvent(string startNode) 
+            : base(startNode) {}
+    }
+
+    private abstract class FieldEvent
+    {
+        public FieldEvent(string startNode)
+        {
+            StartNode = startNode;
+        }
+
+        public string StartNode { get; private set; }
+        
     }
 
     private BackgroundScroll BackgroundScroller;
@@ -35,20 +51,32 @@ public class FieldRunner : MonoBehaviour
     {
         var index = 0;
 
-        var nodes = new[] 
+        var nodes = new FieldEvent[] 
         {
-            "Field-Day-01",
-            "Field-Day-02",
-            "Bird-Encounter-01"
+            new ShowTextEvent("Field-Day-01"),
+            new ShowTextEvent("Field-Day-02"), 
+            new BirdEncounterEvent("Bird-Encounter-01")
         };
-
-
+        
         while (true)
         {
             yield return new WaitForSeconds(2f);
             var runner = FindObjectOfType<DialogueRunner>();
             BackgroundScroller.Pause();
-            yield return StartCoroutine(runner.StartAwaitableDialogue(nodes[index]));
+
+            var current = nodes[index];
+
+            // TODO: Should this be in the yarn script instead?
+            if (current is ShowTextEvent)
+            {
+                yield return StartCoroutine(runner.StartAwaitableDialogue(current.StartNode));
+            }
+            else if (current is BirdEncounterEvent)
+            {
+                yield return StartCoroutine(runner.StartAwaitableDialogue(current.StartNode));
+                EncounterStarter.Instance.Init("acorn-woodpecker");
+            }
+            
             BackgroundScroller.Resume();
             
             index++;

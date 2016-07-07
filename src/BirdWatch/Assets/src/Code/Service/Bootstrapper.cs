@@ -35,7 +35,8 @@ public class Bootstrapper : MonoBehaviour
     // These are all services that need to exist somewhere and require no configuration
     private List<Type> SimpleServices = new List<Type>
     {
-        typeof(LevelLoader)
+        typeof(LevelLoader),
+        typeof(EncounterStarter)
     };
 
     private void GenerateServices()

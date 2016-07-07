@@ -2,9 +2,10 @@
 using System.Collections;
 
 // ReSharper disable InconsistentNaming
-public enum LevelEntrance
+public enum Level
 {
-
+    Field,
+    Encounter
 }
 // ReSharper enable InconsistentNaming
 
@@ -15,10 +16,16 @@ public class LevelLoader : Singleton<LevelLoader>
         Application.LoadLevel(levelName);
     }
 
-    public void LoadLevel(LevelEntrance levelEntrance)
+    public void LoadLevel(Level levelEntrance)
     {
         switch (levelEntrance)
         {
+            case Level.Field:
+                Application.LoadLevel("Field");
+                break;
+            case Level.Encounter:
+                Application.LoadLevel("Encounter");
+                break;
             default:
                 Debug.LogError("Level entrance type " + levelEntrance + " not supported");
                 break;

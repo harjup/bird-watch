@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": 128,
-			"y": -116
+			"x": -207,
+			"y": -565
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": 369,
-			"y": -111
+			"x": 34,
+			"y": -560
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": 595,
-			"y": -106
+			"x": 260,
+			"y": -555
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are.\n\nNice trees, right?",
 		"position": {
-			"x": 429,
-			"y": 138
+			"x": 94,
+			"y": -311
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Yup. Nice woods.",
 		"position": {
-			"x": 428,
-			"y": 354
+			"x": 93,
+			"y": -95
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,18 @@
 		"tags": "",
 		"body": "Oh! A bird!",
 		"position": {
-			"x": 430,
-			"y": 569
+			"x": 98,
+			"y": 120
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AW_Start",
+		"tags": "",
+		"body": "An Acorn Woodpecker appeared!\n\nWow!",
+		"position": {
+			"x": 210,
+			"y": 484
 		},
 		"colorID": 0
 	}
