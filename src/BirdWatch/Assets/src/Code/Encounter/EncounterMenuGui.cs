@@ -16,5 +16,7 @@ public class EncounterMenuGui : Singleton<EncounterMenuGui>
     {
         MenuContainer.SetActive(true);
     }
-	
+
+
+
 }

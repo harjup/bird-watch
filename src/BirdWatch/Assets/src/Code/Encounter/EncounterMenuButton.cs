@@ -1,11 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class EncounterMenuButton : MonoBehaviour
 {
+    public enum Type
+    {
+        Unknown,
+        Breath,
+        Camera
+    }
+
+    public Type ButtonType;
+
     private SpriteRenderer _render;
     private Color initialColor;
-
 
     // Use this for initialization
     void Start()
@@ -25,7 +34,7 @@ public class EncounterMenuButton : MonoBehaviour
     {
         _render.color = initialColor;
 
-        StartCoroutine(FindObjectOfType<EncounterRunner>().RunMinigame());
+        StartCoroutine(FindObjectOfType<EncounterRunner>().RunMinigame(ButtonType));
     }
     
     // Mouse over

@@ -20,7 +20,7 @@ public class EncounterRunner : MonoBehaviour
     IEnumerator RunIntro()
     {
         var runner = FindObjectOfType<DialogueRunner>();
-
+        FindObjectOfType<BreathBar>().enabled = false;
 
         // Run through any special bird messages.
         yield return StartCoroutine(runner.StartAwaitableDialogue("AW_Start"));
@@ -33,11 +33,11 @@ public class EncounterRunner : MonoBehaviour
         // Do bird thing
     }
 
-    public IEnumerator RunMinigame()
+    public IEnumerator RunMinigame(EncounterMenuButton.Type buttonType)
     {
         yield return StartCoroutine(_actionSelect.Disable());
 
-        FindObjectOfType<EncounterMinigame>().Enable();
+        FindObjectOfType<BreathingMinigame>().Enable();
         // Do appropriate minigame when a button gets picked
 
 
