@@ -173,6 +173,7 @@ public class BreathBar : MonoBehaviour
             switch (bar.BarType)
             {
                 case Bar.Type.Good:    
+
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Good);
                     break;
                 case Bar.Type.Ok:
@@ -183,6 +184,8 @@ public class BreathBar : MonoBehaviour
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Bad);
                     break;
             }
+            
+            FindObjectOfType<EncounterRunner>().ApplyBreatheResult(bar.BarType);
 
             return breaths + 1;
         }
