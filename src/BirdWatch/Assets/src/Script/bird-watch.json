@@ -68,5 +68,15 @@
 			"y": 484
 		},
 		"colorID": 0
+	},
+	{
+		"title": "Effect_Placeholder",
+		"tags": "",
+		"body": "You did a thing and the bird is affected somehow!",
+		"position": {
+			"x": 509,
+			"y": 284
+		},
+		"colorID": 0
 	}
 ]

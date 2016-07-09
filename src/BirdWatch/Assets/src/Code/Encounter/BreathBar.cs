@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Assets.src.Code.Encounter;
 using DG.Tweening;
 
@@ -15,13 +16,48 @@ public class BreathBar : MonoBehaviour
 
     public List<RatingBar> RatingBars = new List<RatingBar>();
 
-    private void Start()
+
+    public IEnumerator Run()
+    {
+        Init();
+
+        int breaths = 0;
+        int breathsMax = 6;
+
+        // Press the mouse button!
+        LungBar.transform.localScale = LungBar.transform.localScale.SetX(.3f);
+        while (!Input.GetKey(KeyCode.Mouse0))
+        {
+            yield return null;
+        }
+
+        prevMouse = true;
+
+        while (true)
+        {
+            breaths = DetectInputAndThenReactToIt(breaths);
+
+            if (breaths >= breathsMax)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(.25f);
+
+        Cleanup();
+    }
+
+    private void Init()
     {
         ColoredBox = Resources.Load<GameObject>("Prefabs/Battle/ColoredBox");
         FeedbackSprite = Resources.Load<GameObject>("Prefabs/Battle/FloatySprite");
-
-
+        
         LungBar = transform.FindChild("lung-bar").gameObject;
+
+        LungBar.GetComponent<LungBar>().Clear();
 
         // forgive my tiny array name :<
         float[] mk = { 0f, .1f, .15f, .175f, .825f, .85f, .9f, 1f };
@@ -53,6 +89,12 @@ public class BreathBar : MonoBehaviour
         }
     }
 
+    private void Cleanup()
+    {
+        RatingBars.Where(r => r != null).ToList().ForEach(r => Destroy(r.gameObject));
+
+        RatingBars.Clear();
+    }
 
 
     private GameObject SpawnCollider(float start, float end)
@@ -85,7 +127,7 @@ public class BreathBar : MonoBehaviour
     private float speed = .5f;
     private bool prevMouse = false;
 
-    private void Update()
+    private int DetectInputAndThenReactToIt(int breaths)
     {
         var x = LungBar.transform.localScale.x;
         var incr = speed * Time.smoothDeltaTime;
@@ -122,9 +164,9 @@ public class BreathBar : MonoBehaviour
             // TODO: not like this, man
             FindObjectOfType<BreathingFace>().Toggle(mouse);
 
-            var lungBar = FindObjectOfType<LungBar>();
+            var lungBar = LungBar.GetComponent<LungBar>();
 
-            var current = lungBar.RightmostBar();
+            var current = lungBar.RightmostBar() ?? RatingBars.First();
             var bar = current.Bar;
 
             var res = Instantiate(FeedbackSprite, current.transform.position, Quaternion.identity) as GameObject;
@@ -141,6 +183,10 @@ public class BreathBar : MonoBehaviour
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Bad);
                     break;
             }
+
+            return breaths + 1;
         }
+
+        return breaths;
     }
 }

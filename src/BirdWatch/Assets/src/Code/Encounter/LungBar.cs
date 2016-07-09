@@ -11,6 +11,11 @@ public class LungBar : MonoBehaviour
         return RatingBars.OrderByDescending(r => r.transform.position.x).FirstOrDefault();
     }
 
+    public void Clear()
+    {
+        RatingBars.Clear();
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         var b = other.GetComponent<RatingBar>();

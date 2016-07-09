@@ -33,13 +33,17 @@ public class EncounterRunner : MonoBehaviour
         // Do bird thing
     }
 
-    public IEnumerator RunMinigame(EncounterMenuButton.Type buttonType)
+    public IEnumerator RunMinigame<T>() where T: MonoBehaviour, IEncounterMinigame
     {
         yield return StartCoroutine(_actionSelect.Disable());
 
-        FindObjectOfType<BreathingMinigame>().Enable();
-        // Do appropriate minigame when a button gets picked
+        yield return StartCoroutine(FindObjectOfType<T>().Run());
 
+        // Show effect on bird
+        var runner = FindObjectOfType<DialogueRunner>();
+        yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Placeholder"));
+        
+        yield return StartCoroutine(_actionSelect.Enable());
 
         yield return null;
     }

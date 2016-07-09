@@ -34,9 +34,20 @@ public class EncounterMenuButton : MonoBehaviour
     {
         _render.color = initialColor;
 
-        StartCoroutine(FindObjectOfType<EncounterRunner>().RunMinigame(ButtonType));
+
+        switch (ButtonType)
+        {
+            case Type.Breath:
+                StartCoroutine(FindObjectOfType<EncounterRunner>().RunMinigame<BreathingMinigame>());
+                break;
+            case Type.Camera:
+                //StartCoroutine(FindObjectOfType<EncounterRunner>().RunMinigame(ButtonType));
+                break;
+        }
+
+        
     }
-    
+
     // Mouse over
     public void OnMouseEnter()
     {
