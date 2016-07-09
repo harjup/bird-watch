@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": -207,
-			"y": -565
+			"x": -376,
+			"y": -349
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": 34,
-			"y": -560
+			"x": -135,
+			"y": -344
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": 260,
-			"y": -555
+			"x": 91,
+			"y": -339
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are.\n\nNice trees, right?",
 		"position": {
-			"x": 94,
-			"y": -311
+			"x": -75,
+			"y": -95
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Yup. Nice woods.",
 		"position": {
-			"x": 93,
-			"y": -95
+			"x": -76,
+			"y": 121
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Oh! A bird!",
 		"position": {
-			"x": 98,
-			"y": 120
+			"x": -71,
+			"y": 336
 		},
 		"colorID": 0
 	},
@@ -64,18 +64,48 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared!\n\nWow!",
 		"position": {
-			"x": 210,
-			"y": 484
+			"x": 41,
+			"y": 700
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Effect_Placeholder",
+		"title": "Effect_Good",
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": 509,
-			"y": 284
+			"x": 327,
+			"y": 283
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Too_Agitated",
+		"tags": "",
+		"body": "They're too agitated! There's no way they'll hold still long enough for a photo!",
+		"position": {
+			"x": 330,
+			"y": 491
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Effect_Bad",
+		"tags": "",
+		"body": "Uh, ok, that bird is not looking happy.",
+		"position": {
+			"x": 544,
+			"y": 283
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Battle_Exit",
+		"tags": "",
+		"body": "Nice photo!\n\nHey, did you know that Acron Woodpeckers like to eat acorns?\n\nWell, probably.",
+		"position": {
+			"x": 578,
+			"y": 493
 		},
 		"colorID": 0
 	}

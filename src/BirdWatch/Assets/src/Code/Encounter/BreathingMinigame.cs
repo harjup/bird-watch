@@ -1,14 +1,50 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
-using DG.Tweening;
 
 public interface IEncounterMinigame
 {
-    IEnumerator Run();
+    IEnumerator Run(Action<MinigameResult> callback);
+}
+
+public class MinigameResult
+{
+    public static MinigameResult Fail()
+    {
+        return new MinigameResult(StatusCode.Fail);
+    }
+
+    public static MinigameResult Success()
+    {
+        return new MinigameResult(StatusCode.Success);
+    }
+
+    public static MinigameResult Cancelled()
+    {
+        return new MinigameResult(StatusCode.Cancelled);
+    }
+
+
+    public enum StatusCode
+    {
+        Cancelled,
+        Success,
+        Fail
+    }
+
+
+    public StatusCode Status { get; private set; }
+
+    public MinigameResult(StatusCode status)
+    {
+        Status = status;
+    }
 }
 
 public class BreathingMinigame : MonoBehaviour, IEncounterMinigame
 {
+
+
     public void Start()
     {
         //Enable();
@@ -24,7 +60,7 @@ public class BreathingMinigame : MonoBehaviour, IEncounterMinigame
 
 
 
-    public IEnumerator Run()
+    public IEnumerator Run(Action<MinigameResult> callback)
     {
         // Easter Egg: If you hold your breath for 1 minute you pass out and the day is over??
 
@@ -33,5 +69,7 @@ public class BreathingMinigame : MonoBehaviour, IEncounterMinigame
         yield return StartCoroutine(FindObjectOfType<BreathBar>().Run());
 
         transform.position = Vector3.zero.SetY(-20);
+
+        callback(MinigameResult.Success());
     }
 }
