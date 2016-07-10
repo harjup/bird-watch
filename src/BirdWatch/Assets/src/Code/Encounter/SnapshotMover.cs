@@ -4,13 +4,10 @@ using UnityEditor;
 
 public class SnapshotMover : MonoBehaviour
 {
+    public float TurnRadius = 30f;
+
     public IEnumerator Run()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            StartCoroutine(ScreenFlash.Instance.Flash());
-        }
-
         var mousePostion = Input.mousePosition;
         var targetPos = Camera.main.ScreenToWorldPoint(mousePostion);
 
@@ -22,17 +19,15 @@ public class SnapshotMover : MonoBehaviour
             angle = 360 - angle;
         }
         
-        if (angle > 10f)
+        if (angle > TurnRadius)
         {
-            angle = 10f;
+            angle = TurnRadius;
         }
-        else if (angle < -10f)
+        else if (angle < -TurnRadius)
         {
-            angle = -10f;
+            angle = -TurnRadius;
         }
-
-        var newRotation =  transform.rotation.eulerAngles.SetZ(angle);
-
+        
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 

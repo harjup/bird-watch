@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BirdSprite : MonoBehaviour
+public class BirdBattleSprite : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
 

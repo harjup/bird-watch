@@ -38,19 +38,31 @@ public class EncounterRunner : MonoBehaviour
     }
 
 
-    private int RateAgitation(int current)
+    private string RateAgitation(int current)
     {
+        var descriptionMap = new Dictionary<int, string>()
+        {
+            { 0, "AG_GREAT"},
+            {1, "AG_OK" },
+            {2, "AG_BAD" },
+            {3, "AG_MAD" },
+            {-1, "AG_RAGE" },
+
+        };
+
         for (int i = 0; i < _agitationLevels.Count; i++)
         {
             var val = _agitationLevels[i];
             if (current <= val)
             {
-                return i;
+                return descriptionMap[i];
             }
         }
 
-        return -1;
+        return descriptionMap[-1];
     }
+
+    
 
     private Bird _bird;
 
@@ -69,7 +81,7 @@ public class EncounterRunner : MonoBehaviour
         _actionSelect = FindObjectOfType<ActionSelect>();
 
         // TODO: Acquire in a safer manner??
-        FindObjectOfType<BirdSprite>().SetSprite(_bird.Id);
+        FindObjectOfType<BirdBattleSprite>().SetSprite(_bird.Id);
         FindObjectOfType<BirdPhotoResult>().SetSprite(_bird.Id);
 
         StartCoroutine(RunIntro());
@@ -89,6 +101,46 @@ public class EncounterRunner : MonoBehaviour
         // Do bird thing
     }
 
+
+    private int _birdShots = 0;
+    private int _birdShotMax = 10;
+    public IEnumerator RunCameraMinigame()
+    {
+        yield return StartCoroutine(_actionSelect.Disable());
+
+        //MinigameResult result = null;
+        var target = FindObjectOfType<CameraMinigame>();
+        
+        CameraMinigameResult result = null;
+        yield return StartCoroutine(target.Run(_birdShots, _birdShotMax, res => { result = res; }));
+        _birdShots = result.PhotosTaken;
+
+
+        if (_birdShots >= _birdShotMax)
+        {
+            // Move to outro, exit early
+            StartCoroutine(PhotoTaken());
+            yield break;
+        }
+        
+        BirdAgitation += 10;
+
+        var agitationRating = RateAgitation(BirdAgitation);
+
+        var runner = FindObjectOfType<DialogueRunner>();
+        
+        yield return StartCoroutine(runner.StartAwaitableDialogue("Camera_NotEnoughShots"));
+        
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
+
+        yield return StartCoroutine(_actionSelect.Enable());
+
+    }
+
+
+
+
+
     public IEnumerator RunMinigame<T>() where T : MonoBehaviour, IEncounterMinigame
     {
         yield return StartCoroutine(_actionSelect.Disable());
@@ -98,38 +150,11 @@ public class EncounterRunner : MonoBehaviour
 
         yield return StartCoroutine(target.Run(res => { result = res; }));
 
-
-        // TODO: Make this a dictionary or something I dunno
         var agitationRating = RateAgitation(BirdAgitation);
-        string flavorText = "AG_OK";
-        switch (agitationRating)
-        {
-            case 0:
-                //Great
-                flavorText = "AG_GREAT";
-                break;
-            case 1:
-                //Ok
-                flavorText = "AG_OK";
-                break;
-            case 2:
-                // Meh
-                flavorText = "AG_BAD";
-                break;
-            case 3:
-                // Bad
-                flavorText = "AG_MAD";
-                break;
-            case -1:
-                //TERRIBLE!!!
-                flavorText = "AG_RAGE";
-                break;
-        }
-
-
+  
         var runner = FindObjectOfType<DialogueRunner>();
 
-        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(flavorText)));
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
         // TODO: Extract this into something nicer. Each Minigame should handle its own results scripting stuff.
         // TODO: Figure out how we can propagate breaking out of this workflow when we end the cycle with a successful camera shot.
@@ -140,15 +165,6 @@ public class EncounterRunner : MonoBehaviour
                 yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
                 break;
             case MinigameResult.StatusCode.Success:
-
-
-                if (target is CameraMinigame)
-                {
-                    // Move to outro, exit early
-                    StartCoroutine(PhotoTaken());
-                    yield break;
-                }
-
                 yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Good"));
                 break;
             case MinigameResult.StatusCode.Fail:

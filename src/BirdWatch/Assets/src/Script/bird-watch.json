@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": -2195,
-			"y": 64
+			"x": -1247,
+			"y": 463
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": -1954,
-			"y": 69
+			"x": -1006,
+			"y": 468
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": -1728,
-			"y": 74
+			"x": -780,
+			"y": 473
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are.\n\nNice trees, right?",
 		"position": {
-			"x": -1894,
-			"y": 318
+			"x": -946,
+			"y": 717
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Yup. Nice woods.",
 		"position": {
-			"x": -1895,
-			"y": 534
+			"x": -947,
+			"y": 933
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Oh! A bird!",
 		"position": {
-			"x": -1890,
-			"y": 749
+			"x": -942,
+			"y": 1148
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared! \n\nLook at that red cap!",
 		"position": {
-			"x": -654,
-			"y": -120
+			"x": 294,
+			"y": 279
 		},
 		"colorID": 0
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": -1492,
-			"y": 696
+			"x": -544,
+			"y": 1095
 		},
 		"colorID": 0
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "They're too agitated! There's no way they'll hold still long enough for a photo!",
 		"position": {
-			"x": -1489,
-			"y": 904
+			"x": -541,
+			"y": 1303
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Uh, ok, that bird is not looking happy.",
 		"position": {
-			"x": -1275,
-			"y": 696
+			"x": -327,
+			"y": 1095
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nHey, did you know that Acron Woodpeckers like to hoard acorns?\n\nThey peck out holes in trees, and then stash tons of acorns inside the holes.\n\nI guess sometimes... the acorn... doesn't fall far from the tree!",
 		"position": {
-			"x": -441,
-			"y": 294
+			"x": 507,
+			"y": 693
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "The woodpecker is calmly adjusting its stash of nuts.",
 		"position": {
-			"x": -658,
-			"y": 113
+			"x": 290,
+			"y": 512
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "The woodpecker is pecking out a hole in the tree.",
 		"position": {
-			"x": -659,
-			"y": 313
+			"x": 289,
+			"y": 712
 		},
 		"colorID": 0
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "The woodpecker is squawking and flying around. \n\nI don't think we can get a photo.",
 		"position": {
-			"x": -659,
-			"y": 514
+			"x": 289,
+			"y": 913
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "They fley away. Drat!",
 		"position": {
-			"x": -1132,
-			"y": 382
+			"x": -184,
+			"y": 781
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Nice Picture!",
 		"position": {
-			"x": -1260,
-			"y": 906
+			"x": -312,
+			"y": 1305
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "I'm hearing some loud squawks in this direction. Wonder what it is...",
 		"position": {
-			"x": -654,
-			"y": -337
+			"x": 294,
+			"y": 62
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Bird sighted!",
 		"position": {
-			"x": -1092,
-			"y": -372
+			"x": -144,
+			"y": 27
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "A flock of Bushtits appeared!\n\nThey're so fluffy!",
 		"position": {
-			"x": -24,
-			"y": -189
+			"x": 924,
+			"y": 210
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Sounds like there's a flock of songbirds nearby.",
 		"position": {
-			"x": -32,
-			"y": -405
+			"x": 916,
+			"y": -6
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nBushtits like to hang upside down sometimes when looking for food.\n\nThey like to sit in bushes and are almost always in flocks.\n\nIf there's 30 in a bush, how much would one in the hand be worth?",
 		"position": {
-			"x": 192,
-			"y": 245
+			"x": 1140,
+			"y": 644
 		},
 		"colorID": 0
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "The bushtits are resting in some shrubs.",
 		"position": {
-			"x": -24,
-			"y": 38
+			"x": 924,
+			"y": 437
 		},
 		"colorID": 0
 	},
@@ -224,8 +224,8 @@
 		"tags": "",
 		"body": "The bushtits are singing and flying around.",
 		"position": {
-			"x": -26,
-			"y": 270
+			"x": 922,
+			"y": 669
 		},
 		"colorID": 0
 	},
@@ -234,8 +234,8 @@
 		"tags": "",
 		"body": "The bushtits are swarming up, angrily squeaking!\n\nI don't think we can get a photo.",
 		"position": {
-			"x": -29,
-			"y": 479
+			"x": 919,
+			"y": 878
 		},
 		"colorID": 0
 	},
@@ -244,8 +244,8 @@
 		"tags": "",
 		"body": "It's an American Kestrel!",
 		"position": {
-			"x": 537,
-			"y": -234
+			"x": 1485,
+			"y": 165
 		},
 		"colorID": 0
 	},
@@ -254,8 +254,8 @@
 		"tags": "",
 		"body": "Sounds like there's a kestrel-like bird nearby.",
 		"position": {
-			"x": 532,
-			"y": -446
+			"x": 1480,
+			"y": -47
 		},
 		"colorID": 0
 	},
@@ -264,8 +264,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nKestrels are North America's littlest falcon.\n\nOf course, that doesn't stop snatching up all kinds of prey.\n\n...\n\n...\n\n... yeah...",
 		"position": {
-			"x": 774,
-			"y": 94
+			"x": 1722,
+			"y": 493
 		},
 		"colorID": 0
 	},
@@ -274,8 +274,8 @@
 		"tags": "",
 		"body": "The kestrel is resting on a fence post.",
 		"position": {
-			"x": 541,
-			"y": -18
+			"x": 1489,
+			"y": 381
 		},
 		"colorID": 0
 	},
@@ -284,8 +284,8 @@
 		"tags": "",
 		"body": "The kestrel is flying around, looking for prey.",
 		"position": {
-			"x": 547,
-			"y": 196
+			"x": 1495,
+			"y": 595
 		},
 		"colorID": 0
 	},
@@ -294,8 +294,18 @@
 		"tags": "",
 		"body": "The kestrel is angrily diving at the ground!\n\nI don't think we can get a photo.",
 		"position": {
-			"x": 547,
-			"y": 412
+			"x": 1495,
+			"y": 811
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Camera_NotEnoughShots",
+		"tags": "",
+		"body": "We should take a couple more shots to make sure we get a good one.",
+		"position": {
+			"x": 454,
+			"y": 1262
 		},
 		"colorID": 0
 	}
