@@ -61,7 +61,7 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
-            _bird = BirdListing.GetDayBirds().First();
+            _bird = BirdListing.GetCurrentDayBird();
         }
         
         BirdAgitation = 20;
@@ -71,8 +71,7 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Acquire in a safer manner??
         FindObjectOfType<BirdSprite>().SetSprite(_bird.Id);
         FindObjectOfType<BirdPhotoResult>().SetSprite(_bird.Id);
-        
-        Debug.Log("RUNNING ENCOUNTER FOR BIRD " + _bird.Name);
+
         StartCoroutine(RunIntro());
     }
 

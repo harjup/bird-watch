@@ -54,8 +54,8 @@ public class FieldRunner : MonoBehaviour
 
         var nodes = new FieldEvent[] 
         {
-            new ShowTextEvent("Field-Day-01"),
-            new ShowTextEvent("Field-Day-02"), 
+            //new ShowTextEvent("Field-Day-01"),
+            //new ShowTextEvent("Field-Day-02"), 
             new BirdEncounterEvent("Bird-Encounter-01")
         };
         
@@ -74,7 +74,8 @@ public class FieldRunner : MonoBehaviour
             }
             else if (current is BirdEncounterEvent)
             {
-                var bird = BirdListing.GetDayBirds().Last();
+                var bird = BirdListing.GetNextDayBird();
+                
                 var approachNode = bird.GetNode("Approach");
 
                 yield return StartCoroutine(runner.StartAwaitableDialogue(approachNode));

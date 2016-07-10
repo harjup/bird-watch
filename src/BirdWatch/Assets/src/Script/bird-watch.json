@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": -1591,
-			"y": 376
+			"x": -2195,
+			"y": 64
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": -1350,
-			"y": 381
+			"x": -1954,
+			"y": 69
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": -1124,
-			"y": 386
+			"x": -1728,
+			"y": 74
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are.\n\nNice trees, right?",
 		"position": {
-			"x": -1290,
-			"y": 630
+			"x": -1894,
+			"y": 318
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Yup. Nice woods.",
 		"position": {
-			"x": -1291,
-			"y": 846
+			"x": -1895,
+			"y": 534
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Oh! A bird!",
 		"position": {
-			"x": -1286,
-			"y": 1061
+			"x": -1890,
+			"y": 749
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared! \n\nLook at that red cap!",
 		"position": {
-			"x": -50,
-			"y": 192
+			"x": -654,
+			"y": -120
 		},
 		"colorID": 0
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": -888,
-			"y": 1008
+			"x": -1492,
+			"y": 696
 		},
 		"colorID": 0
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "They're too agitated! There's no way they'll hold still long enough for a photo!",
 		"position": {
-			"x": -885,
-			"y": 1216
+			"x": -1489,
+			"y": 904
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Uh, ok, that bird is not looking happy.",
 		"position": {
-			"x": -671,
-			"y": 1008
+			"x": -1275,
+			"y": 696
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nHey, did you know that Acron Woodpeckers like to hoard acorns?\n\nThey peck out holes in trees, and then stash tons of acorns inside the holes.\n\nI guess sometimes... the acorn... doesn't fall far from the tree!",
 		"position": {
-			"x": 163,
-			"y": 606
+			"x": -441,
+			"y": 294
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "The woodpecker is calmly adjusting its stash of nuts.",
 		"position": {
-			"x": -54,
-			"y": 425
+			"x": -658,
+			"y": 113
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "The woodpecker is pecking out a hole in the tree.",
 		"position": {
-			"x": -55,
-			"y": 625
+			"x": -659,
+			"y": 313
 		},
 		"colorID": 0
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "The woodpecker is squawking and flying around. \n\nI don't think we can get a photo.",
 		"position": {
-			"x": -55,
-			"y": 826
+			"x": -659,
+			"y": 514
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "They fley away. Drat!",
 		"position": {
-			"x": -528,
-			"y": 694
+			"x": -1132,
+			"y": 382
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Nice Picture!",
 		"position": {
-			"x": -656,
-			"y": 1218
+			"x": -1260,
+			"y": 906
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "I'm hearing some loud squawks in this direction. Wonder what it is...",
 		"position": {
-			"x": -50,
-			"y": -25
+			"x": -654,
+			"y": -337
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Bird sighted!",
 		"position": {
-			"x": -488,
-			"y": -60
+			"x": -1092,
+			"y": -372
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "A flock of Bushtits appeared!\n\nThey're so fluffy!",
 		"position": {
-			"x": 556,
-			"y": 131
+			"x": -24,
+			"y": -189
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Sounds like there's a flock of songbirds nearby.",
 		"position": {
-			"x": 548,
-			"y": -85
+			"x": -32,
+			"y": -405
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nBushtits like to hang upside down sometimes when looking for food.\n\nThey like to sit in bushes and are almost always in flocks.\n\nIf there's 30 in a bush, how much would one in the hand be worth?",
 		"position": {
-			"x": 772,
-			"y": 565
+			"x": 192,
+			"y": 245
 		},
 		"colorID": 0
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "The bushtits are resting in some shrubs.",
 		"position": {
-			"x": 556,
-			"y": 358
+			"x": -24,
+			"y": 38
 		},
 		"colorID": 0
 	},
@@ -224,8 +224,8 @@
 		"tags": "",
 		"body": "The bushtits are singing and flying around.",
 		"position": {
-			"x": 554,
-			"y": 590
+			"x": -26,
+			"y": 270
 		},
 		"colorID": 0
 	},
@@ -234,8 +234,68 @@
 		"tags": "",
 		"body": "The bushtits are swarming up, angrily squeaking!\n\nI don't think we can get a photo.",
 		"position": {
-			"x": 551,
-			"y": 799
+			"x": -29,
+			"y": 479
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_Start",
+		"tags": "",
+		"body": "It's an American Kestrel!",
+		"position": {
+			"x": 537,
+			"y": -234
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_Approach",
+		"tags": "",
+		"body": "Sounds like there's a kestrel-like bird nearby.",
+		"position": {
+			"x": 532,
+			"y": -446
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_Battle_Exit",
+		"tags": "",
+		"body": "Nice photo!\n\nKestrels are North America's littlest falcon.\n\nOf course, that doesn't stop snatching up all kinds of prey.\n\n...\n\n...\n\n... yeah...",
+		"position": {
+			"x": 774,
+			"y": 94
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_AG_GREAT",
+		"tags": "",
+		"body": "The kestrel is resting on a fence post.",
+		"position": {
+			"x": 541,
+			"y": -18
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_AG_OK",
+		"tags": "",
+		"body": "The kestrel is flying around, looking for prey.",
+		"position": {
+			"x": 547,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AK_AG_BAD",
+		"tags": "",
+		"body": "The kestrel is angrily diving at the ground!\n\nI don't think we can get a photo.",
+		"position": {
+			"x": 547,
+			"y": 412
 		},
 		"colorID": 0
 	}
