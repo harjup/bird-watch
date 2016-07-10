@@ -6,6 +6,11 @@ public class SnapshotMover : MonoBehaviour
 {
     public IEnumerator Run()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            StartCoroutine(ScreenFlash.Instance.Flash());
+        }
+
         var mousePostion = Input.mousePosition;
         var targetPos = Camera.main.ScreenToWorldPoint(mousePostion);
 
