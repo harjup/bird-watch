@@ -2,9 +2,9 @@
 
 public class EncounterStarter : Singleton<EncounterStarter>
 {
-    public string Bird = "None";
+    public Bird Bird { get; private set; }
     
-    public void Init(string bird)
+    public void Init(Bird bird)
     {
         Bird = bird;
         LevelLoader.Instance.LoadLevel(Level.Encounter);

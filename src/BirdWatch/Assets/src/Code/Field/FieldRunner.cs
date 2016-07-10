@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using Assets.src.Code.Models;
 using Yarn.Unity;
 
 public class FieldRunner : MonoBehaviour
@@ -28,8 +30,7 @@ public class FieldRunner : MonoBehaviour
     }
 
     private BackgroundScroll BackgroundScroller;
-
-
+    
     void Awake()
     {
         BackgroundScroller = FindObjectOfType<BackgroundScroll>();
@@ -73,8 +74,14 @@ public class FieldRunner : MonoBehaviour
             }
             else if (current is BirdEncounterEvent)
             {
-                yield return StartCoroutine(runner.StartAwaitableDialogue(current.StartNode));
-                EncounterStarter.Instance.Init("acorn-woodpecker");
+                var bird = BirdListing.GetDayBirds().Last();
+                var approachNode = bird.GetNode("Approach");
+
+                yield return StartCoroutine(runner.StartAwaitableDialogue(approachNode));
+
+                yield return StartCoroutine(runner.StartAwaitableDialogue("Bird_Found"));
+                
+                EncounterStarter.Instance.Init(bird);
             }
             
             BackgroundScroller.Resume();

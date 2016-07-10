@@ -2,7 +2,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.src.Code.Encounter;
+using Assets.src.Code.Models;
 using Yarn.Unity;
 
 public class EncounterRunner : MonoBehaviour
@@ -50,15 +52,27 @@ public class EncounterRunner : MonoBehaviour
         return -1;
     }
 
+    private Bird _bird;
+
     private void Start()
     {
-        var bird = EncounterStarter.Instance.Bird;
+        _bird = EncounterStarter.Instance.Bird;
 
+        // TODO: Determine how we want to inject the current metadata for testing
+        if (_bird == null)
+        {
+            _bird = BirdListing.GetDayBirds().First();
+        }
+        
         BirdAgitation = 20;
 
         _actionSelect = FindObjectOfType<ActionSelect>();
 
-        Debug.Log("RUNNING ENCOUNTER FOR BIRD " + bird);
+        // TODO: Acquire in a safer manner??
+        FindObjectOfType<BirdSprite>().SetSprite(_bird.Id);
+        FindObjectOfType<BirdPhotoResult>().SetSprite(_bird.Id);
+        
+        Debug.Log("RUNNING ENCOUNTER FOR BIRD " + _bird.Name);
         StartCoroutine(RunIntro());
     }
 
@@ -68,10 +82,10 @@ public class EncounterRunner : MonoBehaviour
         FindObjectOfType<BreathBar>().enabled = false;
 
         // Run through any special bird messages.
-        yield return StartCoroutine(runner.StartAwaitableDialogue("AW_Start"));
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Start")));
 
         // Show menu.
-        yield return StartCoroutine(_actionSelect.Enable());
+        yield return StartCoroutine(_actionSelect.Enable()); //TODO: This should have a callback with the player's selection
 
         // Do bird thing
     }
@@ -116,7 +130,7 @@ public class EncounterRunner : MonoBehaviour
 
         var runner = FindObjectOfType<DialogueRunner>();
 
-        yield return StartCoroutine(runner.StartAwaitableDialogue(flavorText));
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(flavorText)));
 
         // TODO: Extract this into something nicer. Each Minigame should handle its own results scripting stuff.
         // TODO: Figure out how we can propagate breaking out of this workflow when we end the cycle with a successful camera shot.
@@ -159,7 +173,7 @@ public class EncounterRunner : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        yield return StartCoroutine(runner.StartAwaitableDialogue("Battle_Exit"));
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Battle_Exit")));
 
         FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
 
