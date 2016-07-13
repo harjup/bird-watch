@@ -103,7 +103,7 @@ public class EncounterRunner : MonoBehaviour
 
 
     private int _birdShots = 0;
-    private int _birdShotMax = 10;
+    private int _birdShotMax = 1;
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
@@ -115,11 +115,10 @@ public class EncounterRunner : MonoBehaviour
         yield return StartCoroutine(target.Run(_birdShots, _birdShotMax, res => { result = res; }));
         _birdShots = result.PhotosTaken;
 
-
         if (_birdShots >= _birdShotMax)
         {
             // Move to outro, exit early
-            StartCoroutine(PhotoTaken());
+            StartCoroutine(FinalPhotoTaken());
             yield break;
         }
         
@@ -179,14 +178,16 @@ public class EncounterRunner : MonoBehaviour
         yield return null;
     }
 
-    public IEnumerator PhotoTaken()
+    public IEnumerator FinalPhotoTaken()
     {
         var runner = FindObjectOfType<DialogueRunner>();
 
         // SHOW PICTURE
         GameObject.Find("photo-result").transform.position = Vector3.zero;
 
-        yield return new WaitForSeconds(3f);
+        yield return StartCoroutine(ScreenFlash.Instance.Flash(2f, 1f, 1f));
+
+        yield return new WaitForSeconds(1f);
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Battle_Exit")));
 
