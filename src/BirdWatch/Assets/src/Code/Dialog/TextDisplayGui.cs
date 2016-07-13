@@ -110,13 +110,14 @@ public class TextDisplayGui : MonoBehaviour
         yield return null;
     }
 
+
     public void ShowChoices(List<string> choices, Action<int> onChoice)
     {
         //TODO: Make this safer~
         var initialPosition = GameObject.Find("ChoiceInitialPosition").transform.position;
 
+        // TODO: Refactor b/c this is copy pasted
         var buttons = new List<GameObject>();
-
         for (int i = 0; i < choices.Count; i++)
         {
             var choice = choices[i];
@@ -140,6 +141,23 @@ public class TextDisplayGui : MonoBehaviour
                 });
         }
     }
+
+    public IEnumerator ShowChoicesAndWait(List<string> choices, Action<int> onChoice)
+    {
+        var waitingForChoice = true;
+        ShowChoices(choices, i =>
+        {
+            onChoice(i);
+            waitingForChoice = false;
+        });
+
+        while (waitingForChoice)
+        {
+            yield return null;
+        }
+    }
+
+
 
     private void CleanUpButtons(List<GameObject> buttons)
     {

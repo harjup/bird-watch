@@ -5,7 +5,7 @@ public class BirdPhotoResult : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
     
-    void Start()
+    void Awake()
     {
         _spriteRenderer = transform.FindChild("bird-result-sprite").GetComponent<SpriteRenderer>();
     }

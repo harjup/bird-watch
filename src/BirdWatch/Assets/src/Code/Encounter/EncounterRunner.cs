@@ -73,6 +73,9 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
+            BirdListing.GetNextDayBird();
+            BirdListing.GetNextDayBird();
+            BirdListing.GetNextDayBird();
             _bird = BirdListing.GetCurrentDayBird();
         }
         
@@ -103,7 +106,7 @@ public class EncounterRunner : MonoBehaviour
 
 
     private int _birdShots = 0;
-    private int _birdShotMax = 1;
+    private int _birdShotMax = 10;
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
@@ -176,6 +179,34 @@ public class EncounterRunner : MonoBehaviour
         yield return StartCoroutine(_actionSelect.Enable());
 
         yield return null;
+    }
+
+    public IEnumerator RunExitChoice()
+    {
+        yield return StartCoroutine(_actionSelect.Disable());
+
+        var runner = FindObjectOfType<DialogueRunner>();
+
+        yield return StartCoroutine(runner.StartAwaitableDialogue("Run_Away_Option"));
+
+        int choice = -1;
+
+        yield return
+            StartCoroutine(FindObjectOfType<TextDisplayGui>().ShowChoicesAndWait(
+                new List<string> {"Yes", "No"}, 
+            i => { choice = i; }));
+
+        Debug.Log(choice);
+
+        if (choice == 0)
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Run_Away"));
+
+            FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
+            yield break;
+        }
+
+        yield return StartCoroutine(_actionSelect.Enable());
     }
 
     public IEnumerator FinalPhotoTaken()

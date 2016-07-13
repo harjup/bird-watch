@@ -8,7 +8,8 @@ public class EncounterMenuButton : MonoBehaviour
     {
         Unknown,
         Breath,
-        Camera
+        Camera,
+        Exit
     }
 
     public Type ButtonType;
@@ -42,6 +43,9 @@ public class EncounterMenuButton : MonoBehaviour
                 break;
             case Type.Camera:
                 StartCoroutine(FindObjectOfType<EncounterRunner>().RunCameraMinigame());
+                break;
+            case Type.Exit:
+                StartCoroutine(FindObjectOfType<EncounterRunner>().RunExitChoice());
                 break;
         }
 
