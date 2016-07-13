@@ -17,7 +17,7 @@ public class EncounterRunner : MonoBehaviour
 
 
     // TODO: Need to figure out a better way to associate a number range with a given status
-    List<int> _agitationLevels = new List<int> {20, 50, 70, 90};
+    List<int> _agitationLevels = new List<int> {20, 50, 70, 100};
 
 
     public void ApplyBreatheResult(Bar.Type res)
@@ -45,8 +45,7 @@ public class EncounterRunner : MonoBehaviour
             { 0, "AG_GREAT"},
             {1, "AG_OK" },
             {2, "AG_BAD" },
-            {3, "AG_MAD" },
-            {-1, "AG_RAGE" },
+            {3, "AG_LEAVE" },
 
         };
 
@@ -59,7 +58,7 @@ public class EncounterRunner : MonoBehaviour
             }
         }
 
-        return descriptionMap[-1];
+        return descriptionMap[3];
     }
 
     
@@ -128,12 +127,22 @@ public class EncounterRunner : MonoBehaviour
         BirdAgitation += 10;
 
         var agitationRating = RateAgitation(BirdAgitation);
-
-        var runner = FindObjectOfType<DialogueRunner>();
         
+        var runner = FindObjectOfType<DialogueRunner>();
+
+        if (agitationRating == "AG_LEAVE")
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+            FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
+            yield break;
+        }
+
+
         yield return StartCoroutine(runner.StartAwaitableDialogue("Camera_NotEnoughShots"));
         
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
+
+        yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
 
         yield return StartCoroutine(_actionSelect.Enable());
 
@@ -156,23 +165,32 @@ public class EncounterRunner : MonoBehaviour
   
         var runner = FindObjectOfType<DialogueRunner>();
 
+        if (agitationRating == "AG_LEAVE")
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+            FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
+            yield break;
+        }
+
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
+        yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+        
         // TODO: Extract this into something nicer. Each Minigame should handle its own results scripting stuff.
         // TODO: Figure out how we can propagate breaking out of this workflow when we end the cycle with a successful camera shot.
 
-        switch (result.Status)
-        {
-            case MinigameResult.StatusCode.Cancelled:
-                yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
-                break;
-            case MinigameResult.StatusCode.Success:
-                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Good"));
-                break;
-            case MinigameResult.StatusCode.Fail:
-                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Bad"));
-                break;
-        }
+        //        switch (result.Status)
+        //        {
+        //            case MinigameResult.StatusCode.Cancelled:
+        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
+        //                break;
+        //            case MinigameResult.StatusCode.Success:
+        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Good"));
+        //                break;
+        //            case MinigameResult.StatusCode.Fail:
+        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Bad"));
+        //                break;
+        //        }
         // END EXTRACT LOGIC ---------------------------------
 
 

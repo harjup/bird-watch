@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": -628,
-			"y": -549
+			"x": -1830,
+			"y": -322
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": -387,
-			"y": -544
+			"x": -1589,
+			"y": -317
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": -161,
-			"y": -539
+			"x": -1363,
+			"y": -312
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are.\n\nNice trees, right?",
 		"position": {
-			"x": -327,
-			"y": -295
+			"x": -1529,
+			"y": -68
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Yup. Nice woods.",
 		"position": {
-			"x": -328,
-			"y": -79
+			"x": -1530,
+			"y": 148
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Oh! A bird!",
 		"position": {
-			"x": -323,
-			"y": 136
+			"x": -1525,
+			"y": 363
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared! \n\nLook at that red cap!",
 		"position": {
-			"x": 913,
-			"y": -733
+			"x": -289,
+			"y": -506
 		},
 		"colorID": 0
 	},
@@ -74,18 +74,18 @@
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": 75,
-			"y": 83
+			"x": -1127,
+			"y": 310
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Too_Agitated",
 		"tags": "",
-		"body": "They're too agitated! There's no way they'll hold still long enough for a photo!",
+		"body": "Your hands are too shakey to take a photo!\n\nYou need to relax!",
 		"position": {
-			"x": 78,
-			"y": 291
+			"x": -1124,
+			"y": 518
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Uh, ok, that bird is not looking happy.",
 		"position": {
-			"x": 292,
-			"y": 83
+			"x": -910,
+			"y": 310
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nHey, did you know that Acron Woodpeckers like to hoard acorns?\n\nThey peck out holes in trees, and then stash tons of acorns inside the holes.\n\nI guess sometimes... the acorn... doesn't fall far from the tree!",
 		"position": {
-			"x": 1126,
-			"y": -319
+			"x": -76,
+			"y": -92
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "The woodpecker is calmly adjusting its stash of nuts.",
 		"position": {
-			"x": 909,
-			"y": -500
+			"x": -298,
+			"y": -294
 		},
 		"colorID": 0
 	},
@@ -124,18 +124,18 @@
 		"tags": "",
 		"body": "The woodpecker is pecking out a hole in the tree.",
 		"position": {
-			"x": 908,
-			"y": -300
+			"x": -294,
+			"y": -73
 		},
 		"colorID": 0
 	},
 	{
 		"title": "AW_AG_BAD",
 		"tags": "",
-		"body": "The woodpecker is squawking and flying around. \n\nI don't think we can get a photo.",
+		"body": "The woodpecker is squawking and flying around. ",
 		"position": {
-			"x": 908,
-			"y": -99
+			"x": -294,
+			"y": 128
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "They fley away. Drat!",
 		"position": {
-			"x": 435,
-			"y": -231
+			"x": -767,
+			"y": -4
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Nice Picture!",
 		"position": {
-			"x": 292,
-			"y": 298
+			"x": -910,
+			"y": 525
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "I'm hearing some loud squawks in this direction. Wonder what it is...",
 		"position": {
-			"x": 913,
-			"y": -950
+			"x": -289,
+			"y": -723
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Bird sighted!",
 		"position": {
-			"x": 475,
-			"y": -985
+			"x": -727,
+			"y": -758
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "A flock of Bushtits appeared!\n\nThey're so fluffy!",
 		"position": {
-			"x": 1543,
-			"y": -802
+			"x": 341,
+			"y": -575
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Sounds like there's a flock of songbirds nearby.",
 		"position": {
-			"x": 1535,
-			"y": -1018
+			"x": 333,
+			"y": -791
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nBushtits like to hang upside down sometimes when looking for food.\n\nThey like to sit in bushes and are almost always in flocks.\n\nIf there's 30 in a bush, how much would one in the hand be worth?",
 		"position": {
-			"x": 1759,
-			"y": -368
+			"x": 557,
+			"y": -141
 		},
 		"colorID": 0
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "The bushtits are resting in some shrubs.",
 		"position": {
-			"x": 1543,
-			"y": -575
+			"x": 341,
+			"y": -348
 		},
 		"colorID": 0
 	},
@@ -224,18 +224,18 @@
 		"tags": "",
 		"body": "The bushtits are singing and flying around.",
 		"position": {
-			"x": 1541,
-			"y": -343
+			"x": 339,
+			"y": -116
 		},
 		"colorID": 0
 	},
 	{
 		"title": "BT_AG_BAD",
 		"tags": "",
-		"body": "The bushtits are swarming up, angrily squeaking!\n\nI don't think we can get a photo.",
+		"body": "The bushtits are swarming up, angrily squeaking!",
 		"position": {
-			"x": 1538,
-			"y": -134
+			"x": 336,
+			"y": 93
 		},
 		"colorID": 0
 	},
@@ -244,8 +244,8 @@
 		"tags": "",
 		"body": "It's an American Kestrel!",
 		"position": {
-			"x": 2104,
-			"y": -847
+			"x": 902,
+			"y": -620
 		},
 		"colorID": 0
 	},
@@ -254,8 +254,8 @@
 		"tags": "",
 		"body": "Sounds like there's a kestrel-like bird nearby.",
 		"position": {
-			"x": 2099,
-			"y": -1059
+			"x": 897,
+			"y": -832
 		},
 		"colorID": 0
 	},
@@ -264,8 +264,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nKestrels are North America's littlest falcon.\n\nOf course, that doesn't stop snatching up all kinds of prey.\n\n...\n\n...\n\n... yeah...",
 		"position": {
-			"x": 2341,
-			"y": -519
+			"x": 1139,
+			"y": -292
 		},
 		"colorID": 0
 	},
@@ -274,8 +274,8 @@
 		"tags": "",
 		"body": "The kestrel is resting on a fence post.",
 		"position": {
-			"x": 2108,
-			"y": -631
+			"x": 906,
+			"y": -404
 		},
 		"colorID": 0
 	},
@@ -284,18 +284,18 @@
 		"tags": "",
 		"body": "The kestrel is flying around, looking for prey.",
 		"position": {
-			"x": 2114,
-			"y": -417
+			"x": 912,
+			"y": -190
 		},
 		"colorID": 0
 	},
 	{
 		"title": "AK_AG_BAD",
 		"tags": "",
-		"body": "The kestrel is angrily diving at the ground!\n\nI don't think we can get a photo.",
+		"body": "The kestrel is angrily diving at the ground!",
 		"position": {
-			"x": 2114,
-			"y": -201
+			"x": 912,
+			"y": 26
 		},
 		"colorID": 0
 	},
@@ -304,8 +304,8 @@
 		"tags": "",
 		"body": "We should take a couple more shots to make sure we get a good one.",
 		"position": {
-			"x": 1073,
-			"y": 250
+			"x": -309,
+			"y": 462
 		},
 		"colorID": 0
 	},
@@ -314,8 +314,8 @@
 		"tags": "",
 		"body": "Look for a different bird?",
 		"position": {
-			"x": 436,
-			"y": 584
+			"x": -766,
+			"y": 811
 		},
 		"colorID": 0
 	},
@@ -324,8 +324,48 @@
 		"tags": "",
 		"body": "Yeah. Let's go look for other birds.",
 		"position": {
-			"x": 652,
-			"y": 580
+			"x": -550,
+			"y": 807
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AG_OK",
+		"tags": "",
+		"body": "Your hands are getting a little jittery.",
+		"position": {
+			"x": 193,
+			"y": 469
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AG_BAD",
+		"tags": "",
+		"body": "Your poor breathing is spooking them!",
+		"position": {
+			"x": 441,
+			"y": 468
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AG_GREAT",
+		"tags": "",
+		"body": "You feel perfectly calm.",
+		"position": {
+			"x": -29,
+			"y": 470
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AG_LEAVE",
+		"tags": "",
+		"body": "The bird flew away! You spooked them too much!",
+		"position": {
+			"x": 703,
+			"y": 469
 		},
 		"colorID": 0
 	}
