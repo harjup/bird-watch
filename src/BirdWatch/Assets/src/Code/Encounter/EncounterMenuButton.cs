@@ -27,7 +27,7 @@ public class EncounterMenuButton : MonoBehaviour
     // Mouse is depressed
     public void OnMouseDown()
     {
-        _render.color = Color.black;
+        _render.color = new Color(.7f, .7f, .7f, 1f);
     }
 
     // Successful mouseclick
@@ -55,7 +55,7 @@ public class EncounterMenuButton : MonoBehaviour
     // Mouse over
     public void OnMouseEnter()
     {
-        _render.color = Color.blue;
+        _render.color = Color.grey;
     }
 
     // Mouse off
