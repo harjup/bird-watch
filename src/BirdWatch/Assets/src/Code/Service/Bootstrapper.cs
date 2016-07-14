@@ -36,7 +36,8 @@ public class Bootstrapper : MonoBehaviour
     private List<Type> SimpleServices = new List<Type>
     {
         typeof(LevelLoader),
-        typeof(EncounterStarter)
+        typeof(EncounterStarter),
+        typeof(GameProgress)
     };
 
     private void GenerateServices()

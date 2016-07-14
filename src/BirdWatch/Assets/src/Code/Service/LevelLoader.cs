@@ -5,7 +5,8 @@ using System.Collections;
 public enum Level
 {
     Field,
-    Encounter
+    Encounter,
+    Cutscene
 }
 // ReSharper enable InconsistentNaming
 
@@ -25,6 +26,9 @@ public class LevelLoader : Singleton<LevelLoader>
                 break;
             case Level.Encounter:
                 Application.LoadLevel("Encounter");
+                break;
+            case Level.Cutscene:
+                Application.LoadLevel("Cutscene");
                 break;
             default:
                 Debug.LogError("Level entrance type " + levelEntrance + " not supported");

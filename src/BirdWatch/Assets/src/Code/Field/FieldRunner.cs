@@ -54,9 +54,8 @@ public class FieldRunner : MonoBehaviour
 
         var nodes = new FieldEvent[] 
         {
-            //new ShowTextEvent("Field-Day-01"),
-            //new ShowTextEvent("Field-Day-02"), 
-            new BirdEncounterEvent("Bird-Encounter-01")
+            new ShowTextEvent("Day_Chat"),
+            new BirdEncounterEvent("")
         };
         
         while (true)
@@ -67,21 +66,35 @@ public class FieldRunner : MonoBehaviour
 
             var current = nodes[index];
 
-            // TODO: Should this be in the yarn script instead?
+
+            var gameProgress = GameProgress.Instance;
             if (current is ShowTextEvent)
             {
-                yield return StartCoroutine(runner.StartAwaitableDialogue(current.StartNode));
+
+                //End of day. Say we're going home and then cut to black where it transaitions to next day.
+                if (gameProgress.EncounterCount > gameProgress.EncounterMax)
+                {
+                    yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Day"));
+                    LevelLoader.Instance.LoadLevel(Level.Cutscene);
+
+                    break;
+                }
+
+                var node = current.StartNode + "_" + gameProgress.EncounterCount.ToString("00");
+                
+                yield return StartCoroutine(runner.StartAwaitableDialogue(node));
             }
             else if (current is BirdEncounterEvent)
             {
                 var bird = BirdListing.GetNextDayBird();
                 
                 var approachNode = bird.GetNode("Approach");
-
+                
                 yield return StartCoroutine(runner.StartAwaitableDialogue(approachNode));
 
                 yield return StartCoroutine(runner.StartAwaitableDialogue("Bird_Found"));
-                
+
+                gameProgress.StartEncounter();
                 EncounterStarter.Instance.Init(bird);
             }
             
