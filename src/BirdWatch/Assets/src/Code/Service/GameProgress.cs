@@ -23,6 +23,6 @@ public class GameProgress : Singleton<GameProgress>
 
     public void ResetEncounterCount()
     {
-        EncounterCount = 10;
+        EncounterCount = 0;
     }
 }

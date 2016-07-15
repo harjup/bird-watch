@@ -30,7 +30,7 @@ public class CameraMinigame : MonoBehaviour
         Setup();
 
         // TODO: Get this in a better way.
-        //var agitation = FindObjectOfType<EncounterRunner>().BirdAgitation;
+        //var agitation = FindObjectOfType<EncounterRunner>().Agitation;
 
         // Show dialog if we can't do that
         // TODO: This should be handled by selecting the menu option

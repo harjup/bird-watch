@@ -16,8 +16,9 @@ public class BreathBar : MonoBehaviour
 
     public List<RatingBar> RatingBars = new List<RatingBar>();
 
+    private int ranking = 0;
 
-    public IEnumerator Run()
+    public IEnumerator Run(Action<decimal> action)
     {
         Init();
 
@@ -47,11 +48,26 @@ public class BreathBar : MonoBehaviour
 
         yield return new WaitForSeconds(.25f);
 
+        if (ranking > 3)
+        {
+            action(1m);
+        }
+        else if (ranking > 0)
+        {
+            action(.5m);
+        }
+        else
+        {
+            action(-.5m);
+        }
+        
         Cleanup();
     }
 
     private void Init()
     {
+        ranking = 0;
+
         ColoredBox = Resources.Load<GameObject>("Prefabs/Battle/ColoredBox");
         FeedbackSprite = Resources.Load<GameObject>("Prefabs/Battle/FloatySprite");
         
@@ -60,15 +76,17 @@ public class BreathBar : MonoBehaviour
         LungBar.GetComponent<LungBar>().Clear();
 
         // forgive my tiny array name :<
-        float[] mk = { 0f, .1f, .15f, .175f, .825f, .85f, .9f, 1f };
-        Color[] colors = { Color.red, Color.yellow, Color.green, Color.clear, Color.green, Color.yellow, Color.red };
+        //float[] mk = { 0f, .1f, .15f, .175f, .825f, .85f, .9f, 1f };
+        //Color[] colors = { Color.red, Color.yellow, Color.green, Color.yellow, Color.clear, Color.yellow, Color.green, Color.yellow, Color.red };
 
         Bar[] bars =
         {
             new Bar(0f, .1f, Bar.Type.Bad),
             new Bar(.1f, .15f, Bar.Type.Ok),
             new Bar(.15f, .175f, Bar.Type.Good),
-            new Bar(.175f, .825f, Bar.Type.Clear),
+            new Bar(.175f, .2f, Bar.Type.Ok),
+            new Bar(.2f, .8f, Bar.Type.Clear),
+            new Bar(.8f, .825f, Bar.Type.Ok),
             new Bar(.825f, .85f, Bar.Type.Good),
             new Bar(.85f, .9f, Bar.Type.Ok),
             new Bar(.9f, 1f, Bar.Type.Bad),
@@ -124,7 +142,7 @@ public class BreathBar : MonoBehaviour
     }
 
 
-    private float speed = .5f;
+    private float speed = .75f;// .5f;
     private bool prevMouse = false;
 
     private int DetectInputAndThenReactToIt(int breaths)
@@ -173,19 +191,19 @@ public class BreathBar : MonoBehaviour
             switch (bar.BarType)
             {
                 case Bar.Type.Good:    
-
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Good);
+                    ranking += 2;
                     break;
                 case Bar.Type.Ok:
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Ok);
+                    ranking += 1;
                     break;
-                case Bar.Type.Bad:                    
+                case Bar.Type.Bad:
                 case Bar.Type.Clear:
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Bad);
+                    ranking -= 3;
                     break;
             }
-            
-            FindObjectOfType<EncounterRunner>().ApplyBreatheResult(bar.BarType);
 
             return breaths + 1;
         }

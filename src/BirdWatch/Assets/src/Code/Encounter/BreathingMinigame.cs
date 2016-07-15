@@ -41,7 +41,7 @@ public class MinigameResult
     }
 }
 
-public class BreathingMinigame : MonoBehaviour, IEncounterMinigame
+public class BreathingMinigame : MonoBehaviour
 {
 
 
@@ -60,16 +60,17 @@ public class BreathingMinigame : MonoBehaviour, IEncounterMinigame
 
 
 
-    public IEnumerator Run(Action<MinigameResult> callback)
+    public IEnumerator Run(Action<decimal> callback)
     {
         // Easter Egg: If you hold your breath for 1 minute you pass out and the day is over??
 
         transform.position = Vector3.zero;
-        
-        yield return StartCoroutine(FindObjectOfType<BreathBar>().Run());
+
+        decimal result = 0m;
+        yield return StartCoroutine(FindObjectOfType<BreathBar>().Run(i => { result = i; }));
 
         transform.position = Vector3.zero.SetY(-20);
 
-        callback(MinigameResult.Success());
+        callback(result);
     }
 }

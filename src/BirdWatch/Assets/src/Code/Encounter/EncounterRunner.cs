@@ -13,52 +13,21 @@ public class EncounterRunner : MonoBehaviour
     private ActionSelect _actionSelect;
 
     // TODO: Determine if this is where we wanna store this info
-    public int BirdAgitation;
+    public decimal Agitation;
 
-
-    // TODO: Need to figure out a better way to associate a number range with a given status
-    List<int> _agitationLevels = new List<int> {20, 50, 70, 100};
-
-
-    public void ApplyBreatheResult(Bar.Type res)
-    {
-        switch (res)
-        {
-            case Bar.Type.Good:
-                BirdAgitation -= 5;
-                break;
-            case Bar.Type.Ok:
-                BirdAgitation -= 3;
-                break;
-            case Bar.Type.Bad:
-            case Bar.Type.Clear:
-                BirdAgitation += 5;
-                break;
-        }
-    }
-
-
-    private string RateAgitation(int current)
+    private string RateAgitation(decimal current)
     {
         var descriptionMap = new Dictionary<int, string>()
         {
-            { 0, "AG_GREAT"},
-            {1, "AG_OK" },
-            {2, "AG_BAD" },
-            {3, "AG_LEAVE" },
+            {3, "AG_GREAT"},
+            {2, "AG_OK" },
+            {1, "AG_BAD" },
+            {0, "AG_LEAVE" },
 
         };
 
-        for (int i = 0; i < _agitationLevels.Count; i++)
-        {
-            var val = _agitationLevels[i];
-            if (current <= val)
-            {
-                return descriptionMap[i];
-            }
-        }
-
-        return descriptionMap[3];
+        var actual = (int)Math.Round(current, MidpointRounding.AwayFromZero);
+        return descriptionMap[actual];
     }
 
     
@@ -78,7 +47,7 @@ public class EncounterRunner : MonoBehaviour
             _bird = BirdListing.GetCurrentDayBird();
         }
         
-        BirdAgitation = 20;
+        Agitation = 3;
 
         _actionSelect = FindObjectOfType<ActionSelect>();
 
@@ -123,10 +92,10 @@ public class EncounterRunner : MonoBehaviour
             StartCoroutine(FinalPhotoTaken());
             yield break;
         }
-        
-        BirdAgitation += 10;
 
-        var agitationRating = RateAgitation(BirdAgitation);
+        Agitation -= .5m;
+
+        var agitationRating = RateAgitation(Agitation);
         
         var runner = FindObjectOfType<DialogueRunner>();
 
@@ -152,16 +121,25 @@ public class EncounterRunner : MonoBehaviour
 
 
 
-    public IEnumerator RunMinigame<T>() where T : MonoBehaviour, IEncounterMinigame
+    public IEnumerator RunBreathingMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
 
-        MinigameResult result = null;
-        var target = FindObjectOfType<T>();
+        decimal result = 0m;
+        var target = FindObjectOfType<BreathingMinigame>();
 
         yield return StartCoroutine(target.Run(res => { result = res; }));
+        
+        Agitation += result;
+        if (Agitation > 3)
+        {
+            Agitation = 3;
+        }
 
-        var agitationRating = RateAgitation(BirdAgitation);
+
+        Debug.Log(Agitation);
+
+        var agitationRating = RateAgitation(Agitation);
   
         var runner = FindObjectOfType<DialogueRunner>();
 
@@ -175,24 +153,6 @@ public class EncounterRunner : MonoBehaviour
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
-        
-        // TODO: Extract this into something nicer. Each Minigame should handle its own results scripting stuff.
-        // TODO: Figure out how we can propagate breaking out of this workflow when we end the cycle with a successful camera shot.
-
-        //        switch (result.Status)
-        //        {
-        //            case MinigameResult.StatusCode.Cancelled:
-        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
-        //                break;
-        //            case MinigameResult.StatusCode.Success:
-        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Good"));
-        //                break;
-        //            case MinigameResult.StatusCode.Fail:
-        //                yield return StartCoroutine(runner.StartAwaitableDialogue("Effect_Bad"));
-        //                break;
-        //        }
-        // END EXTRACT LOGIC ---------------------------------
-
 
         yield return StartCoroutine(_actionSelect.Enable());
 
