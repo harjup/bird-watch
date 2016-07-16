@@ -11,10 +11,13 @@ namespace Assets.src.Code.Models
 
         private static List<Bird> DayBirds = new List<Bird>
         {
+                new Bird("SJ", "Steller's jay", 20),
+                new Bird("WS", "Wilson's Snipe", 20),
                 //TODO: Should battle stats be modeled here?
                 new Bird("AW", "Acorn Woodpecker", 20),
                 new Bird("AK", "American Kestrel", 20),
-                new Bird("BT", "Bushtit", 20)
+                new Bird("BT", "Bushtit", 20),
+                
         };
 
         public static Bird GetNextDayBird()
