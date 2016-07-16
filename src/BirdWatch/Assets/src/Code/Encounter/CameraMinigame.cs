@@ -35,6 +35,8 @@ public class CameraMinigame : MonoBehaviour
 
         var cameraCooldown = false;
 
+        var snapshotCamera = FindObjectOfType<SnapshotCameraDisplay>();
+
         while (true)
         {
             yield return StartCoroutine(FindObjectOfType<SnapshotMover>().Run());
@@ -60,13 +62,17 @@ public class CameraMinigame : MonoBehaviour
                     FindObjectOfType<SnapshotBird>().OnPictureTaken();
                     FindObjectOfType<PolaroidBox>().SpawnPicture();
                 }
+                else
+                {
+                    snapshotCamera.Shake();
+                }
 
-                FindObjectOfType<SnapshotCameraDisplay>().SetInactive();
+                snapshotCamera.SetInactive();
                 
                 StartCoroutine(StartTimer(.25f, () =>
                 {
                     cameraCooldown = false;
-                    FindObjectOfType<SnapshotCameraDisplay>().SetActive();
+                    snapshotCamera.SetActive();
                 }));
             }
 

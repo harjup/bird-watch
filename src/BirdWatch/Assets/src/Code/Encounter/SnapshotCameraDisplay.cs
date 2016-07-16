@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using DG.Tweening;
 using TreeEditor;
 
 public class SnapshotCameraDisplay : MonoBehaviour
@@ -25,5 +26,10 @@ public class SnapshotCameraDisplay : MonoBehaviour
     {
         _iconSprite.color = Color.grey;
         _coneSprite.color = Color.white.SetAlpha(0f);
+    }
+
+    public void Shake()
+    {
+        transform.DOShakePosition(.25f, new Vector2(.25f, .25f), 20, 45);
     }
 }
