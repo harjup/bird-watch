@@ -8,8 +8,8 @@ public class StatusMeter : MonoBehaviour
     private Dictionary<decimal, float> _agitationPositions = 
         new Dictionary<decimal, float>
     {
-            {3.0m, -8.41f },
-            {2.5m, -5.53f },
+            //{3.0m, -8.41f },
+            //{2.5m, -5.53f },
             {2.0m, -2.62f },
             {1.5m, .1f },
             {1.0m, 3.6f },

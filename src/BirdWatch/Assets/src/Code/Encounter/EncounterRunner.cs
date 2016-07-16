@@ -2,8 +2,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Assets.src.Code.Encounter;
 using Assets.src.Code.Models;
 using Yarn.Unity;
 
@@ -13,13 +11,14 @@ public class EncounterRunner : MonoBehaviour
     private ActionSelect _actionSelect;
 
     // TODO: Determine if this is where we wanna store this info
-    public decimal Agitation;
+    public Agitation Agitation;
+    
 
     private string RateAgitation(decimal current)
     {
         var descriptionMap = new Dictionary<int, string>()
         {
-            {3, "AG_GREAT"},
+            //{3, "AG_GREAT"},
             {2, "AG_OK" },
             {1, "AG_BAD" },
             {0, "AG_LEAVE" },
@@ -47,7 +46,9 @@ public class EncounterRunner : MonoBehaviour
             _bird = BirdListing.GetCurrentDayBird();
         }
         
-        Agitation = 3;
+        Agitation = new Agitation(2.0m);
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
+
 
         _actionSelect = FindObjectOfType<ActionSelect>();
 
@@ -93,9 +94,9 @@ public class EncounterRunner : MonoBehaviour
             yield break;
         }
 
-        Agitation -= .5m;
+        Agitation.Decrement(0.5m);
 
-        var agitationRating = RateAgitation(Agitation);
+        var agitationRating = RateAgitation(Agitation.Value);
 
         var runner = FindObjectOfType<DialogueRunner>();
 
@@ -111,7 +112,7 @@ public class EncounterRunner : MonoBehaviour
         
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
-        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
 
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
@@ -132,17 +133,10 @@ public class EncounterRunner : MonoBehaviour
         var target = FindObjectOfType<BreathingMinigame>();
 
         yield return StartCoroutine(target.Run(res => { result = res; }));
+
+        Agitation.Increment(result);
         
-        Agitation += result;
-        if (Agitation > 3)
-        {
-            Agitation = 3;
-        }
-
-
-        Debug.Log(Agitation);
-
-        var agitationRating = RateAgitation(Agitation);
+        var agitationRating = RateAgitation(Agitation.Value);
         
         var runner = FindObjectOfType<DialogueRunner>();
 
@@ -155,7 +149,7 @@ public class EncounterRunner : MonoBehaviour
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
-        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
 
