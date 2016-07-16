@@ -16,8 +16,6 @@ public class CameraMinigameResult
 
 public class CameraMinigame : MonoBehaviour
 {
-    public int MaxAgitation = 50;
-    
     private GameObject _timeLimit;
 
     private void Setup()
@@ -28,22 +26,6 @@ public class CameraMinigame : MonoBehaviour
     public IEnumerator Run(int birdShots, int birdShotMax, Action<CameraMinigameResult> callback)
     {
         Setup();
-
-        // TODO: Get this in a better way.
-        //var agitation = FindObjectOfType<EncounterRunner>().Agitation;
-
-        // Show dialog if we can't do that
-        // TODO: This should be handled by selecting the menu option
-//        if (agitation >= MaxAgitation)
-//        {
-//            var runner = FindObjectOfType<DialogueRunner>();
-//            yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
-//
-//            callback(MinigameResult.Cancelled());
-//            yield break;
-//        }
-
-
 
         // Setup
         transform.position = Vector3.zero;

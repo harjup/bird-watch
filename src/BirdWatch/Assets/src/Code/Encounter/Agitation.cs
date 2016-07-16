@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Agitation
 {
@@ -7,10 +9,17 @@ public class Agitation
     public decimal Value { get; private set; }
     public decimal Maximum { get; private set; }
 
-    public Agitation(decimal max)
+    /// <summary>
+    /// Non-inclusive thresold for whether you can take a picture
+    /// </summary>
+    public decimal CameraThreshold { get; private set;}
+
+    public Agitation(decimal max, decimal cameraThreshold)
     {
         _initalValue = max;
         Maximum = max;
+
+        CameraThreshold = cameraThreshold;
 
         Reset();
     }
@@ -37,6 +46,32 @@ public class Agitation
         EnforceBounds();
 
         return Value;
+    }
+
+
+    public bool IsWithinCameraThresold()
+    {
+        return Value > CameraThreshold;
+    }
+
+    public bool IsAtBestValue()
+    {
+        return Value == Maximum;
+    }
+
+    public string GetDescriptionNode()
+    {
+        var descriptionMap = new Dictionary<int, string>()
+        {
+            //{3, "AG_GREAT"},
+            {2, "AG_OK" },
+            {1, "AG_BAD" },
+            {0, "AG_LEAVE" },
+
+        };
+
+        var actual = (int)Math.Round(Value, MidpointRounding.AwayFromZero);
+        return descriptionMap[actual];
     }
 
     private void EnforceBounds()

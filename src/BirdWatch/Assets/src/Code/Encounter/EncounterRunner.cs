@@ -13,24 +13,6 @@ public class EncounterRunner : MonoBehaviour
     // TODO: Determine if this is where we wanna store this info
     public Agitation Agitation;
     
-
-    private string RateAgitation(decimal current)
-    {
-        var descriptionMap = new Dictionary<int, string>()
-        {
-            //{3, "AG_GREAT"},
-            {2, "AG_OK" },
-            {1, "AG_BAD" },
-            {0, "AG_LEAVE" },
-
-        };
-
-        var actual = (int)Math.Round(current, MidpointRounding.AwayFromZero);
-        return descriptionMap[actual];
-    }
-
-    
-
     private Bird _bird;
 
     private void Start()
@@ -46,8 +28,8 @@ public class EncounterRunner : MonoBehaviour
             _bird = BirdListing.GetCurrentDayBird();
         }
         
-        Agitation = new Agitation(2.0m);
-        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
+        Agitation = new Agitation(2.0m, 1.0m);
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
 
         _actionSelect = FindObjectOfType<ActionSelect>();
@@ -79,6 +61,15 @@ public class EncounterRunner : MonoBehaviour
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
+        
+        var runner = FindObjectOfType<DialogueRunner>();
+
+        if (!Agitation.IsWithinCameraThresold())
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
+            yield return StartCoroutine(_actionSelect.Enable());
+            yield break;
+        }
 
         //MinigameResult result = null;
         var target = FindObjectOfType<CameraMinigame>();
@@ -96,10 +87,9 @@ public class EncounterRunner : MonoBehaviour
 
         Agitation.Decrement(0.5m);
 
-        var agitationRating = RateAgitation(Agitation.Value);
+        var agitationRating = Agitation.GetDescriptionNode();
 
-        var runner = FindObjectOfType<DialogueRunner>();
-
+   
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
@@ -110,12 +100,12 @@ public class EncounterRunner : MonoBehaviour
 
         yield return StartCoroutine(runner.StartAwaitableDialogue("Camera_NotEnoughShots"));
         
-        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
-
-        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
-
-
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
+        
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+
+        // TODO: Find a better method of communicating bird behavior
+        //yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
         yield return StartCoroutine(_actionSelect.Enable());
 
@@ -129,6 +119,15 @@ public class EncounterRunner : MonoBehaviour
     {
         yield return StartCoroutine(_actionSelect.Disable());
 
+        var runner = FindObjectOfType<DialogueRunner>();
+        if (Agitation.IsAtBestValue())
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Calm"));
+            yield return StartCoroutine(_actionSelect.Enable());
+            yield break;
+        }
+
+
         decimal result = 0m;
         var target = FindObjectOfType<BreathingMinigame>();
 
@@ -136,22 +135,21 @@ public class EncounterRunner : MonoBehaviour
 
         Agitation.Increment(result);
         
-        var agitationRating = RateAgitation(Agitation.Value);
+        var agitationRating = Agitation.GetDescriptionNode();
         
-        var runner = FindObjectOfType<DialogueRunner>();
-
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
         }
-
-        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
-
-        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation.Value);
+        
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+
+        // TODO: Find a better method of communicating bird behavior
+        //yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
         yield return StartCoroutine(_actionSelect.Enable());
 

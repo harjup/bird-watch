@@ -5,6 +5,11 @@ using DG.Tweening;
 
 public class StatusMeter : MonoBehaviour
 {
+    public Sprite OkSprite;
+    public Sprite BadSprite;
+
+    private SpriteRenderer _spriteRenderer;
+
     private Dictionary<decimal, float> _agitationPositions = 
         new Dictionary<decimal, float>
     {
@@ -22,14 +27,17 @@ public class StatusMeter : MonoBehaviour
     private void Start()
     {
         _statusSprite = transform.FindChild("status-ok").gameObject;
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
 
-    public void UpdateStatus(decimal amount)
+    public void UpdateStatus(Agitation agitation)
     {
-        Debug.Log(amount);
-        var val = _agitationPositions[amount];
+        var val = _agitationPositions[agitation.Value];
 
         _statusSprite.transform.DOLocalMoveX(val, .5f).SetEase(Ease.OutBack);
+
+        _spriteRenderer.sprite = agitation.IsWithinCameraThresold() ? OkSprite : BadSprite;
+        
     }
 }

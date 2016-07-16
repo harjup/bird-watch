@@ -48,7 +48,7 @@ public class BreathBar : MonoBehaviour
 
         yield return new WaitForSeconds(.25f);
 
-        if (ranking > 3)
+        if (ranking > 5)
         {
             action(1m);
         }

@@ -1,21 +1,40 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 
 public class SnapshotBird : MonoBehaviour
 {
+    private List<Transform> _availablePositions;
+
     private void Start()
     {
+        var positionsObj = GameObject.Find("bird-fly-positions");
+        _availablePositions = positionsObj.transform.Cast<Transform>().ToList();
+
         OnPictureTaken();
     }
 
+    private Vector3 _currentLocation;
+
+
     public void OnPictureTaken()
     {
-        var upperLeft = GameObject.Find("upper-left").transform.position;
-        var lowerRight = GameObject.Find("lower-right").transform.position;
+        var nextPositions = _availablePositions
+            .Select(p => p.localPosition)
+            .Where(p => p != _currentLocation)
+            .OrderBy(p => Guid.NewGuid())
+            .ToList();
+        
+        var pathNodes = nextPositions.Take(2).ToArray();
+        _currentLocation = pathNodes.Last();
 
-        var x = Random.Range(upperLeft.x, lowerRight.x);
-        var y = Random.Range(upperLeft.y, lowerRight.y);
 
-        transform.position = new Vector3(x, y, 0f);
+        transform
+            .DOLocalPath(pathNodes, 5f, PathType.CatmullRom, PathMode.Sidescroller2D)
+            .SetSpeedBased()
+            .SetEase(Ease.OutSine);
     }
+   
 }
