@@ -96,7 +96,7 @@ public class EncounterRunner : MonoBehaviour
         Agitation -= .5m;
 
         var agitationRating = RateAgitation(Agitation);
-        
+
         var runner = FindObjectOfType<DialogueRunner>();
 
         if (agitationRating == "AG_LEAVE")
@@ -110,6 +110,9 @@ public class EncounterRunner : MonoBehaviour
         yield return StartCoroutine(runner.StartAwaitableDialogue("Camera_NotEnoughShots"));
         
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
+
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
+
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
 
@@ -140,7 +143,7 @@ public class EncounterRunner : MonoBehaviour
         Debug.Log(Agitation);
 
         var agitationRating = RateAgitation(Agitation);
-  
+        
         var runner = FindObjectOfType<DialogueRunner>();
 
         if (agitationRating == "AG_LEAVE")
@@ -151,6 +154,8 @@ public class EncounterRunner : MonoBehaviour
         }
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
+
+        FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
 
