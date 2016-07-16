@@ -15,11 +15,11 @@ public class StatusMeter : MonoBehaviour
     {
             //{3.0m, -8.41f },
             //{2.5m, -5.53f },
-            {2.0m, -2.62f },
-            {1.5m, .1f },
-            {1.0m, 3.6f },
-            {0.5m, 5.65f },
-            {0.0m, 6.02f }
+            {2.0m, -8.34f },
+            {1.5m, -3.58f },
+            {1.0m, -1.52f },
+            {0.5m, 0.53f },
+            {0.0m, 4f }
     };
 
     private GameObject _statusSprite;

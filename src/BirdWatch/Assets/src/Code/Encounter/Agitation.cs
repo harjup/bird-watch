@@ -61,6 +61,11 @@ public class Agitation
 
     public string GetDescriptionNode()
     {
+        if (IsAtBestValue())
+        {
+            return "AG_GREAT";
+        }
+        
         var descriptionMap = new Dictionary<int, string>()
         {
             //{3, "AG_GREAT"},
@@ -69,6 +74,8 @@ public class Agitation
             {0, "AG_LEAVE" },
 
         };
+
+
 
         var actual = (int)Math.Round(Value, MidpointRounding.AwayFromZero);
         return descriptionMap[actual];

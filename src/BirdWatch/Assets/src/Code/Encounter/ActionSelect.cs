@@ -15,6 +15,6 @@ public class ActionSelect : MonoBehaviour
 
     public IEnumerator Disable()
     {
-        yield return transform.DOMoveY(-10f, .5f).SetEase(Ease.InBack).WaitForCompletion();
+        yield return transform.DOMoveY(-5f, .5f).SetEase(Ease.InBack).WaitForCompletion();
     }
 }
