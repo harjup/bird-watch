@@ -21,9 +21,14 @@ public class CutsceneRunner : MonoBehaviour
 
         yield return StartCoroutine(runner.StartAwaitableDialogue(currentNode));
 
+        if (progress.IsEndOfFinalDay())
+        {
+            FindObjectOfType<TextMesh>().text = "THIS IS END FOR NOW";
+            yield break;
+        }
+        
         progress.NextDay();
-
-
+        
         LevelLoader.Instance.LoadLevel(Level.Field);
     }
 }

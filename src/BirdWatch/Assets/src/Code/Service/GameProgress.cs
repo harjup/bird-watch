@@ -10,6 +10,7 @@ public class GameProgress : Singleton<GameProgress>
     public int CurrentDay = 1;
     public int EncounterCount { get; private set; }
     public readonly int EncounterMax = 5;
+    public readonly int FinalDay = 3;
 
     private void Awake()
     {
@@ -26,6 +27,12 @@ public class GameProgress : Singleton<GameProgress>
         CurrentDay++;
         ResetEncounterCount();
     }
+
+    public bool IsEndOfFinalDay()
+    {
+        return CurrentDay >= FinalDay;
+    }
+
 
     public void ResetEncounterCount()
     {
