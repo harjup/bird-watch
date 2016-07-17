@@ -37,7 +37,7 @@ public class EncounterRunner : MonoBehaviour
 
         // TODO: Acquire in a safer manner??
         FindObjectOfType<BirdBattleSprite>().SetSprite(_bird.Id);
-        FindObjectOfType<BirdPhotoResult>().SetSprite(_bird.Id);
+        FindObjectOfType<BirdPhotoResult>().SetSprite(_bird);
 
         StartCoroutine(RunIntro());
     }

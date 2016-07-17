@@ -25,10 +25,8 @@ public class BackgroundScroll : MonoBehaviour
         _tween.Play();
     }
 
-    public void SetupBackground(BackgroundType type)
+    public void SetupBackground(GameObject bgPrefab)
     {
-        var bgPrefab = GetCurrentBackground(type);
-
         var bg = Instantiate(bgPrefab, transform.position, Quaternion.identity) as GameObject;
 
         bg.transform.parent = transform;
@@ -43,20 +41,5 @@ public class BackgroundScroll : MonoBehaviour
             .SetEase(Ease.Linear)
             .SetSpeedBased()
             .SetLoops(-1, LoopType.Restart);
-    }
-
-    private GameObject GetCurrentBackground(BackgroundType type)
-    {
-        switch (type)
-        {
-            case BackgroundType.Day:
-                return Resources.Load<GameObject>("Prefabs/Field/field-background-day");
-            case BackgroundType.Night:
-                return Resources.Load<GameObject>("Prefabs/Field/field-background-night");
-            case BackgroundType.Rain:
-                return Resources.Load<GameObject>("Prefabs/Field/field-background-rain");
-        }
-
-        return Resources.Load<GameObject>("Prefabs/Field/field-background-day");
     }
 }

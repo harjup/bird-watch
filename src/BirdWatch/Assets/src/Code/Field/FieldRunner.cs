@@ -36,7 +36,11 @@ public class FieldRunner : MonoBehaviour
     {
         BackgroundScroller = FindObjectOfType<BackgroundScroll>();
 
-        SetupVisuals();
+        var dayNumber = GameProgress.Instance.CurrentDay;
+        var day = new DayListing().GetDay(dayNumber);
+        
+
+        SetupVisuals(day);
 
 
         // the area has loaded
@@ -44,34 +48,21 @@ public class FieldRunner : MonoBehaviour
         // fire off an event waiter thing
         // 5 or 10 seconds
         // either do dialog for area that hasn't been seen yet or do another bird
-        StartCoroutine(WalkTheField());
+        StartCoroutine(WalkTheField(day));
 
     }
 
-    private void SetupVisuals()
+    private void SetupVisuals(Day day)
     {
-        var currentDay = GameProgress.Instance.CurrentDay;
-
-        if (currentDay == 1)
-        {
-            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Day);
-        }
-        if (currentDay == 2)
-        {
-            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Night);
-        }
-        if (currentDay == 3)
-        {
-            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Rain);
-        }
-
+        var fieldBackground = day.GetFieldBackground();
+        BackgroundScroller.SetupBackground(fieldBackground);
     }
 
     // 1 -> dialog
     // 2 -> dialog
     // 3 -> bird found
     
-    IEnumerator WalkTheField()
+    IEnumerator WalkTheField(Day day)
     {
         var index = 0;
 
@@ -95,7 +86,7 @@ public class FieldRunner : MonoBehaviour
             {
 
                 //End of day. Say we're going home and then cut to black where it transaitions to next day.
-                if (gameProgress.EncounterCount > gameProgress.EncounterMax)
+                if (gameProgress.EncounterCount >= gameProgress.EncounterMax)
                 {
                     yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Day"));
                     LevelLoader.Instance.LoadLevel(Level.Cutscene);
@@ -103,14 +94,20 @@ public class FieldRunner : MonoBehaviour
                     break;
                 }
 
-                var node = current.StartNode + "_" + gameProgress.EncounterCount.ToString("00");
                 
+
+                //var node = current.StartNode + "_" + .ToString("00");
+                var node = day.DialogBetweenEncounters[gameProgress.EncounterCount];
+
+
                 yield return StartCoroutine(runner.StartAwaitableDialogue(node));
             }
             else if (current is BirdEncounterEvent)
             {
-                var bird = BirdListing.GetNextDayBird();
-                
+                //var bird = BirdListing.GetNextDayBird();
+                var bird = day.AvailableBirds[gameProgress.EncounterCount];
+
+
                 var approachNode = bird.GetNode("Approach");
                 
                 yield return StartCoroutine(runner.StartAwaitableDialogue(approachNode));

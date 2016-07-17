@@ -5,15 +5,17 @@ public class Bird
 {
     public string Id { get; private set; }
     
-    public string Name { get; private set; }
+    public Day.TimeOfDay Time { get; private set; }
 
-    public int BaseAgitation { get; private set; }
-
-    public Bird(string id, string name, int baseAgitation)
+    public Bird(string id, Day.TimeOfDay time = Day.TimeOfDay.Day)
     {
         Id = id;
-        Name = name;
-        BaseAgitation = baseAgitation;
+        Time = time;
+    }
+
+    public Bird At(Day.TimeOfDay time)
+    {
+        return new Bird(Id, time);
     }
 
 

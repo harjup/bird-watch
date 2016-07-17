@@ -11,12 +11,17 @@ public class ScreenFlash : Singleton<ScreenFlash>
         _image = GetComponent<Image>();
     }
 
-
     public IEnumerator Flash(float initialPause = .1f, float initialAlpha = .5f, float fadeSpeed = 8f)
     {
+        StopAllCoroutines();
+        yield return StartCoroutine(FadeFlashOverlay(initialPause, initialAlpha, fadeSpeed));
+    }
+
+    public IEnumerator FadeFlashOverlay(float initialPause = .1f, float initialAlpha = .5f, float fadeSpeed = 8f)
+    {
         var inital = new Color(
-            _image.color.r, 
-            _image.color.g, 
+            _image.color.r,
+            _image.color.g,
             _image.color.b,
             initialAlpha);
 
@@ -41,5 +46,4 @@ public class ScreenFlash : Singleton<ScreenFlash>
 
         _image.color = target; // Color.clear;
     }
-
 }

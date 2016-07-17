@@ -21,8 +21,14 @@ public class GameProgress : Singleton<GameProgress>
         EncounterCount++;
     }
 
+    public void NextDay()
+    {
+        CurrentDay++;
+        ResetEncounterCount();
+    }
+
     public void ResetEncounterCount()
     {
-        EncounterCount = 1;
+        EncounterCount = 0;
     }
 }

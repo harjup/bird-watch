@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class BirdPhotoResult : MonoBehaviour
@@ -10,9 +11,22 @@ public class BirdPhotoResult : MonoBehaviour
         _spriteRenderer = transform.FindChild("bird-result-sprite").GetComponent<SpriteRenderer>();
     }
 
-    public void SetSprite(string id)
+    public void SetSprite(Bird bird)
     {
-        var sprite = Resources.Load<Sprite>("bird-pictures/" + id.ToUpper() + "-Idle-Day");
+        var dayString = "-Idle-Day";
+
+        switch (bird.Time)
+        {
+            case Day.TimeOfDay.Night:
+                dayString = "-Night-Sing";
+                break;
+            case Day.TimeOfDay.Rain:
+                dayString = "-Rain-Eat";
+                break;
+        }
+
+
+        var sprite = Resources.Load<Sprite>("bird-pictures/" + bird.Id.ToUpper() + dayString);
         _spriteRenderer.sprite = sprite;
     }
 }
