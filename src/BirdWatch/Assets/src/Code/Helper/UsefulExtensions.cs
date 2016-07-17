@@ -47,8 +47,8 @@ public static class UsefulExtensions
         var vectorValues = vectorString.Split(',');
         //Stick the values in a vector3
         return new Vector3(
-            float.Parse(vectorValues[0]), 
-            float.Parse(vectorValues[1]), 
+            float.Parse(vectorValues[0]),
+            float.Parse(vectorValues[1]),
             float.Parse(vectorValues[2]));
     }
 }

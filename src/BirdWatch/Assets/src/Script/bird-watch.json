@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": 781,
-			"y": -2155
+			"x": 213,
+			"y": -453
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": 1013,
-			"y": -2149
+			"x": 445,
+			"y": -447
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": 1237,
-			"y": -2125
+			"x": 669,
+			"y": -423
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Well, here we are. Yosemete park.\n\nNice trees, right?\n\n...\n\n...\n\nI think I heard some birds in this direction.\n\nLet's go snap some pictures.",
 		"position": {
-			"x": 387,
-			"y": -517
+			"x": -181,
+			"y": 1185
 		},
 		"colorID": 1
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Nice looking birds, out here.\n\n",
 		"position": {
-			"x": 629,
-			"y": -511
+			"x": 61,
+			"y": 1191
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "How long do you want to stay out here?\n\nBefore we head back to the cabin?\n\nI dunno.\n\nIf I were to guess, three more birds.",
 		"position": {
-			"x": 857,
-			"y": -517
+			"x": 289,
+			"y": 1185
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared! \n\nLook at that red cap!",
 		"position": {
-			"x": 3272,
-			"y": -2318
+			"x": 2704,
+			"y": -616
 		},
 		"colorID": 0
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": 2791,
-			"y": -1579
+			"x": 2223,
+			"y": 123
 		},
 		"colorID": 0
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "Your hands are too shakey to take a photo!\n\nYou need to relax!",
 		"position": {
-			"x": 2794,
-			"y": -1380
+			"x": 2226,
+			"y": 322
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Uh, ok, that bird is not looking happy.",
 		"position": {
-			"x": 3008,
-			"y": -1588
+			"x": 2440,
+			"y": 114
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nHey, did you know that Acron Woodpeckers like to hoard acorns?\n\nThey peck out holes in trees, and then stash tons of acorns inside the holes.\n\nI guess sometimes... the acorn... doesn't fall far from the tree!",
 		"position": {
-			"x": 3485,
-			"y": -1904
+			"x": 2917,
+			"y": -202
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "The woodpecker is calmly adjusting its stash of nuts.",
 		"position": {
-			"x": 3263,
-			"y": -2106
+			"x": 2695,
+			"y": -404
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "The woodpecker is pecking out a hole in the tree.",
 		"position": {
-			"x": 3267,
-			"y": -1885
+			"x": 2699,
+			"y": -183
 		},
 		"colorID": 0
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "The woodpecker is squawking and flying around. ",
 		"position": {
-			"x": 3267,
-			"y": -1684
+			"x": 2699,
+			"y": 18
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "They fley away. Drat!",
 		"position": {
-			"x": 3725,
-			"y": -1090
+			"x": 3157,
+			"y": 612
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Nice Picture!",
 		"position": {
-			"x": 3008,
-			"y": -1373
+			"x": 2440,
+			"y": 329
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "I'm hearing some loud squawks in this direction. Wonder what it is...",
 		"position": {
-			"x": 3272,
-			"y": -2535
+			"x": 2704,
+			"y": -833
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Bird sighted!",
 		"position": {
-			"x": 3016,
-			"y": -1078
+			"x": 2448,
+			"y": 624
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "A flock of Bushtits appeared!\n\nThey're so fluffy!",
 		"position": {
-			"x": 3902,
-			"y": -2387
+			"x": 3334,
+			"y": -685
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Sounds like there's a flock of songbirds nearby.",
 		"position": {
-			"x": 3894,
-			"y": -2603
+			"x": 3326,
+			"y": -901
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nBushtits like to hang upside down sometimes when looking for food.\n\nThey like to sit in bushes and are almost always in flocks.\n\nIf there's 30 in a bush, how much would one in the hand be worth?",
 		"position": {
-			"x": 4118,
-			"y": -1953
+			"x": 3550,
+			"y": -251
 		},
 		"colorID": 0
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "The bushtits are resting in some shrubs.",
 		"position": {
-			"x": 3902,
-			"y": -2160
+			"x": 3334,
+			"y": -458
 		},
 		"colorID": 0
 	},
@@ -224,8 +224,8 @@
 		"tags": "",
 		"body": "The bushtits are singing and flying around.",
 		"position": {
-			"x": 3900,
-			"y": -1928
+			"x": 3332,
+			"y": -226
 		},
 		"colorID": 0
 	},
@@ -234,8 +234,8 @@
 		"tags": "",
 		"body": "The bushtits are swarming up, angrily squeaking!",
 		"position": {
-			"x": 3897,
-			"y": -1719
+			"x": 3329,
+			"y": -17
 		},
 		"colorID": 0
 	},
@@ -244,8 +244,8 @@
 		"tags": "",
 		"body": "It's an American Kestrel!",
 		"position": {
-			"x": 4463,
-			"y": -2432
+			"x": 3895,
+			"y": -730
 		},
 		"colorID": 0
 	},
@@ -254,8 +254,8 @@
 		"tags": "",
 		"body": "Sounds like there's a kestrel-like bird nearby.",
 		"position": {
-			"x": 4458,
-			"y": -2644
+			"x": 3890,
+			"y": -942
 		},
 		"colorID": 0
 	},
@@ -264,8 +264,8 @@
 		"tags": "",
 		"body": "Nice photo!\n\nKestrels are North America's littlest falcon.\n\nOf course, that doesn't stop snatching up all kinds of prey.\n\n...\n\n...\n\n... yeah...",
 		"position": {
-			"x": 4700,
-			"y": -2104
+			"x": 4132,
+			"y": -402
 		},
 		"colorID": 0
 	},
@@ -274,8 +274,8 @@
 		"tags": "",
 		"body": "The kestrel is resting on a fence post.",
 		"position": {
-			"x": 4467,
-			"y": -2216
+			"x": 3899,
+			"y": -514
 		},
 		"colorID": 0
 	},
@@ -284,8 +284,8 @@
 		"tags": "",
 		"body": "The kestrel is flying around, looking for prey.",
 		"position": {
-			"x": 4473,
-			"y": -2002
+			"x": 3905,
+			"y": -300
 		},
 		"colorID": 0
 	},
@@ -294,8 +294,8 @@
 		"tags": "",
 		"body": "The kestrel is angrily diving at the ground!",
 		"position": {
-			"x": 4473,
-			"y": -1786
+			"x": 3905,
+			"y": -84
 		},
 		"colorID": 0
 	},
@@ -304,8 +304,8 @@
 		"tags": "",
 		"body": "We should take a couple more shots to make sure we get a good one.",
 		"position": {
-			"x": 3252,
-			"y": -1350
+			"x": 2684,
+			"y": 352
 		},
 		"colorID": 0
 	},
@@ -314,8 +314,8 @@
 		"tags": "",
 		"body": "Look for a different bird?",
 		"position": {
-			"x": 3286,
-			"y": -1081
+			"x": 2718,
+			"y": 621
 		},
 		"colorID": 0
 	},
@@ -324,8 +324,8 @@
 		"tags": "",
 		"body": "Yeah. Let's go look for other birds.",
 		"position": {
-			"x": 3502,
-			"y": -1085
+			"x": 2934,
+			"y": 617
 		},
 		"colorID": 0
 	},
@@ -334,8 +334,8 @@
 		"tags": "",
 		"body": "Your hands are getting a little jittery.",
 		"position": {
-			"x": 3754,
-			"y": -1343
+			"x": 3186,
+			"y": 359
 		},
 		"colorID": 0
 	},
@@ -344,8 +344,8 @@
 		"tags": "",
 		"body": "Your poor breathing is spooking them!",
 		"position": {
-			"x": 4002,
-			"y": -1344
+			"x": 3434,
+			"y": 358
 		},
 		"colorID": 0
 	},
@@ -354,8 +354,8 @@
 		"tags": "",
 		"body": "You feel perfectly calm.",
 		"position": {
-			"x": 3532,
-			"y": -1342
+			"x": 2964,
+			"y": 360
 		},
 		"colorID": 0
 	},
@@ -364,8 +364,8 @@
 		"tags": "",
 		"body": "The bird flew away! You spooked them too much!",
 		"position": {
-			"x": 4264,
-			"y": -1343
+			"x": 3696,
+			"y": 359
 		},
 		"colorID": 0
 	},
@@ -374,8 +374,8 @@
 		"tags": "",
 		"body": "Hey, why'd you bring that bag of seed?\n\nI want some photos of them eating.\n\nWe're not supposed to feed the animals here.\n\n...\n\nThat's ok. I'm still doing it.",
 		"position": {
-			"x": 1085,
-			"y": -525
+			"x": 517,
+			"y": 1177
 		},
 		"colorID": 0
 	},
@@ -384,8 +384,8 @@
 		"tags": "",
 		"body": "Last one for now.",
 		"position": {
-			"x": 1331,
-			"y": -530
+			"x": 763,
+			"y": 1172
 		},
 		"colorID": 0
 	},
@@ -394,8 +394,8 @@
 		"tags": "",
 		"body": "Let's head back. I need a rest.",
 		"position": {
-			"x": 1567,
-			"y": -534
+			"x": 999,
+			"y": 1168
 		},
 		"colorID": 0
 	},
@@ -404,8 +404,8 @@
 		"tags": "",
 		"body": "Back at the cabin. Let's take a load off.\n\n...\n\nHey, why'd you bring that bag of seed?\n\nI want some photos of them eating.\n\nWe're not supposed to feed the animals here.\n\n...\n\nThat's ok. I'm still doing it.\n\n...\n\nFine.\n\nGOT BAG OF SEED.\n\nTRANSITION TO EVENING\n\nHey.\n\nWant to look at some more birds before we turn in?\n\nSure.",
 		"position": {
-			"x": 392,
-			"y": -295
+			"x": -176,
+			"y": 1407
 		},
 		"colorID": 3
 	},
@@ -414,8 +414,8 @@
 		"tags": "",
 		"body": "You are already as calm as can be.",
 		"position": {
-			"x": 2563,
-			"y": -1364
+			"x": 1995,
+			"y": 338
 		},
 		"colorID": 0
 	},
@@ -424,8 +424,8 @@
 		"tags": "",
 		"body": "Looks like there's something moving in the river.",
 		"position": {
-			"x": 5212,
-			"y": -2646
+			"x": 4644,
+			"y": -944
 		},
 		"colorID": 1
 	},
@@ -434,8 +434,8 @@
 		"tags": "",
 		"body": "It's a Wilson's Snipe!\n\nThat beak is so long!",
 		"position": {
-			"x": 5218,
-			"y": -2431
+			"x": 4650,
+			"y": -729
 		},
 		"colorID": 0
 	},
@@ -444,8 +444,8 @@
 		"tags": "",
 		"body": "It's a Steller's Jay!\n\nWow! Such a bright color!",
 		"position": {
-			"x": 5517,
-			"y": -2433
+			"x": 4949,
+			"y": -731
 		},
 		"colorID": 0
 	},
@@ -454,8 +454,8 @@
 		"tags": "",
 		"body": "There's a hint of blue in the trees over there.",
 		"position": {
-			"x": 5525,
-			"y": -2654
+			"x": 4957,
+			"y": -952
 		},
 		"colorID": 2
 	},
@@ -464,8 +464,8 @@
 		"tags": "",
 		"body": "Nice photo!",
 		"position": {
-			"x": 5515,
-			"y": -2211
+			"x": 4947,
+			"y": -509
 		},
 		"colorID": 0
 	},
@@ -474,8 +474,8 @@
 		"tags": "",
 		"body": "Nice photo!",
 		"position": {
-			"x": 5220,
-			"y": -2218
+			"x": 4652,
+			"y": -516
 		},
 		"colorID": 0
 	},
@@ -484,8 +484,8 @@
 		"tags": "",
 		"body": "Now it is night time.",
 		"position": {
-			"x": 389,
-			"y": -75
+			"x": -179,
+			"y": 1627
 		},
 		"colorID": 1
 	},
@@ -494,8 +494,8 @@
 		"tags": "",
 		"body": "Now it is night time 2.",
 		"position": {
-			"x": 622,
-			"y": -79
+			"x": 54,
+			"y": 1623
 		},
 		"colorID": 0
 	},
@@ -504,8 +504,8 @@
 		"tags": "",
 		"body": "Now it is night time 3.",
 		"position": {
-			"x": 851,
-			"y": -78
+			"x": 283,
+			"y": 1624
 		},
 		"colorID": 0
 	},
@@ -514,8 +514,8 @@
 		"tags": "",
 		"body": "Now it is night time 4.",
 		"position": {
-			"x": 1073,
-			"y": -81
+			"x": 517,
+			"y": 1624
 		},
 		"colorID": 0
 	},
@@ -524,8 +524,8 @@
 		"tags": "",
 		"body": "Now it is night time 5.",
 		"position": {
-			"x": 1303,
-			"y": -80
+			"x": 735,
+			"y": 1622
 		},
 		"colorID": 0
 	},
@@ -534,8 +534,8 @@
 		"tags": "",
 		"body": "It is raining",
 		"position": {
-			"x": 384,
-			"y": 348
+			"x": -184,
+			"y": 2050
 		},
 		"colorID": 1
 	},
@@ -544,8 +544,8 @@
 		"tags": "",
 		"body": "It is raining 2",
 		"position": {
-			"x": 608,
-			"y": 353
+			"x": 40,
+			"y": 2055
 		},
 		"colorID": 0
 	},
@@ -554,8 +554,8 @@
 		"tags": "",
 		"body": "It is raining 3",
 		"position": {
-			"x": 858,
-			"y": 347
+			"x": 290,
+			"y": 2049
 		},
 		"colorID": 0
 	},
@@ -564,8 +564,8 @@
 		"tags": "",
 		"body": "It is raining 4",
 		"position": {
-			"x": 1074,
-			"y": 338
+			"x": 506,
+			"y": 2040
 		},
 		"colorID": 0
 	},
@@ -574,8 +574,8 @@
 		"tags": "",
 		"body": "It is raining 5",
 		"position": {
-			"x": 1302,
-			"y": 350
+			"x": 734,
+			"y": 2052
 		},
 		"colorID": 0
 	},
@@ -584,8 +584,8 @@
 		"tags": "",
 		"body": "This is the second intermission.",
 		"position": {
-			"x": 387,
-			"y": 131
+			"x": -181,
+			"y": 1833
 		},
 		"colorID": 3
 	},
@@ -594,8 +594,8 @@
 		"tags": "",
 		"body": "Evening Grosbeak or something",
 		"position": {
-			"x": 5808,
-			"y": -2647
+			"x": 5240,
+			"y": -945
 		},
 		"colorID": 3
 	},
@@ -604,8 +604,8 @@
 		"tags": "",
 		"body": "Evening Grosbeak or something",
 		"position": {
-			"x": 5809,
-			"y": -2436
+			"x": 5241,
+			"y": -734
 		},
 		"colorID": 0
 	},
@@ -614,8 +614,8 @@
 		"tags": "",
 		"body": "Nice photo!",
 		"position": {
-			"x": 5808,
-			"y": -2220
+			"x": 5240,
+			"y": -518
 		},
 		"colorID": 0
 	},
@@ -624,8 +624,8 @@
 		"tags": "",
 		"body": "Common Merganser Approach",
 		"position": {
-			"x": 6639,
-			"y": -2650
+			"x": 6071,
+			"y": -948
 		},
 		"colorID": 6
 	},
@@ -634,8 +634,8 @@
 		"tags": "",
 		"body": "Common Merganser Start",
 		"position": {
-			"x": 6639,
-			"y": -2439
+			"x": 6071,
+			"y": -737
 		},
 		"colorID": 0
 	},
@@ -644,8 +644,8 @@
 		"tags": "",
 		"body": "Common Merganser Exit",
 		"position": {
-			"x": 6643,
-			"y": -2234
+			"x": 6075,
+			"y": -532
 		},
 		"colorID": 0
 	},
@@ -654,8 +654,8 @@
 		"tags": "",
 		"body": "Junco Dark-Eyed Approach",
 		"position": {
-			"x": 6356,
-			"y": -2651
+			"x": 5788,
+			"y": -949
 		},
 		"colorID": 5
 	},
@@ -664,8 +664,8 @@
 		"tags": "",
 		"body": "Junco Dark-Eyed Start",
 		"position": {
-			"x": 6362,
-			"y": -2438
+			"x": 5794,
+			"y": -736
 		},
 		"colorID": 0
 	},
@@ -674,8 +674,8 @@
 		"tags": "",
 		"body": "Junco Dark-Eyed Exit",
 		"position": {
-			"x": 6362,
-			"y": -2228
+			"x": 5794,
+			"y": -526
 		},
 		"colorID": 0
 	},
@@ -684,8 +684,8 @@
 		"tags": "",
 		"body": "Northern Saw-Whet Into",
 		"position": {
-			"x": 6089,
-			"y": -2651
+			"x": 5521,
+			"y": -949
 		},
 		"colorID": 4
 	},
@@ -694,8 +694,8 @@
 		"tags": "",
 		"body": "Northern Saw-Whet Start",
 		"position": {
-			"x": 6084,
-			"y": -2444
+			"x": 5516,
+			"y": -742
 		},
 		"colorID": 0
 	},
@@ -704,8 +704,8 @@
 		"tags": "",
 		"body": "Northern Saw-Whet Exit",
 		"position": {
-			"x": 6089,
-			"y": -2227
+			"x": 5521,
+			"y": -525
 		},
 		"colorID": 0
 	},
@@ -714,9 +714,49 @@
 		"tags": "",
 		"body": "Congrats for making it all the way to the end.\n\nThat is more effort than I expected.\n\nTODO: have actual ending",
 		"position": {
-			"x": 383,
-			"y": 573
+			"x": -185,
+			"y": 2275
 		},
 		"colorID": 3
+	},
+	{
+		"title": "Encounter_Tutorial",
+		"tags": "",
+		"body": "Info: Hello, I am this computer game's developer with some helpful tips to get you through the game.\r\nInfo: Our goal here is to get a good photo of that bird over there.\r\nInfo: If you use your camera, you can snap some photos of it. I think we need ten photos before we get a good one.\r\nInfo: When you're ready to start, move your mouse cursor over the camera picture and perform a click.\r\nInfo: This computer game is operated only by moving the mouse and clicking, so don't worry about any other keyboard buttons.",
+		"position": {
+			"x": 400,
+			"y": 29
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Post_Camera_Tutorial",
+		"tags": "",
+		"body": "Info: Taking photos can get stressful! If you get too stressed then you won't be able to operate the camera. \r\nInfo: We may need to do some breathing exercises to calm down when that happens.\r\nInfo: Right now you're only a little stressed out, so you can take another set of pictures first, if you'd like\r\n",
+		"position": {
+			"x": 406,
+			"y": 450
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Camera_Tutorial",
+		"tags": "",
+		"body": "Info: It is me, the game's developer again. Sorry to be back so soon!\r\nInfo: To snap a picture of a bird, hover your cursor over the bird and click the mouse button to snap a photo.\r\nInfo: If the bird is in the center of the camera's frame, you'll take a picture that's worth two!",
+		"position": {
+			"x": 403,
+			"y": 241
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Breathing_Tutorial",
+		"tags": "",
+		"body": "Info: Ready to chill out?\nInfo: Start by depressing the mouse button, and then release it when the blue meter near the green zone on the right.\nInfo: Then, depress the mouse button when it approaches the green zone on the left.\nInfo: Keep it up and you'll be calmer in no time!",
+		"position": {
+			"x": 410,
+			"y": 659
+		},
+		"colorID": 0
 	}
 ]

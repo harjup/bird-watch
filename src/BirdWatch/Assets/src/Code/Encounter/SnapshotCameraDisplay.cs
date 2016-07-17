@@ -7,25 +7,29 @@ using TreeEditor;
 public class SnapshotCameraDisplay : MonoBehaviour
 {
     private SpriteRenderer _iconSprite;
-    private SpriteRenderer _coneSprite;
+    private SpriteRenderer _okSprite;
+    private SpriteRenderer _perfectSprite;
 
     void Start()
     {
         var sprites = GetComponentsInChildren<SpriteRenderer>();
         _iconSprite = sprites.First(s => s.name == "camera-icon");
-        _coneSprite = sprites.First(s => s.name == "camera-cone");
+        _okSprite = sprites.First(s => s.name == "ok-cone");
+        _perfectSprite = sprites.First(s => s.name == "perfect-cone");
     }
 
     public void SetActive()
     {
         _iconSprite.color = Color.white;
-        _coneSprite.color = Color.white.SetAlpha(.62f);
+        _okSprite.color = Color.white.SetAlpha(.62f);
+        _perfectSprite.color = _perfectSprite.color.SetAlpha(.62f);
     }
 
     public void SetInactive()
     {
         _iconSprite.color = Color.grey;
-        _coneSprite.color = Color.white.SetAlpha(0f);
+        _okSprite.color = Color.white.SetAlpha(0f);
+        _perfectSprite.color = _perfectSprite.color.SetAlpha(0f);
     }
 
     public void Shake()

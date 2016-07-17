@@ -50,6 +50,12 @@ public class EncounterRunner : MonoBehaviour
         // Run through any special bird messages.
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Start")));
 
+        if (GameProgress.Instance.ShowEncounterTutorial)
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Encounter_Tutorial"));
+            GameProgress.Instance.ShowEncounterTutorial = false;
+        }
+
         // Show menu.
         yield return StartCoroutine(_actionSelect.Enable()); //TODO: This should have a callback with the player's selection
 
@@ -58,7 +64,7 @@ public class EncounterRunner : MonoBehaviour
 
 
     private int _birdShots = 0;
-    private int _birdShotMax = 10;
+    private int _birdShotMax = 15;
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
@@ -72,6 +78,12 @@ public class EncounterRunner : MonoBehaviour
             yield break;
         }
 
+
+        if (GameProgress.Instance.ShowCameraTutorialText)
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Camera_Tutorial"));
+        }
+        
         //MinigameResult result = null;
         var target = FindObjectOfType<CameraMinigame>();
         
@@ -108,18 +120,21 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Find a better method of communicating bird behavior
         //yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode(agitationRating)));
 
+        if (GameProgress.Instance.ShowCameraTutorialText)
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Post_Camera_Tutorial"));
+            GameProgress.Instance.ShowCameraTutorialText = false;
+        }
+
         yield return StartCoroutine(_actionSelect.Enable());
 
     }
 
-
-
-
-
+    
     public IEnumerator RunBreathingMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
-
+        
         var runner = FindObjectOfType<DialogueRunner>();
         if (Agitation.IsAtBestValue())
         {
@@ -128,6 +143,11 @@ public class EncounterRunner : MonoBehaviour
             yield break;
         }
 
+        if (GameProgress.Instance.ShowBreathingTutorialText)
+        {
+            yield return StartCoroutine(runner.StartAwaitableDialogue("Breathing_Tutorial"));
+            GameProgress.Instance.ShowBreathingTutorialText = false;
+        }
 
         decimal result = 0m;
         var target = FindObjectOfType<BreathingMinigame>();

@@ -27,6 +27,7 @@ SOFTWARE.
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Yarn.Unity
 {
@@ -135,12 +136,12 @@ namespace Yarn.Unity
 			// Stop any processes that might be running already
 			StopAllCoroutines ();
 			dialogueUI.StopAllCoroutines ();
-
+            
 			// Get it going
 			yield return StartCoroutine (RunDialogue (startNode));
 		}
 
-		IEnumerator RunDialogue (string startNode = "Start")
+        IEnumerator RunDialogue (string startNode = "Start")
 		{
 			// Mark that we're in conversation.
 			isDialogueRunning = true;

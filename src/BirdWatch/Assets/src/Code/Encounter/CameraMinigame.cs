@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-
+using System.Linq;
 using Yarn.Unity;
 
 public class CameraMinigameResult
@@ -45,8 +45,28 @@ public class CameraMinigame : MonoBehaviour
             {
                 cameraCooldown = true;
                 
-                var birdCollision = FindObjectOfType<SnapshotCollider>().BirdInCollider;
-                if (birdCollision)
+                var colliders = FindObjectsOfType<SnapshotCollider>();
+                var okCollision = colliders.First(c => c.name == "ok-cone").BirdInCollider;
+                var perfectCollision = colliders.First(c => c.name == "perfect-cone").BirdInCollider;
+
+                if (perfectCollision)
+                {
+                    birdShots += 2;
+
+                    if (birdShots >= birdShotMax)
+                    {
+                        callback(new CameraMinigameResult(birdShots));
+                        break;
+                    }
+
+                    StartCoroutine(ScreenFlash.Instance.Flash());
+
+
+                    FindObjectOfType<SnapshotBird>().OnPictureTaken();
+                    FindObjectOfType<PolaroidBox>().SpawnPicture();
+                    FindObjectOfType<PolaroidBox>().SpawnPicture();
+                }
+                else if (okCollision)
                 {
                     birdShots += 1;
 
