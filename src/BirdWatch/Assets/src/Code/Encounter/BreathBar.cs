@@ -24,9 +24,12 @@ public class BreathBar : MonoBehaviour
 
         int breaths = 0;
         int breathsMax = 6;
-
+        
         // Press the mouse button!
         LungBar.transform.localScale = LungBar.transform.localScale.SetX(.3f);
+
+        yield return new WaitForSeconds(.05f);
+
         while (!Input.GetKey(KeyCode.Mouse0))
         {
             yield return null;
