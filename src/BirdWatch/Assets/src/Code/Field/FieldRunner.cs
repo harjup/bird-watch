@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Globalization;
 using System.Linq;
 using Assets.src.Code.Models;
 using Yarn.Unity;
@@ -35,12 +36,34 @@ public class FieldRunner : MonoBehaviour
     {
         BackgroundScroller = FindObjectOfType<BackgroundScroll>();
 
+        SetupVisuals();
+
+
         // the area has loaded
         // pick the background & characters to scroll and set that up
         // fire off an event waiter thing
         // 5 or 10 seconds
         // either do dialog for area that hasn't been seen yet or do another bird
         StartCoroutine(WalkTheField());
+
+    }
+
+    private void SetupVisuals()
+    {
+        var currentDay = GameProgress.Instance.CurrentDay;
+
+        if (currentDay == 1)
+        {
+            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Day);
+        }
+        if (currentDay == 2)
+        {
+            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Night);
+        }
+        if (currentDay == 3)
+        {
+            BackgroundScroller.SetupBackground(BackgroundScroll.BackgroundType.Rain);
+        }
 
     }
 
