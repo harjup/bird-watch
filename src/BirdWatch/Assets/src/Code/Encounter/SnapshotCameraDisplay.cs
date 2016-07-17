@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Linq;
 using DG.Tweening;
-using TreeEditor;
 
 public class SnapshotCameraDisplay : MonoBehaviour
 {

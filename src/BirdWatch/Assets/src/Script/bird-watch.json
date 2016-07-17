@@ -722,7 +722,7 @@
 	{
 		"title": "Encounter_Tutorial",
 		"tags": "",
-		"body": "Info: Hello, I am this computer game's developer with some helpful tips to get you through the game.\r\nInfo: Our goal here is to get a good photo of that bird over there.\r\nInfo: If you use your camera, you can snap some photos of it. I think we need ten photos before we get a good one.\r\nInfo: When you're ready to start, move your mouse cursor over the camera picture and perform a click.\r\nInfo: This computer game is operated only by moving the mouse and clicking, so don't worry about any other keyboard buttons.",
+		"body": "Info: Hello, I am this computer game's developer with some helpful tips to get you through the game.\r\nInfo: Our goal here is to get a good photo of that bird over there.\r\nInfo: If you use your camera, you can snap some photos of it. I think we need fifteen photos before we get a good one.\r\nInfo: When you're ready to start, move your mouse cursor over the camera icon and perform a click.\r\nInfo: This computer game is operated only by moving the mouse and clicking, so don't worry about any other keyboard buttons.",
 		"position": {
 			"x": 400,
 			"y": 29
