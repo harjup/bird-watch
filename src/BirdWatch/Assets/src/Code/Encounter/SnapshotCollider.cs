@@ -8,6 +8,11 @@ public class SnapshotCollider : MonoBehaviour
     
     public readonly List<SnapshotBird> Birds = new List<SnapshotBird>();
 
+    public void Init()
+    {
+        Birds.Clear(); 
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         var bird = collision.GetComponentInParent<SnapshotBird>();

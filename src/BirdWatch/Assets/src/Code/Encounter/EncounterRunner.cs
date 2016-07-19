@@ -23,7 +23,7 @@ public class EncounterRunner : MonoBehaviour
         if (_bird == null)
         {
 //            BirdListing.GetNextDayBird();
-            BirdListing.GetNextDayBird();
+            //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             _bird = BirdListing.GetCurrentDayBird();

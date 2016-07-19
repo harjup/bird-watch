@@ -56,6 +56,8 @@ public class CameraMinigame : MonoBehaviour
 
         var snapshotCamera = FindObjectOfType<SnapshotCameraDisplay>();
 
+        FindObjectsOfType<SnapshotCollider>().ToList().ForEach(s => s.Init());
+
         while (true)
         {
             yield return StartCoroutine(FindObjectOfType<SnapshotMover>().Run());
@@ -90,8 +92,11 @@ public class CameraMinigame : MonoBehaviour
                         FindObjectOfType<PolaroidBox>().SpawnPicture();
                     });
 
-                    okCollider.Birds.Clear();
-                    
+                    if (bird.Id == "BT")
+                    {
+                        okCollider.Birds.Clear();
+                    }
+
                 }
                 else
                 {
