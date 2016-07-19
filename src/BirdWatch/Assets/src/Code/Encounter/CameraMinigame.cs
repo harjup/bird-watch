@@ -91,15 +91,6 @@ public class CameraMinigame : MonoBehaviour
                     });
 
                     okCollider.Birds.Clear();
-
-//                    FindObjectsOfType<MonoBehaviour>()
-//                        .Where(c => c is ISnapshotBird)
-//                        .Cast<ISnapshotBird>()
-//                        .First()
-//                        .OnPictureTaken();
-
-
-
                     
                 }
                 else
