@@ -36,6 +36,7 @@ public class BreathBar : MonoBehaviour
         }
 
         prevMouse = true;
+        FindObjectOfType<BreathingFace>().Toggle(prevMouse);
 
         while (true)
         {
@@ -204,7 +205,7 @@ public class BreathBar : MonoBehaviour
                 case Bar.Type.Bad:
                 case Bar.Type.Clear:
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Bad);
-                    ranking -= 3;
+                    ranking -= 2;
                     break;
             }
 

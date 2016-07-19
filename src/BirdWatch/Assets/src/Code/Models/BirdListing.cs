@@ -25,9 +25,10 @@ namespace Assets.src.Code.Models
         {
             AW,
             AK,
+            BT,
             SJ,
             WS,
-            BT
+            
         };
 
         public static List<Bird> NightBirds = new List<Bird>

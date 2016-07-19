@@ -24,14 +24,7 @@ public class CameraMinigame : MonoBehaviour
     {
         _timeLimit = GameObject.Find("time-limit");
 
-        if (bird.Id == "AW")
-        {
-            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
-            _fieldObject = Instantiate(prefab);
-            _fieldObject.transform.parent = transform;
-            _fieldObject.transform.localPosition = Vector3.zero;
-        }
-        if (bird.Id == "AK")
+        if (bird.Id == "AW" || bird.Id == "AK" || bird.Id == "BT")
         {
             var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
             _fieldObject = Instantiate(prefab);
@@ -72,17 +65,16 @@ public class CameraMinigame : MonoBehaviour
                 cameraCooldown = true;
                 
                 var colliders = FindObjectsOfType<SnapshotCollider>();
-                var collision = colliders
-                    .First(c => c.name == "ok-cone")
-                    .BirdInCollider;
+                var okCollider = colliders
+                    .First(c => c.name == "ok-cone");
 
                 var isWithinBounds = colliders
                     .Where(c => c.name == "camera-bounds")
                     .All(c => !c.BirdInCollider);
 
-                if (collision && isWithinBounds)
+                if (okCollider.BirdInCollider && isWithinBounds)
                 {
-                    birdShots += 1;
+                    birdShots += okCollider.Birds.Count;
 
                     if (birdShots >= birdShotMax)
                     {
@@ -92,13 +84,23 @@ public class CameraMinigame : MonoBehaviour
 
                     StartCoroutine(ScreenFlash.Instance.Flash());
 
+                    okCollider.Birds.Cast<ISnapshotBird>().ToList().ForEach(b =>
+                    {
+                        b.OnPictureTaken();
+                        FindObjectOfType<PolaroidBox>().SpawnPicture();
+                    });
+
+                    okCollider.Birds.Clear();
+
+//                    FindObjectsOfType<MonoBehaviour>()
+//                        .Where(c => c is ISnapshotBird)
+//                        .Cast<ISnapshotBird>()
+//                        .First()
+//                        .OnPictureTaken();
+
+
+
                     
-                    FindObjectsOfType<MonoBehaviour>()
-                        .Where(c => c is ISnapshotBird)
-                        .Cast<ISnapshotBird>()
-                        .First()
-                        .OnPictureTaken();
-                    FindObjectOfType<PolaroidBox>().SpawnPicture();
                 }
                 else
                 {

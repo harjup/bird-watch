@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class SnapshotCollider : MonoBehaviour
 {
-    public bool BirdInCollider;
+    public bool BirdInCollider { get { return Birds.Any(); } }
+    
+    public readonly List<SnapshotBird> Birds = new List<SnapshotBird>();
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        var isBird = collision.GetComponentInParent<SnapshotBird>() != null;
-        if (isBird)
+        var bird = collision.GetComponentInParent<SnapshotBird>();
+        if (!Birds.Contains(bird))
         {
-            BirdInCollider = true;
+            Birds.Add(bird);
         }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        var isBird = collision.GetComponentInParent<SnapshotBird>() != null;
-        if (isBird)
+        var bird = collision.GetComponentInParent<SnapshotBird>();
+        if (Birds.Contains(bird))
         {
-            BirdInCollider = false;
+            Birds.Remove(bird);
         }
     }
 }
