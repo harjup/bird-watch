@@ -13,19 +13,19 @@ public class SnapshotMover : MonoBehaviour
         var angle = AngleBetweenVector2(transform.position, targetPos);
 
         
-        if (angle > 180)
-        {
-            angle = 360 - angle;
-        }
-        
-        if (angle > TurnRadius)
-        {
-            angle = TurnRadius;
-        }
-        else if (angle < -TurnRadius)
-        {
-            angle = -TurnRadius;
-        }
+//        if (angle > 180)
+//        {
+//            angle = 360 - angle;
+//        }
+//        
+//        if (angle > TurnRadius)
+//        {
+//            angle = TurnRadius;
+//        }
+//        else if (angle < -TurnRadius)
+//        {
+//            angle = -TurnRadius;
+//        }
         
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 

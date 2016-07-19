@@ -22,8 +22,8 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
-            BirdListing.GetNextDayBird();
-            BirdListing.GetNextDayBird();
+//            BirdListing.GetNextDayBird();
+//            BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             _bird = BirdListing.GetCurrentDayBird();
@@ -64,7 +64,7 @@ public class EncounterRunner : MonoBehaviour
 
 
     private int _birdShots = 0;
-    private int _birdShotMax = 15;
+    private int _birdShotMax = 10;
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());
@@ -88,7 +88,7 @@ public class EncounterRunner : MonoBehaviour
         var target = FindObjectOfType<CameraMinigame>();
         
         CameraMinigameResult result = null;
-        yield return StartCoroutine(target.Run(_birdShots, _birdShotMax, res => { result = res; }));
+        yield return StartCoroutine(target.Run(_bird, _birdShots, _birdShotMax, res => { result = res; }));
         _birdShots = result.PhotosTaken;
 
         if (_birdShots >= _birdShotMax)

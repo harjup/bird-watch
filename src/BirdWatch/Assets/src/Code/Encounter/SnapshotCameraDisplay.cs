@@ -14,21 +14,18 @@ public class SnapshotCameraDisplay : MonoBehaviour
         var sprites = GetComponentsInChildren<SpriteRenderer>();
         _iconSprite = sprites.First(s => s.name == "camera-icon");
         _okSprite = sprites.First(s => s.name == "ok-cone");
-        _perfectSprite = sprites.First(s => s.name == "perfect-cone");
     }
 
     public void SetActive()
     {
         _iconSprite.color = Color.white;
-        _okSprite.color = Color.white.SetAlpha(.62f);
-        _perfectSprite.color = _perfectSprite.color.SetAlpha(.62f);
+        _okSprite.color = Color.white.SetAlpha(.30f);
     }
 
     public void SetInactive()
     {
         _iconSprite.color = Color.grey;
         _okSprite.color = Color.white.SetAlpha(0f);
-        _perfectSprite.color = _perfectSprite.color.SetAlpha(0f);
     }
 
     public void Shake()

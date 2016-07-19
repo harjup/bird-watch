@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 
-public class SnapshotBird : MonoBehaviour
+
+public class SwoopySnapshotBird : SnapshotBird, ISnapshotBird
 {
     private List<Transform> _availablePositions;
 

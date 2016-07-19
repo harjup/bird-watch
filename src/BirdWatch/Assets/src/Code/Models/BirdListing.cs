@@ -23,9 +23,9 @@ namespace Assets.src.Code.Models
 
         public static List<Bird> DayBirds = new List<Bird>
         {
-            SJ,
             AW,
             AK,
+            SJ,
             WS,
             BT
         };

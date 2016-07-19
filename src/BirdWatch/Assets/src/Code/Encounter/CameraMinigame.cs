@@ -17,21 +17,47 @@ public class CameraMinigameResult
 public class CameraMinigame : MonoBehaviour
 {
     private GameObject _timeLimit;
+    private GameObject _fieldObject;
 
-    private void Setup()
+
+    private void Setup(Bird bird)
     {
         _timeLimit = GameObject.Find("time-limit");
+
+        if (bird.Id == "AW")
+        {
+            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
+            _fieldObject = Instantiate(prefab);
+            _fieldObject.transform.parent = transform;
+            _fieldObject.transform.localPosition = Vector3.zero;
+        }
+        if (bird.Id == "AK")
+        {
+            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
+            _fieldObject = Instantiate(prefab);
+            _fieldObject.transform.parent = transform;
+            _fieldObject.transform.localPosition = Vector3.zero;
+        }
+        else
+        {
+            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-swoopy");
+            _fieldObject = Instantiate(prefab);
+            _fieldObject.transform.parent = transform;
+            _fieldObject.transform.localPosition = Vector3.zero;
+        }
     }
 
-    public IEnumerator Run(int birdShots, int birdShotMax, Action<CameraMinigameResult> callback)
+    public IEnumerator Run(Bird bird, int birdShots, int birdShotMax, Action<CameraMinigameResult> callback)
     {
-        Setup();
+        Setup(bird);
+        
+        yield return new WaitForSeconds(.01f); // Wait a tiny bit so we can get set up
 
         // Setup
         transform.position = Vector3.zero;
 
         var timeLimit = 0f;
-        var timeLimitMax = 4f;
+        var timeLimitMax = 5f;
 
         var cameraCooldown = false;
 
@@ -46,27 +72,15 @@ public class CameraMinigame : MonoBehaviour
                 cameraCooldown = true;
                 
                 var colliders = FindObjectsOfType<SnapshotCollider>();
-                var okCollision = colliders.First(c => c.name == "ok-cone").BirdInCollider;
-                var perfectCollision = colliders.First(c => c.name == "perfect-cone").BirdInCollider;
+                var collision = colliders
+                    .First(c => c.name == "ok-cone")
+                    .BirdInCollider;
 
-                if (perfectCollision)
-                {
-                    birdShots += 2;
+                var isWithinBounds = colliders
+                    .Where(c => c.name == "camera-bounds")
+                    .All(c => !c.BirdInCollider);
 
-                    if (birdShots >= birdShotMax)
-                    {
-                        callback(new CameraMinigameResult(birdShots));
-                        break;
-                    }
-
-                    StartCoroutine(ScreenFlash.Instance.Flash());
-
-
-                    FindObjectOfType<SnapshotBird>().OnPictureTaken();
-                    FindObjectOfType<PolaroidBox>().SpawnPicture();
-                    FindObjectOfType<PolaroidBox>().SpawnPicture();
-                }
-                else if (okCollision)
+                if (collision && isWithinBounds)
                 {
                     birdShots += 1;
 
@@ -78,8 +92,12 @@ public class CameraMinigame : MonoBehaviour
 
                     StartCoroutine(ScreenFlash.Instance.Flash());
 
-
-                    FindObjectOfType<SnapshotBird>().OnPictureTaken();
+                    
+                    FindObjectsOfType<MonoBehaviour>()
+                        .Where(c => c is ISnapshotBird)
+                        .Cast<ISnapshotBird>()
+                        .First()
+                        .OnPictureTaken();
                     FindObjectOfType<PolaroidBox>().SpawnPicture();
                 }
                 else
@@ -127,6 +145,8 @@ public class CameraMinigame : MonoBehaviour
     private void Cleanup()
     {
         transform.position = Vector3.zero.SetY(-20);
+
+        Destroy(_fieldObject);
     }
 
     private IEnumerator StartTimer(float seconds, Action callback)
