@@ -67,6 +67,9 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
 
     public void OnPictureTaken()
     {
+        //TODO: Determine if we want it to do anything when a picture is taken.
+        // Maybe it should spawn a little surprised mark so you know you got them
+
 //        if (doneFlyingIn)
 //        {
 //            transform.DOKill();
