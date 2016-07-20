@@ -1,11 +1,18 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public static class UsefulExtensions
 {
     public static Vector3 SetX(this Vector3 vector3, float x)
     {
         return new Vector3(x, vector3.y, vector3.z);
+    }
+
+    public static Vector3 AddX(this Vector3 vector3, float x)
+    {
+        return new Vector3(vector3.x + x, vector3.y, vector3.z);
     }
 
     public static Vector3 SetY(this Vector3 vector3, float y)
@@ -50,6 +57,14 @@ public static class UsefulExtensions
             float.Parse(vectorValues[0]),
             float.Parse(vectorValues[1]),
             float.Parse(vectorValues[2]));
+    }
+}
+
+public static class ListExtensions
+{
+    public static T GetRandom<T>(this List<T> self)
+    {
+        return self.OrderBy(p => Guid.NewGuid()).First();
     }
 }
 
