@@ -86,7 +86,6 @@ public class WilsonSnipeSnapshot : SnapshotBird, ISnapshotBird
             .AppendInterval(Random.Range(.25f, .5f))
             .Append(transform.DOLocalMove(nextPosition, .25f).SetEase(Ease.Linear))
             .AppendInterval(Random.Range(.2f, .3f));
-            //.AppendCallback(OnPictureTaken);
 
         _currentLocation = nextPosition;
     }

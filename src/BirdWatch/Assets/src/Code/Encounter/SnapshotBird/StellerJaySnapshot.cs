@@ -9,7 +9,9 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
 
     private List<Transform> _startingPoints;
     private List<Transform> _landingPoints;
-    bool doneFlyingIn = false;
+    bool doneFlyingIn = true;
+
+    private Transform _startSpot;
 
     void Start()
     {
@@ -20,10 +22,9 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
         // Starting points:
         _startingPoints = availablePositions.Where(p => p.name == "start-position").ToList();
         _landingPoints = availablePositions.Where(p => p.name == "land-position").ToList();
-        
+
+        doneFlyingIn = false;
         FlyInTween();
-
-
 
         // Quickly swoop onto the screen, hop around.
         // On picture taken, fly off screen, pause, fly onto another spot and start hopping around.
@@ -34,6 +35,7 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
     public void FlyInTween()
     {
         var startSpot = _startingPoints.GetRandom();
+        _startSpot = startSpot;
 
         // If they start on the left they should land on the left, start right -> land right.
         // Comparing floats sucks, man
@@ -42,6 +44,7 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
             .ToList()
             .GetRandom();
 
+        //TODO: I think teleporting around is messing with the camera collider. We should make sure the bird gets removed properly, or that it can't be added offscreen.
         transform.localPosition = startSpot.transform.localPosition;
 
         // TODO: While I'd like to just have a straightforward sequence. SetSpeedBased doesn't seem to work in children in a sequence. I should file a bug with DOTween.
@@ -57,9 +60,10 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
                     .Append(transform.DOLocalJump(transform.localPosition.AddX(-.5f), .25f/2f, 2, .5f).SetEase(Ease.Linear))
                     .OnComplete(() =>
                     {
-                        transform.DOLocalMove(startSpot.localPosition, 8f).SetEase(Ease.Linear)
-                        .SetSpeedBased()
-                        .OnComplete(FlyInTween);
+                        doneFlyingIn = true;
+//                        transform.DOLocalMove(startSpot.localPosition, 8f).SetEase(Ease.Linear)
+//                        .SetSpeedBased()
+//                        .OnComplete(FlyInTween);
                     });
 
             });   
@@ -70,10 +74,12 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
         //TODO: Determine if we want it to do anything when a picture is taken.
         // Maybe it should spawn a little surprised mark so you know you got them
 
-//        if (doneFlyingIn)
-//        {
-//            transform.DOKill();
-//            FlyInTween();
-//        }
+        if (doneFlyingIn)
+        {
+            doneFlyingIn = false;
+            transform.DOLocalMove(_startSpot.localPosition, 16f).SetEase(Ease.Linear)
+                        .SetSpeedBased()
+                        .OnComplete(FlyInTween);
+        }
     }
 }
