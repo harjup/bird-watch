@@ -61,9 +61,6 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
                     .OnComplete(() =>
                     {
                         doneFlyingIn = true;
-//                        transform.DOLocalMove(startSpot.localPosition, 8f).SetEase(Ease.Linear)
-//                        .SetSpeedBased()
-//                        .OnComplete(FlyInTween);
                     });
 
             });   
