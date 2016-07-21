@@ -24,7 +24,7 @@ public class CameraMinigame : MonoBehaviour
     {
         _timeLimit = GameObject.Find("time-limit");
 
-        if (bird.Id == "AW" || bird.Id == "AK" || bird.Id == "BT" || bird.Id == "SJ")
+        if (bird.Id == "AW" || bird.Id == "AK" || bird.Id == "BT" || bird.Id == "SJ" || bird.Id == "WS")
         {
             var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
             _fieldObject = Instantiate(prefab);
