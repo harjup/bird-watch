@@ -24,7 +24,7 @@ public class StatusMeter : MonoBehaviour
 
     private GameObject _statusSprite;
 
-    private void Start()
+    private void Awake()
     {
         _statusSprite = transform.FindChild("status-ok").gameObject;
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();

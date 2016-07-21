@@ -23,21 +23,10 @@ public class CameraMinigame : MonoBehaviour
     private void Setup(Bird bird)
     {
         _timeLimit = GameObject.Find("time-limit");
-
-        if (bird.Id == "AW" || bird.Id == "AK" || bird.Id == "BT" || bird.Id == "SJ" || bird.Id == "WS" || bird.Id == "NS")
-        {
-            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
-            _fieldObject = Instantiate(prefab);
-            _fieldObject.transform.parent = transform;
-            _fieldObject.transform.localPosition = Vector3.zero;
-        }
-        else
-        {
-            var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-swoopy");
-            _fieldObject = Instantiate(prefab);
-            _fieldObject.transform.parent = transform;
-            _fieldObject.transform.localPosition = Vector3.zero;
-        }
+        var prefab = Resources.Load<GameObject>("Prefabs/Snapshot/snapshot-bird-" + bird.Id);
+        _fieldObject = Instantiate(prefab);
+        _fieldObject.transform.parent = transform;
+        _fieldObject.transform.localPosition = Vector3.zero;
     }
 
     public IEnumerator Run(Bird bird, int birdShots, int birdShotMax, Action<CameraMinigameResult> callback)
