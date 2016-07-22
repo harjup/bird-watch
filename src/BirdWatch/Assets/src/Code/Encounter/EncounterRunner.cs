@@ -19,6 +19,20 @@ public class EncounterRunner : MonoBehaviour
     {
         _bird = EncounterStarter.Instance.Bird;
 
+        var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
+        var nightOverlay = GameObject.Find("night-overlay").GetComponent<SpriteRenderer>();
+        var day = GameProgress.Instance.CurrentDay;
+
+        flashLight.enabled = false;
+        nightOverlay.enabled = false;
+
+        if (day == 2)
+        {
+            nightOverlay.enabled = true;
+            flashLight.enabled = true;
+        }
+
+
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
@@ -26,7 +40,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("EG");
+            _bird = new Bird("JD");
             //_bird = new Bird("NS");
         }
         
