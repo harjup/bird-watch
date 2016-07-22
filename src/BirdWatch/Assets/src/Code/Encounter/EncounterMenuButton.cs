@@ -9,6 +9,7 @@ public class EncounterMenuButton : MonoBehaviour
         Unknown,
         Breath,
         Camera,
+        Book,
         Exit
     }
 
@@ -35,6 +36,12 @@ public class EncounterMenuButton : MonoBehaviour
     {
         _render.color = initialColor;
 
+        var actionSelect = GetComponentInParent<ActionSelect>();
+        if (actionSelect.Disabled)
+        {
+            return;
+        }
+
 
         switch (ButtonType)
         {
@@ -42,8 +49,10 @@ public class EncounterMenuButton : MonoBehaviour
                 StartCoroutine(FindObjectOfType<EncounterRunner>().RunBreathingMinigame());
                 break;
             case Type.Camera:
-                
                 StartCoroutine(FindObjectOfType<EncounterRunner>().RunCameraMinigame());
+                break;
+            case Type.Book:
+                StartCoroutine(FindObjectOfType<EncounterRunner>().RunBookMinigame());
                 break;
             case Type.Exit:
                 StartCoroutine(FindObjectOfType<EncounterRunner>().RunExitChoice());

@@ -237,4 +237,16 @@ public class EncounterRunner : MonoBehaviour
 
         yield return null;
     }
+
+    public IEnumerator RunBookMinigame()
+    {
+        yield return StartCoroutine(_actionSelect.Disable());
+
+        var runner = FindObjectOfType<DialogueRunner>();
+        
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Book")));
+
+        yield return StartCoroutine(_actionSelect.Enable());
+
+    }
 }
