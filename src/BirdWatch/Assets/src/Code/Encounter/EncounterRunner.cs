@@ -86,11 +86,12 @@ public class EncounterRunner : MonoBehaviour
         
         var runner = FindObjectOfType<DialogueRunner>();
 
+        
         if (!Agitation.IsWithinCameraThresold())
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
-            yield return StartCoroutine(_actionSelect.Enable());
-            yield break;
+            //yield return StartCoroutine(_actionSelect.Enable());
+            //yield break;
         }
 
 
