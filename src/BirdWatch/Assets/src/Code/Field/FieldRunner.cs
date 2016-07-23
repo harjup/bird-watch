@@ -68,6 +68,7 @@ public class FieldRunner : MonoBehaviour
 
         var nodes = new FieldEvent[] 
         {
+            new ShowTextEvent("Intro"),
             new ShowTextEvent("Day_Chat"),
             new BirdEncounterEvent("")
         };
@@ -94,13 +95,23 @@ public class FieldRunner : MonoBehaviour
                     break;
                 }
 
-                
+                // TODO: Pretty terrible if I do say so myself. Make less terrible.
+                if (current.StartNode == "Intro")
+                {
+                    if (gameProgress.EncounterCount == 0
+                        && gameProgress.CurrentDay == 1)
+                    {
+                        yield return StartCoroutine(runner.StartAwaitableDialogue("Day_Chat_Intro"));
+                    }
+                }
+                else
+                {
+                    //var node = current.StartNode + "_" + .ToString("00");
+                    var node = day.DialogBetweenEncounters[gameProgress.EncounterCount];
 
-                //var node = current.StartNode + "_" + .ToString("00");
-                var node = day.DialogBetweenEncounters[gameProgress.EncounterCount];
 
-
-                yield return StartCoroutine(runner.StartAwaitableDialogue(node));
+                    yield return StartCoroutine(runner.StartAwaitableDialogue(node));
+                }
             }
             else if (current is BirdEncounterEvent)
             {
