@@ -78,7 +78,7 @@ public class CameraMinigame : MonoBehaviour
                     okCollider.Birds.Cast<ISnapshotBird>().ToList().ForEach(b =>
                     {
                         b.OnPictureTaken();
-                        FindObjectOfType<PolaroidBox>().SpawnPicture();
+                        FindObjectOfType<PolaroidBox>().SpawnPicture(b.transform);
                     });
 
                     if (bird.Id == "BT")

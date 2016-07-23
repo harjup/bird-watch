@@ -20,9 +20,19 @@ public static class UsefulExtensions
         return new Vector3(vector3.x, y, vector3.z);
     }
 
+    public static Vector3 AddY(this Vector3 vector3, float y)
+    {
+        return new Vector3(vector3.x, vector3.y + y, vector3.z);
+    }
+
     public static Vector3 SetZ(this Vector3 vector3, float z)
     {
         return new Vector3(vector3.x, vector3.y, z);
+    }
+
+    public static Vector3 AddZ(this Vector3 vector3, float z)
+    {
+        return new Vector3(vector3.x, vector3.y, vector3.z + z);
     }
 
     //Returns the sign of the first non-zero entry

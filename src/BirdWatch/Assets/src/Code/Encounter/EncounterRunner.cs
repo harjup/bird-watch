@@ -14,10 +14,15 @@ public class EncounterRunner : MonoBehaviour
     public Agitation Agitation;
     
     private Bird _bird;
+    
+    private int _birdShots = 0;
+    private int _birdShotMax = 10;
 
     private void Start()
     {
         _bird = EncounterStarter.Instance.Bird;
+
+        FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
 
         var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
         var nightOverlay = GameObject.Find("night-overlay").GetComponent<SpriteRenderer>();
@@ -40,7 +45,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("WS");
+            _bird = new Bird("BT");
             //_bird = new Bird("NS");
         }
         
@@ -77,9 +82,6 @@ public class EncounterRunner : MonoBehaviour
         // Do bird thing
     }
 
-
-    private int _birdShots = 0;
-    private int _birdShotMax = 10;
     public IEnumerator RunCameraMinigame()
     {
         yield return StartCoroutine(_actionSelect.Disable());

@@ -11,6 +11,8 @@ public class WoodpeckerSnapshot : SnapshotBird, ISnapshotBird
 
     private BirdSprite _birdSprite;
 
+    
+
     private void Start()
     {
         var positionsObj = GameObject.Find("bird-fly-positions");
@@ -19,6 +21,8 @@ public class WoodpeckerSnapshot : SnapshotBird, ISnapshotBird
         _birdSprite = GetComponentInChildren<BirdSprite>();
 
         _currentLocation = transform.localPosition;
+
+        
 
         OnPictureTaken();
     }
