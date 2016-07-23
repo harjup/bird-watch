@@ -57,17 +57,15 @@ public class BreathingMinigame : MonoBehaviour
         // Ok size -> 10
         // Good size -> 5
     }
-
-
-
-    public IEnumerator Run(Action<decimal> callback)
+    
+    public IEnumerator Run(bool showTutorial, Action<decimal> callback)
     {
         // Easter Egg: If you hold your breath for 1 minute you pass out and the day is over??
 
         transform.position = Vector3.zero;
 
         decimal result = 0m;
-        yield return StartCoroutine(FindObjectOfType<BreathBar>().Run(i => { result = i; }));
+        yield return StartCoroutine(FindObjectOfType<BreathBar>().Run(showTutorial, i => { result = i; }));
 
         transform.position = Vector3.zero.SetY(-20);
 

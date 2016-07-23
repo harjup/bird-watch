@@ -17,8 +17,8 @@ public class BreathBar : MonoBehaviour
     public List<RatingBar> RatingBars = new List<RatingBar>();
 
     private int ranking = 0;
-
-    public IEnumerator Run(Action<decimal> action)
+    
+    public IEnumerator Run(bool isTutorial, Action<decimal> action)
     {
         Init();
 
@@ -40,7 +40,7 @@ public class BreathBar : MonoBehaviour
 
         while (true)
         {
-            breaths = DetectInputAndThenReactToIt(breaths);
+            breaths = DetectInputAndThenReactToIt(breaths, isTutorial);
 
             if (breaths >= breathsMax)
             {
@@ -52,7 +52,7 @@ public class BreathBar : MonoBehaviour
 
         yield return new WaitForSeconds(.25f);
 
-        if (ranking > 5)
+        if (ranking > 5 || isTutorial)
         {
             action(1m);
         }
@@ -149,7 +149,7 @@ public class BreathBar : MonoBehaviour
     private float speed = .75f;// .5f;
     private bool prevMouse = false;
 
-    private int DetectInputAndThenReactToIt(int breaths)
+    private int DetectInputAndThenReactToIt(int breaths, bool isTutorial)
     {
         var x = LungBar.transform.localScale.x;
         var incr = speed * Time.smoothDeltaTime;
@@ -208,6 +208,13 @@ public class BreathBar : MonoBehaviour
                     ranking -= 2;
                     break;
             }
+
+            // Don't increment on bad if we're doing the tutorial
+            if (isTutorial && (bar.BarType == Bar.Type.Bad || bar.BarType == Bar.Type.Clear))
+            {
+                return breaths;
+            }
+
 
             return breaths + 1;
         }

@@ -45,7 +45,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("BT");
+            _bird = new Bird("SJ");
             //_bird = new Bird("NS");
         }
         
@@ -161,7 +161,8 @@ public class EncounterRunner : MonoBehaviour
             yield break;
         }
 
-        if (GameProgress.Instance.ShowBreathingTutorialText)
+        var showBreathingTutorial = GameProgress.Instance.ShowBreathingTutorialText;
+        if (showBreathingTutorial)
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Breathing_Tutorial"));
             GameProgress.Instance.ShowBreathingTutorialText = false;
@@ -170,7 +171,7 @@ public class EncounterRunner : MonoBehaviour
         decimal result = 0m;
         var target = FindObjectOfType<BreathingMinigame>();
 
-        yield return StartCoroutine(target.Run(res => { result = res; }));
+        yield return StartCoroutine(target.Run(showBreathingTutorial, res => { result = res; }));
 
         Agitation.Increment(result);
         
