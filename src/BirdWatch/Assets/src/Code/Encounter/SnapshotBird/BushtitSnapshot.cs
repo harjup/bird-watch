@@ -4,8 +4,11 @@ using DG.Tweening;
 
 public class BushtitSnapshot : SnapshotBird, ISnapshotBird
 {
+    private BirdSprite _sprite;
+
     void Start()
     {
+        _sprite = GetComponentInChildren<BirdSprite>();
 
         StartCoroutine(Init());
     }
@@ -38,6 +41,8 @@ public class BushtitSnapshot : SnapshotBird, ISnapshotBird
 
     public void OnPictureTaken()
     {
+        _sprite.Fly();
+
         GetComponentInChildren<CircleCollider2D>().enabled = false;
 
         DOTween.Kill(gameObject);
