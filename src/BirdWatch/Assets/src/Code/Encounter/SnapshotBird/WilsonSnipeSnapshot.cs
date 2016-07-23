@@ -60,7 +60,7 @@ public class WilsonSnipeSnapshot : SnapshotBird, ISnapshotBird
                         .Where(p => p != _currentLocation)
                         .Where(p => p.x > _currentLocation.x)
                         .OrderBy(p => p.x - _currentLocation.x)
-                        .First();
+                        .FirstOrDefault();
         }
         else
         {
@@ -69,9 +69,14 @@ public class WilsonSnipeSnapshot : SnapshotBird, ISnapshotBird
                         .Where(p => p != _currentLocation)
                         .Where(p => p.x < _currentLocation.x)
                         .OrderByDescending(p => p.x - _currentLocation.x)
-                        .First();
+                        .FirstOrDefault();
         }
-
+        
+        // No idea if this will fix the issue, but sometimes one of the two linq statements above throws when first() is called, meaning the list is probably empty somehow.
+        if (nextPosition == Vector3.zero)
+        {
+            nextPosition = _availablePositions.First().localPosition;
+        }
 
         var dist = Mathf.Abs(_currentLocation.x - nextPosition.x);
 

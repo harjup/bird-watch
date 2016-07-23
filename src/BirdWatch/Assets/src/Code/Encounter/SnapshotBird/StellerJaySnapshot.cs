@@ -11,6 +11,9 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
     private List<Transform> _landingPoints;
     bool doneFlyingIn = true;
 
+    private BirdSprite _birdSprite;
+
+
     private Transform _startSpot;
 
     void Start()
@@ -22,6 +25,8 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
         // Starting points:
         _startingPoints = availablePositions.Where(p => p.name == "start-position").ToList();
         _landingPoints = availablePositions.Where(p => p.name == "land-position").ToList();
+
+        _birdSprite = GetComponentInChildren<BirdSprite>();
 
         doneFlyingIn = false;
         FlyInTween();
@@ -47,6 +52,8 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
         //TODO: I think teleporting around is messing with the camera collider. We should make sure the bird gets removed properly, or that it can't be added offscreen.
         transform.localPosition = startSpot.transform.localPosition;
 
+        _birdSprite.Fly();
+
         // TODO: While I'd like to just have a straightforward sequence. SetSpeedBased doesn't seem to work in children in a sequence. I should file a bug with DOTween.
         transform
             .DOLocalMove(landingSpot.localPosition, 8f)
@@ -54,6 +61,8 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
             .SetSpeedBased()
             .OnComplete(() =>
             {
+                _birdSprite.Land();
+
                 DOTween
                     .Sequence()
                     .Append(transform.DOLocalJump(transform.localPosition.AddX(1.5f), .25f, 4, 1f).SetEase(Ease.Linear))
@@ -74,6 +83,7 @@ public class StellerJaySnapshot : SnapshotBird, ISnapshotBird
         if (doneFlyingIn)
         {
             doneFlyingIn = false;
+            _birdSprite.Fly();
             transform.DOLocalMove(_startSpot.localPosition, 16f).SetEase(Ease.Linear)
                         .SetSpeedBased()
                         .OnComplete(FlyInTween);

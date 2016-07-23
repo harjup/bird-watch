@@ -8,6 +8,7 @@ public class NorthernSawWhetSnapshot : SnapshotBird, ISnapshotBird
 {
     private List<Transform> _availablePositions;
     private Vector3 _currentLocation;
+    private BirdSprite _birdSprite;
 
     private void Start()
     {
@@ -15,6 +16,8 @@ public class NorthernSawWhetSnapshot : SnapshotBird, ISnapshotBird
         _availablePositions = positionsObj.transform.Cast<Transform>().ToList();
 
         _currentLocation = transform.localPosition;
+
+        _birdSprite = GetComponentInChildren<BirdSprite>();
 
         OnPictureTaken();
     }
@@ -28,6 +31,8 @@ public class NorthernSawWhetSnapshot : SnapshotBird, ISnapshotBird
             return;
         }
 
+        transform.DOKill();
+
         var nextPosition = _availablePositions
             .Select(p => p.localPosition)
             .Where(p => p != _currentLocation)
@@ -36,11 +41,15 @@ public class NorthernSawWhetSnapshot : SnapshotBird, ISnapshotBird
 
         var offTree = transform.localPosition + new Vector3(0f, .5f, 0f);
 
+        _birdSprite.Fly();
+
         var pathNodes = new[] { offTree, nextPosition };
         transform
             .DOLocalPath(pathNodes, 12f, PathType.CatmullRom, PathMode.Sidescroller2D)
+            .SetLookAt(1f)
             .SetSpeedBased()
-            .SetEase(Ease.Linear);
+            .SetEase(Ease.Linear)
+            .OnComplete(() => { _birdSprite.Land();});
 
         _currentLocation = nextPosition;
     }

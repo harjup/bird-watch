@@ -40,7 +40,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("BT");
+            _bird = new Bird("WS");
             //_bird = new Bird("NS");
         }
         

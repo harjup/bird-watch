@@ -8,7 +8,7 @@ public class BirdSprite : MonoBehaviour
     private Sprite _flyingSprite;
     private Sprite _landedSprite;
 
-    private void Start()
+    private void Awake()
     {
         _flyingSprite = Resources.Load<Sprite>("minigame-sprite/snap-bird-wings");
         _landedSprite = Resources.Load<Sprite>("minigame-sprite/snap-bird-land");

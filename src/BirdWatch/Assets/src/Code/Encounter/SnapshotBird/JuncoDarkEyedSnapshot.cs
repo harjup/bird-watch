@@ -45,6 +45,10 @@ public class JuncoDarkEyedSnapshot : SnapshotBird, ISnapshotBird
         
         var distance = (_currentLocation - nextPosition).magnitude;
 
+        var angle = AngleCalc.AngleInDegrees(_currentLocation, nextPosition);
+
+        transform.DOLocalRotate(Vector3.zero.SetZ(angle), .5f, RotateMode.Fast);
+
         transform
             .DOLocalJump(nextPosition, .25f, (int)distance * 1, .25f * distance)
             .SetEase(Ease.Linear)
