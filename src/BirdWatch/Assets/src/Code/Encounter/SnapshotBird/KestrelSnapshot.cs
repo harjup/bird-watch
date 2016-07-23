@@ -10,8 +10,6 @@ public class KestrelSnapshot : SnapshotBird, ISnapshotBird
     private List<Transform> _leftPositions;
     private List<Transform> _rightPositions;
     private List<Transform> _centerPositions;
-    private Vector3 _currentLocation;
-
     private void Start()
     {
         var positionsObj = GameObject.Find("bird-fly-positions");
@@ -19,8 +17,6 @@ public class KestrelSnapshot : SnapshotBird, ISnapshotBird
         _leftPositions = positions.Where(p => p.name == "left-side").ToList();
         _rightPositions = positions.Where(p => p.name == "right-side").ToList();
         _centerPositions = positions.Where(p => p.name == "center").ToList();
-
-        _currentLocation = transform.localPosition;
 
         transform.localPosition = Vector3.zero.SetX(8.6f);
 
@@ -54,11 +50,10 @@ public class KestrelSnapshot : SnapshotBird, ISnapshotBird
         var pathNodes = new[] { center, nextPosition };
         transform
             .DOLocalPath(pathNodes, 6f, PathType.CatmullRom, PathMode.Sidescroller2D)
+            .SetLookAt(lookAhead: 1f)
             .SetSpeedBased()
             .SetEase(Ease.Linear)
             .OnComplete(Swoop); // We want to swoop in a loop!
-
-        _currentLocation = nextPosition;
     }
 
     public void OnPictureTaken()

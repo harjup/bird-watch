@@ -7,7 +7,7 @@ public class GameProgress : Singleton<GameProgress>
     // 1 -> DayTime
     // 2 -> Night
     // 3 -> Raining
-    public int CurrentDay = 1;
+    public int CurrentDay = 2;
     public int EncounterCount { get; private set; }
     public readonly int EncounterMax = 5;
     public readonly int FinalDay = 3;

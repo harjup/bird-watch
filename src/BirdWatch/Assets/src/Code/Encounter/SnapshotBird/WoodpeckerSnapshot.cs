@@ -9,10 +9,14 @@ public class WoodpeckerSnapshot : SnapshotBird, ISnapshotBird
     private List<Transform> _availablePositions;
     private Vector3 _currentLocation;
 
+    private BirdSprite _birdSprite;
+
     private void Start()
     {
         var positionsObj = GameObject.Find("bird-fly-positions");
         _availablePositions = positionsObj.transform.Cast<Transform>().ToList();
+
+        _birdSprite = GetComponentInChildren<BirdSprite>();
 
         _currentLocation = transform.localPosition;
 
@@ -37,10 +41,15 @@ public class WoodpeckerSnapshot : SnapshotBird, ISnapshotBird
         var offTree = transform.localPosition + new Vector3(-.5f, -.5f, 0f);
 
         var pathNodes = new[] { offTree, nextPosition };
+
+        _birdSprite.Fly();
+
         transform
             .DOLocalPath(pathNodes, 6f, PathType.CatmullRom, PathMode.Sidescroller2D)
+            .SetLookAt(lookAhead: .5f)
             .SetSpeedBased()
-            .SetEase(Ease.Linear);
+            .SetEase(Ease.Linear)
+            .OnComplete(_birdSprite.Land);
 
         _currentLocation = nextPosition;
     }
