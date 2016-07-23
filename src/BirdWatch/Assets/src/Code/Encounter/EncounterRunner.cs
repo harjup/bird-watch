@@ -106,7 +106,7 @@ public class EncounterRunner : MonoBehaviour
         var target = FindObjectOfType<CameraMinigame>();
         
         CameraMinigameResult result = null;
-        yield return StartCoroutine(target.Run(_bird, _birdShots, _birdShotMax, res => { result = res; }));
+        yield return StartCoroutine(target.Run(_bird, _birdShots, _birdShotMax, Agitation.GetShakeLevel(), res => { result = res; }));
         _birdShots = result.PhotosTaken;
 
         if (_birdShots >= _birdShotMax)

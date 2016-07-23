@@ -29,7 +29,7 @@ public class CameraMinigame : MonoBehaviour
         _fieldObject.transform.localPosition = Vector3.zero;
     }
 
-    public IEnumerator Run(Bird bird, int birdShots, int birdShotMax, Action<CameraMinigameResult> callback)
+    public IEnumerator Run(Bird bird, int birdShots, int birdShotMax, int shakeLevel, Action<CameraMinigameResult> callback)
     {
         Setup(bird);
         
@@ -44,6 +44,7 @@ public class CameraMinigame : MonoBehaviour
         var cameraCooldown = false;
 
         var snapshotCamera = FindObjectOfType<SnapshotCameraDisplay>();
+        snapshotCamera.LoopShake(shakeLevel);
 
         FindObjectsOfType<SnapshotCollider>().ToList().ForEach(s => s.Init());
 

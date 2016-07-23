@@ -54,6 +54,26 @@ public class Agitation
         return Value > CameraThreshold;
     }
 
+    public int GetShakeLevel()
+    {
+        if (Value == 1.5m)
+        {
+            return 1;
+        }
+
+        if (Value == 1.0m)
+        {
+            return 2;
+        }
+
+        if (Value == .5m)
+        {
+            return 8;
+        }
+
+        return 0;
+    }
+
     public bool IsAtBestValue()
     {
         return Value == Maximum;
