@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text.RegularExpressions;
 using Assets.src.Code;
 using UnityEngine.EventSystems;
@@ -59,7 +60,22 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
 
         StartCoroutine(InputWait.WaitForInputAxis("Fire1", TextDisplayGui.SkipTextCrawl));
 
-        yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { Debug.Log("RunLine Done"); }));
+        // If we've got a name to use, then set it here.
+        var splitOnName = text.Split(new char[] {':'}, StringSplitOptions.RemoveEmptyEntries);
+        if (splitOnName.Length > 1)
+        {
+            TextDisplayGui.SetName(splitOnName[0]);
+
+            var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim(); 
+
+            yield return StartCoroutine(TextDisplayGui.CrawlText(remainder, () => { }));
+        }
+        else
+        {
+            TextDisplayGui.SetName("");
+            yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { }));
+        }
+        
 
         // Wait for input before advancing
         yield return StartCoroutine(InputWait.WaitForInputAxis("Fire1", () => {}));

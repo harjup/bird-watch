@@ -12,6 +12,7 @@ public class TextDisplayGui : MonoBehaviour
     private GameObject _dialogueWindow;
     private TextCrawler _textCrawler;
     private DialogueWindowText _dialogueWindowText;
+    private Text _dialogueWindowName;
     private GameObject _dialogChoicePrefab;
 
 
@@ -53,6 +54,19 @@ public class TextDisplayGui : MonoBehaviour
         }
     }
 
+    private Text DialogueWindowName
+    {
+        get
+        {
+            if (_dialogueWindowName == null)
+            {
+                return _dialogueWindowName = GameObject.Find("DialogueWindowName").GetComponent<Text>();
+            }
+
+            return _dialogueWindowName;
+        }
+    }
+
     private GameObject DialogChoicePrefab
     {
         get
@@ -84,6 +98,11 @@ public class TextDisplayGui : MonoBehaviour
         yield return null;
     }
 
+
+    public void SetName(string name)
+    {
+        DialogueWindowName.text = name;
+    }
 
     public IEnumerator CrawlText(string text, Action callback)
     {        
