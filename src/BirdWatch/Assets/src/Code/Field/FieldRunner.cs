@@ -32,6 +32,7 @@ public class FieldRunner : MonoBehaviour
 
     private BackgroundScroll BackgroundScroller;
     
+
     void Awake()
     {
         BackgroundScroller = FindObjectOfType<BackgroundScroll>();

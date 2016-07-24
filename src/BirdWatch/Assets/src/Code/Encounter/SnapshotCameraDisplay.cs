@@ -34,6 +34,8 @@ public class SnapshotCameraDisplay : MonoBehaviour
 
     public void LoopShake(int shakeLevel)
     {
+        transform.DOKill();
+
         if (shakeLevel == 0)
         {
             return;

@@ -14,15 +14,34 @@ public class BackgroundScroll : MonoBehaviour
     }
 
     private Tweener _tween;
-    
+    private FootstepsPlayer _footstepsPlayer;
+
+    private FootstepsPlayer FootstepsPlayer
+    {
+        get
+        {
+            if (_footstepsPlayer == null)
+            {
+                return _footstepsPlayer = GetComponentInChildren<FootstepsPlayer>();
+            }
+            return _footstepsPlayer;
+        }
+    }
+
+    public void Awake()
+    {
+    }
+
     public void Pause()
     {
         _tween.Pause();
+        FootstepsPlayer.Stop();
     }
 
     public void Resume()
     {
         _tween.Play();
+        FootstepsPlayer.Play();
     }
 
     public void SetupBackground(GameObject bgPrefab)
