@@ -18,10 +18,13 @@ public class EncounterMenuButton : MonoBehaviour
     private SpriteRenderer _render;
     private Color initialColor;
 
+    private AudioSource _soundEffect;
+
     // Use this for initialization
     void Start()
     {
         _render = GetComponent<SpriteRenderer>();
+        _soundEffect = GetComponent<AudioSource>();
         initialColor = _render.color;
     }
 
@@ -40,6 +43,11 @@ public class EncounterMenuButton : MonoBehaviour
         if (actionSelect.Disabled)
         {
             return;
+        }
+
+        if (_soundEffect != null)
+        {
+            _soundEffect.Play();
         }
 
 

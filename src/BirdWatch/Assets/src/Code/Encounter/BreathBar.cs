@@ -14,6 +14,10 @@ public class BreathBar : MonoBehaviour
     private GameObject LungBar;
     //TODO: Ugh. What a mess. I feel regretful.
 
+    private AudioSource _breathInSfx;
+    private AudioSource _breathOutSfx;
+    private AudioSource _coughSfx;
+
     public List<RatingBar> RatingBars = new List<RatingBar>();
 
     private int ranking = 0;
@@ -37,6 +41,7 @@ public class BreathBar : MonoBehaviour
 
         prevMouse = true;
         FindObjectOfType<BreathingFace>().Toggle(prevMouse);
+        _breathInSfx.Play();
 
         while (true)
         {
@@ -70,6 +75,11 @@ public class BreathBar : MonoBehaviour
 
     private void Init()
     {
+        var audioSources = GameObject.Find("breath-action").transform.FindChild("sfx").GetComponentsInChildren<AudioSource>();
+        _breathInSfx  = audioSources.First(a => a.name == "sfx-breath-in");
+        _breathOutSfx = audioSources.First(a => a.name == "sfx-breath-out");
+        _coughSfx = audioSources.First(a => a.name == "sfx-breath-cough");
+
         ranking = 0;
 
         ColoredBox = Resources.Load<GameObject>("Prefabs/Battle/ColoredBox");
@@ -182,29 +192,35 @@ public class BreathBar : MonoBehaviour
         if (prevMouse != mouse)
         {
             prevMouse = mouse;
+            var breathingFace = FindObjectOfType<BreathingFace>();
 
-            // TODO: not like this, man
-            FindObjectOfType<BreathingFace>().Toggle(mouse);
+            breathingFace.Toggle(mouse);
 
             var lungBar = LungBar.GetComponent<LungBar>();
 
             var current = lungBar.RightmostBar() ?? RatingBars.First();
             var bar = current.Bar;
 
+            var sourceToPlay = mouse ? _breathInSfx : _breathOutSfx;
+
             var res = Instantiate(FeedbackSprite, current.transform.position, Quaternion.identity) as GameObject;
             switch (bar.BarType)
             {
                 case Bar.Type.Good:    
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Good);
+                    sourceToPlay.Play();
                     ranking += 2;
                     break;
                 case Bar.Type.Ok:
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Ok);
                     ranking += 1;
+                    sourceToPlay.Play();
                     break;
                 case Bar.Type.Bad:
                 case Bar.Type.Clear:
                     res.GetComponent<FloatySprite>().SetSprite(FloatySprite.SpriteGraphic.Bad);
+                    _coughSfx.Play();
+                    breathingFace.Shake();
                     ranking -= 2;
                     break;
             }

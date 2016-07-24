@@ -19,6 +19,9 @@ public class CameraMinigame : MonoBehaviour
     private GameObject _timeLimit;
     private GameObject _fieldObject;
 
+    private AudioSource _cameraHit;
+    private AudioSource _cameraHitFinal;
+    private AudioSource _cameraMiss;
 
     private void Setup(Bird bird)
     {
@@ -27,6 +30,13 @@ public class CameraMinigame : MonoBehaviour
         _fieldObject = Instantiate(prefab);
         _fieldObject.transform.parent = transform;
         _fieldObject.transform.localPosition = Vector3.zero;
+
+        var audioSources = transform.FindChild("sfx").GetComponentsInChildren<AudioSource>();
+        _cameraHit = audioSources.First(a => a.name == "sfx-camera-hit");
+        _cameraHitFinal = audioSources.First(a => a.name == "sfx-camera-hit-final");
+        _cameraMiss = audioSources.First(a => a.name == "sfx-camera-miss");
+
+
     }
 
     public IEnumerator Run(Bird bird, int birdShots, int birdShotMax, int shakeLevel, Action<CameraMinigameResult> callback)
@@ -70,10 +80,12 @@ public class CameraMinigame : MonoBehaviour
 
                     if (birdShots >= birdShotMax)
                     {
+                        _cameraHitFinal.Play();
                         callback(new CameraMinigameResult(birdShots));
                         break;
                     }
 
+                    _cameraHit.Play();
                     StartCoroutine(ScreenFlash.Instance.Flash());
 
                     okCollider.Birds.Cast<ISnapshotBird>().ToList().ForEach(b =>
@@ -90,6 +102,7 @@ public class CameraMinigame : MonoBehaviour
                 }
                 else
                 {
+                    _cameraMiss.Play();
                     snapshotCamera.Shake();
                 }
 

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.src.Code.Models;
 using Yarn.Unity;
 
@@ -18,10 +19,21 @@ public class EncounterRunner : MonoBehaviour
     private int _birdShots = 0;
     private int _birdShotMax = 10;
 
+    private AudioSource _mainLoop;
+    private AudioSource _victoryStart;
+    private AudioSource _victoryLoop;
+
     private void Start()
     {
         _bird = EncounterStarter.Instance.Bird;
 
+        var audioSources = transform.GetComponentsInChildren<AudioSource>();
+        _mainLoop = audioSources.First(a => a.name == "music-main-loop");
+        _victoryStart = audioSources.First(a => a.name == "music-victory-start");
+        _victoryLoop = audioSources.First(a => a.name == "music-victory-loop");
+
+        _mainLoop.Play();
+        
         FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
 
         var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
@@ -45,7 +57,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("SJ");
+            _bird = new Bird("AW");
             //_bird = new Bird("NS");
         }
         
@@ -226,12 +238,18 @@ public class EncounterRunner : MonoBehaviour
 
     public IEnumerator FinalPhotoTaken()
     {
+        _mainLoop.Stop();
+        
         var runner = FindObjectOfType<DialogueRunner>();
 
         // SHOW PICTURE
         GameObject.Find("photo-result").transform.position = Vector3.zero;
 
         yield return StartCoroutine(ScreenFlash.Instance.Flash(2f, 1f, 1f));
+
+        //TODO: Improve timing
+        _victoryStart.Play();
+        _victoryLoop.PlayDelayed(_victoryStart.clip.length);
 
         yield return new WaitForSeconds(1f);
 
