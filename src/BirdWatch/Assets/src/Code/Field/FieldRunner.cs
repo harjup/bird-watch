@@ -35,11 +35,12 @@ public class FieldRunner : MonoBehaviour
     void Awake()
     {
         BackgroundScroller = FindObjectOfType<BackgroundScroll>();
-
+        
         var dayNumber = GameProgress.Instance.CurrentDay;
         var day = new DayListing().GetDay(dayNumber);
-        
 
+
+        SetupAudio(day);
         SetupVisuals(day);
 
 
@@ -56,6 +57,24 @@ public class FieldRunner : MonoBehaviour
     {
         var fieldBackground = day.GetFieldBackground();
         BackgroundScroller.SetupBackground(fieldBackground);
+    }
+
+    private void SetupAudio(Day day)
+    {
+        if (day.Time == Day.TimeOfDay.Day)
+        {
+            transform.FindChild("music-daytime").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+        }
+
+        if (day.Time == Day.TimeOfDay.Night)
+        {
+            transform.FindChild("music-night").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+        }
+
+        if (day.Time == Day.TimeOfDay.Rain)
+        {
+            transform.FindChild("music-rain").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+        }
     }
 
     // 1 -> dialog
@@ -75,10 +94,8 @@ public class FieldRunner : MonoBehaviour
         
         while (true)
         {
-            yield return new WaitForSeconds(2f);
             var runner = FindObjectOfType<DialogueRunner>();
-            BackgroundScroller.Pause();
-
+            
             var current = nodes[index];
 
 
@@ -101,6 +118,7 @@ public class FieldRunner : MonoBehaviour
                     if (gameProgress.EncounterCount == 0
                         && gameProgress.CurrentDay == 1)
                     {
+                        BackgroundScroller.Pause();
                         yield return StartCoroutine(runner.StartAwaitableDialogue("Day_Chat_Intro"));
                     }
                 }
@@ -115,6 +133,8 @@ public class FieldRunner : MonoBehaviour
             }
             else if (current is BirdEncounterEvent)
             {
+                BackgroundScroller.Pause();
+
                 //var bird = BirdListing.GetNextDayBird();
                 var bird = day.AvailableBirds[gameProgress.EncounterCount];
 
@@ -137,7 +157,7 @@ public class FieldRunner : MonoBehaviour
                 index = 0;
             }
 
-
+            yield return new WaitForSeconds(2f);
         }
     }
 }
