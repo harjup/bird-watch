@@ -24,13 +24,6 @@ public class TextCrawlSoundManager : MonoBehaviour
 
         _currentTalkTick = _talkTickOther;
 
-        StartCoroutine(Init());
-    }
-
-    private IEnumerator Init()
-    {
-        yield return new WaitForSeconds(.25f);
-
         _textCrawler = FindObjectOfType<TextCrawler>();
 
         var count = 0;
@@ -51,7 +44,7 @@ public class TextCrawlSoundManager : MonoBehaviour
             }
         };
     }
-
+    
     public void SetTextCrawlVoice(string voice)
     {
         _currentTalkTick.Stop();

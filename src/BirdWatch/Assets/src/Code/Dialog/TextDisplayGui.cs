@@ -35,7 +35,7 @@ public class TextDisplayGui : MonoBehaviour
         {
             if (_textCrawler == null)
             {
-                return _textCrawler = gameObject.AddComponent<TextCrawler>();
+                return _textCrawler = gameObject.GetComponent<TextCrawler>();
             } 
             return _textCrawler;
         }
