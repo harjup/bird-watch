@@ -65,6 +65,7 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         if (splitOnName.Length > 1)
         {
             TextDisplayGui.SetName(splitOnName[0]);
+            FindObjectOfType<TextCrawlSoundManager>().SetTextCrawlVoice(splitOnName[0]);
 
             var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim(); 
 
@@ -72,6 +73,7 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         }
         else
         {
+            FindObjectOfType<TextCrawlSoundManager>().SetTextCrawlVoice("other");
             TextDisplayGui.SetName("");
             yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { }));
         }

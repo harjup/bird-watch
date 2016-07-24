@@ -24,7 +24,7 @@ public class TextCrawler : MonoBehaviour
 
 
     [UsedImplicitly]
-    public void Start()
+    private void Start()
     {
         Clear();
     }
@@ -69,9 +69,17 @@ public class TextCrawler : MonoBehaviour
 
             _textCallBack(_currentDisplayText);
 
-            if (OnTextCrawlTick != null) OnTextCrawlTick.Invoke();
 
-            yield return new WaitForSeconds(.025f); 
+
+            if (OnTextCrawlTick != null)
+            {
+                OnTextCrawlTick.Invoke();
+            }
+
+            yield return new WaitForSeconds(.025f);
+//            yield return new WaitForSeconds(.025f);
+//            yield return new WaitForSeconds(.025f);
+//            yield return new WaitForSeconds(.025f);
         }
 
         _textCallBack(_currentDisplayText);
