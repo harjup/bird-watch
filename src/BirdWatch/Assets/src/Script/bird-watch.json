@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "This is a test!!!\n\nThe test continues!\n\nAnd here is the last line.",
 		"position": {
-			"x": -1952,
-			"y": -704
+			"x": -4601,
+			"y": 657
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "No birds yet.",
 		"position": {
-			"x": -1720,
-			"y": -698
+			"x": -4369,
+			"y": 663
 		},
 		"colorID": 0
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Example Dialog",
 		"position": {
-			"x": -1496,
-			"y": -674
+			"x": -4145,
+			"y": 687
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Greg: The guide says this area has a nice range of species.\n\nGreg: What bird are you looking out for?\n\nGreg: What about a Western Pipistrelle?\n\nJudd: That's a bat.\n\nGreg: Oh, right.\n\nJudd: I just want some nice photos.",
 		"position": {
-			"x": -2346,
-			"y": 934
+			"x": -4995,
+			"y": 2295
 		},
 		"colorID": 1
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Greg: Oh look, a nest of baby birds!\nGreg: I remember when my kids left the nest.\nGreg: It feels empty, but I also have more time for hobbies.\n\nJudd: I never had kids.\nJudd: I wanted to, though.\n\nGreg: Oh.\n\nJudd: And baby birds are called chicks.",
 		"position": {
-			"x": -2119,
-			"y": 934
+			"x": -4768,
+			"y": 2295
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Greg: How long do you want to stay out here?\n\nGreg: Before we take a break, not for the whole trip.\n\nJudd: I dunno.\n\nGreg: Five minutes? \nGreg: Five hours? \nGreg: Five days? \nGreg: Five years?\n\nJudd: ...\nJudd: If I were to guess, three more birds.",
 		"position": {
-			"x": -1899,
-			"y": 933
+			"x": -4548,
+			"y": 2294
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "An Acorn Woodpecker appeared! \n\nLook at that red cap!",
 		"position": {
-			"x": 539,
-			"y": -867
+			"x": -2110,
+			"y": 494
 		},
 		"colorID": 0
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "You did a thing and the bird is affected somehow!",
 		"position": {
-			"x": 58,
-			"y": -128
+			"x": -2591,
+			"y": 1233
 		},
 		"colorID": 0
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "Careful! If you keep taking photos without relaxing you'll scare the bird off!",
 		"position": {
-			"x": 61,
-			"y": 71
+			"x": -2588,
+			"y": 1432
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Uh, ok, that bird is not looking happy.",
 		"position": {
-			"x": 275,
-			"y": -137
+			"x": -2374,
+			"y": 1224
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: Did you know that Acron Woodpeckers like to hoard acorns?\n\nJudd: They'll peck out lots of little holes in a tree, and then stash an acorn in each hole.\n\nJudd: It's like swiss cheese, but with filled with acorns.\n\nGreg: I guess sometimes the acorn... doesn't fall far from the tree!\n\nJudd: Wow.",
 		"position": {
-			"x": 767,
-			"y": -647
+			"x": -1882,
+			"y": 714
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "The woodpecker is calmly adjusting its stash of nuts.",
 		"position": {
-			"x": 530,
-			"y": -655
+			"x": -2119,
+			"y": 706
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "The woodpecker is pecking out a hole in the tree.",
 		"position": {
-			"x": 534,
-			"y": -434
+			"x": -2115,
+			"y": 927
 		},
 		"colorID": 0
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "The woodpecker is squawking and flying around. ",
 		"position": {
-			"x": 534,
-			"y": -233
+			"x": -2115,
+			"y": 1128
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "Judd: They fley away. Drat!",
 		"position": {
-			"x": 992,
-			"y": 361
+			"x": -1657,
+			"y": 1722
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Nice Picture!",
 		"position": {
-			"x": 275,
-			"y": 78
+			"x": -2374,
+			"y": 1439
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "Judd: I'm hearing some loud squawks in this direction.",
 		"position": {
-			"x": 539,
-			"y": -1084
+			"x": -2110,
+			"y": 277
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Info: Bird sighted!",
 		"position": {
-			"x": 283,
-			"y": 373
+			"x": -2366,
+			"y": 1734
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "A flock of Bushtits appeared!\n\nThey're so fluffy!",
 		"position": {
-			"x": 1169,
-			"y": -936
+			"x": -1480,
+			"y": 425
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Judd: Sounds like there's a flock of songbirds in those bushes.",
 		"position": {
-			"x": 1177,
-			"y": -1152
+			"x": -1472,
+			"y": 209
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: Bushtits like to hang upside down sometimes when looking for food.\n\nJudd: They're difficult to attract to feeders, because they only eat insects.\n\nGreg: If there's 30 in a bush, how much would one in the hand be worth?\n\nJudd: ...",
 		"position": {
-			"x": 1399,
-			"y": -715
+			"x": -1250,
+			"y": 646
 		},
 		"colorID": 0
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "The bushtits are resting in some shrubs.",
 		"position": {
-			"x": 1169,
-			"y": -709
+			"x": -1480,
+			"y": 652
 		},
 		"colorID": 0
 	},
@@ -224,8 +224,8 @@
 		"tags": "",
 		"body": "The bushtits are singing and flying around.",
 		"position": {
-			"x": 1167,
-			"y": -477
+			"x": -1482,
+			"y": 884
 		},
 		"colorID": 0
 	},
@@ -234,8 +234,8 @@
 		"tags": "",
 		"body": "The bushtits are swarming up, angrily squeaking!",
 		"position": {
-			"x": 1164,
-			"y": -268
+			"x": -1485,
+			"y": 1093
 		},
 		"colorID": 0
 	},
@@ -244,8 +244,8 @@
 		"tags": "",
 		"body": "It's an American Kestrel!",
 		"position": {
-			"x": 1730,
-			"y": -981
+			"x": -919,
+			"y": 380
 		},
 		"colorID": 0
 	},
@@ -254,8 +254,8 @@
 		"tags": "",
 		"body": "Judd: There's a tiny hawk flying around in the distance.",
 		"position": {
-			"x": 1725,
-			"y": -1193
+			"x": -924,
+			"y": 168
 		},
 		"colorID": 0
 	},
@@ -264,8 +264,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: Kestrels like to eat grasshoppers, lizards, mice, and sparrows.\n\nJudd: They'll hover in midair trying to zero in on prey, and then swoop in!\n\nJudd: They like to build their nests high up, and the male and the female both help keep the eggs warm.\n\nGreg: Do you think they ever try hawking their mice to the local owls?\n\nJudd: ...",
 		"position": {
-			"x": 1967,
-			"y": -756
+			"x": -682,
+			"y": 605
 		},
 		"colorID": 0
 	},
@@ -274,8 +274,8 @@
 		"tags": "",
 		"body": "The kestrel is resting on a fence post.",
 		"position": {
-			"x": 1734,
-			"y": -765
+			"x": -915,
+			"y": 596
 		},
 		"colorID": 0
 	},
@@ -284,8 +284,8 @@
 		"tags": "",
 		"body": "The kestrel is flying around, looking for prey.",
 		"position": {
-			"x": 1740,
-			"y": -551
+			"x": -909,
+			"y": 810
 		},
 		"colorID": 0
 	},
@@ -294,8 +294,8 @@
 		"tags": "",
 		"body": "The kestrel is angrily diving at the ground!",
 		"position": {
-			"x": 1740,
-			"y": -335
+			"x": -909,
+			"y": 1026
 		},
 		"colorID": 0
 	},
@@ -304,8 +304,8 @@
 		"tags": "",
 		"body": "We should take a couple more shots to make sure we get a good one.",
 		"position": {
-			"x": 519,
-			"y": 101
+			"x": -2130,
+			"y": 1462
 		},
 		"colorID": 0
 	},
@@ -314,8 +314,8 @@
 		"tags": "",
 		"body": "Info: Look for a different bird? You might not see this one again!",
 		"position": {
-			"x": 553,
-			"y": 370
+			"x": -2096,
+			"y": 1731
 		},
 		"colorID": 0
 	},
@@ -324,8 +324,8 @@
 		"tags": "",
 		"body": "Judd: Let's go look for other birds.",
 		"position": {
-			"x": 769,
-			"y": 366
+			"x": -1880,
+			"y": 1727
 		},
 		"colorID": 0
 	},
@@ -334,8 +334,8 @@
 		"tags": "",
 		"body": "Your hands are getting a little jittery.",
 		"position": {
-			"x": 1021,
-			"y": 108
+			"x": -1628,
+			"y": 1469
 		},
 		"colorID": 0
 	},
@@ -344,8 +344,8 @@
 		"tags": "",
 		"body": "Your poor breathing is spooking them!",
 		"position": {
-			"x": 1269,
-			"y": 107
+			"x": -1380,
+			"y": 1468
 		},
 		"colorID": 0
 	},
@@ -354,8 +354,8 @@
 		"tags": "",
 		"body": "You feel perfectly calm.",
 		"position": {
-			"x": 799,
-			"y": 109
+			"x": -1850,
+			"y": 1470
 		},
 		"colorID": 0
 	},
@@ -364,8 +364,8 @@
 		"tags": "",
 		"body": "The bird flew away! You spooked them too much!",
 		"position": {
-			"x": 1531,
-			"y": 108
+			"x": -1118,
+			"y": 1469
 		},
 		"colorID": 0
 	},
@@ -374,8 +374,8 @@
 		"tags": "",
 		"body": "Greg: These birds love to sing, don't they?\nGreg: I wonder what they're singing about.\n\nJudd: Mating.\n\nGreg: Well, maybe there's other songs too.\n\nJudd: No. It's only mating.\nJudd: Mating and food.",
 		"position": {
-			"x": -1674,
-			"y": 934
+			"x": -4323,
+			"y": 2295
 		},
 		"colorID": 0
 	},
@@ -384,8 +384,8 @@
 		"tags": "",
 		"body": "Greg: I hope this last bird has a neat looking beak.\nGreg: That's my favorite feature, the beak.\n\nJudd: Yeah, maybe.\nJudd: I perfer the plumage, though.",
 		"position": {
-			"x": -1442,
-			"y": 935
+			"x": -4091,
+			"y": 2296
 		},
 		"colorID": 0
 	},
@@ -394,8 +394,8 @@
 		"tags": "",
 		"body": "Judd: Let's head back. I need a rest.\n\nJudd: My hands are swelling too much.\n\nGreg: Okay.\n\nJudd: Knees are going too.\n\nGreg: Okay.\n\nJudd: Shoes don't fit like they used to.\n\nGreg: ...\n\nJudd: Used to be able to go out all day, not so much anymore.",
 		"position": {
-			"x": -1213,
-			"y": 931
+			"x": -3862,
+			"y": 2292
 		},
 		"colorID": 0
 	},
@@ -404,8 +404,8 @@
 		"tags": "",
 		"body": "Greg: Let's take a load off.\n\nJudd: ...\n\nGreg: Hey, why'd you bring that bag of seed?\n\nJudd: I wanted some photos of them eating.\n\nGreg: We're not supposed to feed the animals here.\n\nGreg: It's against the park rules!\n\nJudd: ...\n\nJudd: Oh... this bag is mostly catfood.\n\nJudd: Nevermind.\n\nJudd: I don't even remember when I had my last cat.\n\nTRANSITION TO NIGHT\n\nClock: 4:00 AM\n\nClock: ALARM\n\nJudd: Rise and shine.\n\nGreg: Ugghhhhh\n\nGreg: I'll never get used to this.\n\nJudd: Yeah, well, we're up. Let's go snap some pictures while it's dark out.\n\nJudd: And then we can get breakfast.\n\n...\n\nInfo: Hello, this is the videogame developer again. I hope you don't mind my intrusion.\nInfo: Are you have a good time birding? I really hope so.\nInfo: If you'd like to see some of these birds for yourself, try going to \"feederwatch.org\" in your web browser.\nInfo: They have lots of tips on how to attract birds in your area.\nInfo: Now, let's get back to the story.",
 		"position": {
-			"x": -2343,
-			"y": 1156
+			"x": -4992,
+			"y": 2517
 		},
 		"colorID": 3
 	},
@@ -414,8 +414,8 @@
 		"tags": "",
 		"body": "You are already as calm as can be.",
 		"position": {
-			"x": -170,
-			"y": 87
+			"x": -2819,
+			"y": 1448
 		},
 		"colorID": 0
 	},
@@ -424,8 +424,8 @@
 		"tags": "",
 		"body": "Judd: Looks like there's something moving in the river.\n\nJudd: Want to go on a snipe hunt?",
 		"position": {
-			"x": 2479,
-			"y": -1195
+			"x": -170,
+			"y": 166
 		},
 		"colorID": 1
 	},
@@ -434,8 +434,8 @@
 		"tags": "",
 		"body": "It's a Wilson's Snipe!\n\nThat beak is so long!",
 		"position": {
-			"x": 2485,
-			"y": -980
+			"x": -164,
+			"y": 381
 		},
 		"colorID": 0
 	},
@@ -444,8 +444,8 @@
 		"tags": "",
 		"body": "It's a Steller's Jay!\n\nWow! Such a bright color!",
 		"position": {
-			"x": 2784,
-			"y": -982
+			"x": 135,
+			"y": 379
 		},
 		"colorID": 0
 	},
@@ -454,8 +454,8 @@
 		"tags": "",
 		"body": "Judd: There's a hint of blue in the trees over there.",
 		"position": {
-			"x": 2792,
-			"y": -1203
+			"x": 143,
+			"y": 158
 		},
 		"colorID": 2
 	},
@@ -464,8 +464,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: Steller's Jays love to raid picnics. They're omnvimores, so they'll eat anything you can throw at them.\n\nJudd: They hog all the food at feeders, carrying it away to store for the winter.\n\nGreg: Wow, this Jay doesn't sound very stellar at all!\n\nJudd: ... I suppose.",
 		"position": {
-			"x": 2783,
-			"y": -774
+			"x": 134,
+			"y": 587
 		},
 		"colorID": 0
 	},
@@ -474,8 +474,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: When I was young at summer camp, some kids convinced me to go on a snipe hunt.\nJudd: I had to stand in a marsh at midnight, holding a bag. There were no snipes.\nJudd: I didn't think Snipes were real for the longest time, until I bought my first birding book.\n\nGreg: You didn't catch a snipe, but at least you didn't catch a cold!\nJudd: I did, actually.",
 		"position": {
-			"x": 2487,
-			"y": -767
+			"x": -162,
+			"y": 594
 		},
 		"colorID": 0
 	},
@@ -484,8 +484,8 @@
 		"tags": "",
 		"body": "Greg: The sun isn't even up yet, are there really going to be birds out?\n\nJudd: Sure, there's owls and other nocturnal birds.\nJudd: A lot of birds get up before sunrise as well.\n\nGreg: I suppose.\nGreg: How do you get up this early every day?\n\nJudd: I haven't slept well since Margret got sick.\nJudd: Eventually I stopped trying.\nJudd: But atleast there were birds when I gave up.\n\nGreg: ...",
 		"position": {
-			"x": -2344,
-			"y": 1376
+			"x": -4993,
+			"y": 2737
 		},
 		"colorID": 1
 	},
@@ -494,8 +494,8 @@
 		"tags": "",
 		"body": "Greg: Where do you want to eat after this?\n\nGreg: We could go to one of the restaurants in the park when they open...\n\nJudd: They're probably too expensive.\n\nGreg: Well, it's going to be a drive to go anyplace else.\n\nJudd: Yeah, I know. We can go to the restaurant in our lodge. They do breakfast at 7.\n\nGreg: Sounds good. I'll need more coffee...",
 		"position": {
-			"x": -2111,
-			"y": 1372
+			"x": -4760,
+			"y": 2733
 		},
 		"colorID": 0
 	},
@@ -504,8 +504,8 @@
 		"tags": "",
 		"body": "Greg: How do you spot any of these birds? It's too dark out.\n\nJudd: You just need to know what to look for. And what to listen for.\nJudd: I've been birding for 53 years.\nJudd: They can't hide from me, even if my senses are getting worse by the day...",
 		"position": {
-			"x": -1883,
-			"y": 1373
+			"x": -4532,
+			"y": 2734
 		},
 		"colorID": 0
 	},
@@ -514,8 +514,8 @@
 		"tags": "",
 		"body": "Greg: I'm going to need a coffee and a break soon.\n\nJudd: Yeah, ok. But two more birds first.\nJudd: I can hear a couple more I want to check out.\n\nGreg: Sigh... alright.",
 		"position": {
-			"x": -1648,
-			"y": 1372
+			"x": -4297,
+			"y": 2733
 		},
 		"colorID": 0
 	},
@@ -524,18 +524,18 @@
 		"tags": "",
 		"body": "Judd: Alright, one more bird and we can get out of here.\nJudd: There's some eggs and toast with my name on them.\nGreg: Bird eggs.\nJudd: Chickens are birds, yes.",
 		"position": {
-			"x": -1430,
-			"y": 1371
+			"x": -4079,
+			"y": 2732
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Rain_Chat_01",
 		"tags": "",
-		"body": "Judd: This rain... it makes my joints ache.\n\nGreg: Will you be able to handle it?\nGreg: These birds wont't watch themselves!\n\nJudd: Aches and pains are the only thing that keep me company.\nJudd: That and the birds.",
+		"body": "Judd: This rain... it makes my joints ache.\n\nGreg: Will you be able to handle it?\nGreg: These birds won't watch themselves!\n\nJudd: Aches and pains are the only thing that keep me company.\nJudd: That and the birds.",
 		"position": {
-			"x": -2349,
-			"y": 1799
+			"x": -4998,
+			"y": 3160
 		},
 		"colorID": 1
 	},
@@ -544,18 +544,18 @@
 		"tags": "",
 		"body": "Greg: Some of these bird nests look quite colorful!\n\nJudd: They're using trash for nesting.\nJudd: Newspaper, magazines, straws, anything that can keep together and retain heat.\n\nGreg: Oh, that's a shame.\n\nJudd: At least they have a family.",
 		"position": {
-			"x": -1874,
-			"y": 1788
+			"x": -4523,
+			"y": 3149
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Rain_Chat_02",
 		"tags": "",
-		"body": "Judd: That's all the birds I wanted to see. Ready to go?\n\nGreg: We just got back out here!\nGregs: Let's stick around a bit longer.\n\nJudd: Fine.",
+		"body": "Judd: That's all the birds I wanted to see. Ready to go?\n\nGreg: We just got back out here!\nGreg: Let's stick around a bit longer.\n\nJudd: Fine.",
 		"position": {
-			"x": -2118,
-			"y": 1790
+			"x": -4767,
+			"y": 3151
 		},
 		"colorID": 0
 	},
@@ -564,8 +564,8 @@
 		"tags": "",
 		"body": "Greg: There's so many different birds out here!\nGreg: Way more than what I see at my feeder.\n\nJudd: You just don't know how to attract them.\nJudd: You need the right food, the right feeder and the right places for them to nest.\nJudd: You can't just buy a bag of seed from Flowerland and expect results. You'll just get finches.\n\nGreg: I haven't given bird feeding that much thought!",
 		"position": {
-			"x": -1659,
-			"y": 1789
+			"x": -4308,
+			"y": 3150
 		},
 		"colorID": 0
 	},
@@ -574,8 +574,8 @@
 		"tags": "",
 		"body": "Judd: Let's head back after this one.\n\nGreg: Sure. It's been a long day.",
 		"position": {
-			"x": -1429,
-			"y": 1801
+			"x": -4078,
+			"y": 3162
 		},
 		"colorID": 0
 	},
@@ -584,8 +584,8 @@
 		"tags": "",
 		"body": "Judd: How's your coffee?\n\nGreg: Pretty good. I think I'm perking up!\n\nJudd: Ok.\n\nGreg: Weather says it's going to rain for the rest of today.\nGreg: Are we still going birding after we eat?\n\nJudd: Of course.\nJudd: Some birds prefer the rain. My camera is waterproof too.\n\nGreg: Alright.\nGreg: Well, I hope none of those birds were planning on a parade!\n\nJudd: ... \nJudd: I see that coffee is working...",
 		"position": {
-			"x": -2346,
-			"y": 1582
+			"x": -4995,
+			"y": 2943
 		},
 		"colorID": 3
 	},
@@ -594,8 +594,8 @@
 		"tags": "",
 		"body": "Judd: There's a flock of yellow birds in those tree tops.",
 		"position": {
-			"x": 3075,
-			"y": -1196
+			"x": 426,
+			"y": 165
 		},
 		"colorID": 3
 	},
@@ -604,8 +604,8 @@
 		"tags": "",
 		"body": "It's flock of Evening Grosbeaks!\n\nLook at those eyebrows!",
 		"position": {
-			"x": 3076,
-			"y": -985
+			"x": 427,
+			"y": 376
 		},
 		"colorID": 0
 	},
@@ -614,18 +614,18 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: I'm surprised we managed to find some Evening Grosbeaks.\nJudd: Their migration patterns are very unpredictable, so you never know if they're around this season.\nJudd: I'm happy I managed to get some pictures.\n\nGreg: Do you think they clean their beaks often?\n\nJudd: Probably as much as any other bird while bathing.\n\nGreg: That's good, I thought they might have gross beaks!\n\nJudd: ...\n\nJudd: ...\n\nJudd: ...",
 		"position": {
-			"x": 3075,
-			"y": -769
+			"x": 426,
+			"y": 592
 		},
 		"colorID": 0
 	},
 	{
 		"title": "CM_Approach",
 		"tags": "",
-		"body": "Judd: I see a bird something floating along on the river.",
+		"body": "Judd: I see something floating along on the river.",
 		"position": {
-			"x": 3907,
-			"y": -1199
+			"x": 1258,
+			"y": 162
 		},
 		"colorID": 6
 	},
@@ -634,8 +634,8 @@
 		"tags": "",
 		"body": "It's a Common Merganser!\n\nIt looks happy to be surrounded by water.",
 		"position": {
-			"x": 3906,
-			"y": -988
+			"x": 1257,
+			"y": 373
 		},
 		"colorID": 0
 	},
@@ -644,8 +644,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: The Common Merganser has serrated edges on its bill to help with gripping fish. Some call this a \"sawbill\".\nJudd: They'll develop a pink tinge if they eat enough shellfish, like flamingos.\nJudd: Common Merganser highly prefer water over land. They're bad at running on solid ground.\n\nGreg: One time a Common Merganser flew near my restaurant table when I was eating outside.\n\nJudd: Really? People must have been feeding them a lot to get that tame.\n\nGreg: Yeah, but once he saw the bill he flew off! What a jerk!\n\nJudd: ...",
 		"position": {
-			"x": 3910,
-			"y": -783
+			"x": 1261,
+			"y": 578
 		},
 		"colorID": 0
 	},
@@ -654,8 +654,8 @@
 		"tags": "",
 		"body": "Judd: There are dark birds hopping around on the ground over there.",
 		"position": {
-			"x": 3623,
-			"y": -1201
+			"x": 974,
+			"y": 160
 		},
 		"colorID": 5
 	},
@@ -664,8 +664,8 @@
 		"tags": "",
 		"body": "It's Dark-eyed Junco!\n\nLookin stylish, even if it's only black and white!",
 		"position": {
-			"x": 3626,
-			"y": -992
+			"x": 977,
+			"y": 369
 		},
 		"colorID": 0
 	},
@@ -674,18 +674,18 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: The Dark-eyed Junco is one of most common feeder birds across North America.\nJudd: They like all kinds of bird feed. Sunflower seeds, cracked corn, millet, oats, even peanuts.\nJudd: They like to eat off the ground, or feeders with a platform they can stand on.\n\nGreg: Neat!\n\nJudd: ...\n\nJudd: No pun?\n\nGreg: Nope! I've got nothing!\n\nJudd: ...\n\nJudd: I'm a little disappointed.",
 		"position": {
-			"x": 3629,
-			"y": -777
+			"x": 980,
+			"y": 584
 		},
 		"colorID": 0
 	},
 	{
 		"title": "NS_Approach",
 		"tags": "",
-		"body": "I hear some hoots coming from that conifer.",
+		"body": "Greg: I hear some hoots coming from that conifer.",
 		"position": {
-			"x": 3356,
-			"y": -1201
+			"x": 707,
+			"y": 160
 		},
 		"colorID": 4
 	},
@@ -694,8 +694,8 @@
 		"tags": "",
 		"body": "It's a Northern Saw-whet Owl!\n\nWhat a cute face!",
 		"position": {
-			"x": 3351,
-			"y": -993
+			"x": 702,
+			"y": 368
 		},
 		"colorID": 0
 	},
@@ -704,8 +704,8 @@
 		"tags": "",
 		"body": "Greg: Nice photo!\n\nJudd: The Northern Saw-whet Owl has a very good sense of hearing.\nJudd: In fact, they hunt for mice purely through the sounds their prey make.\nJudd: They're so small, you could fit them in a coffee can.\n\nGreg: Hopefully that can would clean and dry.\n\nJudd: Well, of course, some people use it as a method of weighing them.\n\nGreg: I never saw a wet owl, but I wouldn't want that to be the first time!\n\nJudd: ...",
 		"position": {
-			"x": 3355,
-			"y": -776
+			"x": 706,
+			"y": 585
 		},
 		"colorID": 0
 	},
@@ -714,8 +714,8 @@
 		"tags": "",
 		"body": "Judd: Ready to leave?\n\nGreg: Huh? Already?\n\nJudd: I've seen all the birds I wanted too.\n\nGreg: Don't you want to see more of the park? It took us six hours to drive here!\n\nJudd: Nope, let's go home.\n\nGreg: ... alright\n\nFIN",
 		"position": {
-			"x": -2350,
-			"y": 2024
+			"x": -4999,
+			"y": 3385
 		},
 		"colorID": 3
 	},
@@ -724,8 +724,8 @@
 		"tags": "",
 		"body": "Info: Hello, I am this computer game's developer with some helpful tips to get you through the game.\r\nInfo: Our goal here is to get a good photo of that bird over there.\r\nInfo: If you use your camera, you can snap some photos of it. I think we need ten photos before we get a good one.\r\nInfo: When you're ready to start, move your mouse cursor over the camera icon and perform a click.\r\nInfo: This computer game is operated only by moving the mouse and clicking, so don't worry about any other keyboard buttons.",
 		"position": {
-			"x": -1767,
-			"y": -222
+			"x": -4416,
+			"y": 1139
 		},
 		"colorID": 0
 	},
@@ -734,8 +734,8 @@
 		"tags": "",
 		"body": "Info: Taking photos can get stressful! If you get too stressed then you won't be able to operate the camera. \r\nInfo: We may need to do some breathing exercises to calm down when that happens.\r\nInfo: Right now you're only a little stressed out, so you can take another set of pictures first, if you'd like\r\n",
 		"position": {
-			"x": -1759,
-			"y": 199
+			"x": -4408,
+			"y": 1560
 		},
 		"colorID": 0
 	},
@@ -744,8 +744,8 @@
 		"tags": "",
 		"body": "Info: It is me, the game's developer again. Sorry to be back so soon!\r\nInfo: To snap a picture of a bird, hover your cursor over the bird and click the mouse button to snap a photo.\r\nInfo: Make sure the bird isn't touching the edges! We don't want them partially out of frame!",
 		"position": {
-			"x": -1762,
-			"y": -11
+			"x": -4411,
+			"y": 1350
 		},
 		"colorID": 0
 	},
@@ -754,8 +754,8 @@
 		"tags": "",
 		"body": "Info: Ready to chill out?\nInfo: Start by depressing the mouse button, and then release it when the blue meter near the green zone on the right.\nInfo: Then, depress the mouse button when it approaches the green zone on the left.\nInfo: You'll take 3 exhales and 3 inhales before being ranked.\nInfo: This first time though, take as many as you like! Once you take 3 ok full breaths you can move on.",
 		"position": {
-			"x": -1757,
-			"y": 408
+			"x": -4406,
+			"y": 1769
 		},
 		"colorID": 0
 	},
@@ -764,8 +764,8 @@
 		"tags": "",
 		"body": "Greg: Well, here we are. Yosemete park.\n\nGreg: What a drive.\n\n...\n\nGreg: Is your camera ready?\n\nJudd: Yeah.\n\nGreg: Got your birding book?\n\nJudd: Yeah.\n\nGreg: Your best jacket?\n\nGreg: Your lucky socks?\n\nGreg: Your favorite teeth?\n\nJudd: (Ugh)\n\nJudd: Let's go snap some bird photos.",
 		"position": {
-			"x": -2563,
-			"y": 935
+			"x": -5212,
+			"y": 2296
 		},
 		"colorID": 1
 	},
@@ -774,8 +774,8 @@
 		"tags": "",
 		"body": "Book: Acorn Woodpecker (Melanerpes formicivorus).\nBook: Acorn Woodpeckers live in large groups and hoard acorns.\nBook: They're pretty easy to find, and are tolerant of humans.\nBook: They live in forests on slopes and mountains.\nBook: They'll fly from tree to tree while you take pictures. Try predicting which tree they're flying to!",
 		"position": {
-			"x": 768,
-			"y": -863
+			"x": -1881,
+			"y": 498
 		},
 		"colorID": 0
 	},
@@ -784,8 +784,8 @@
 		"tags": "",
 		"body": "Book: American Bushtit (Psaltriparus minimus)\nBook: Bushtits are tiny, kinglet-sized birds.\nBook: They typically fly around bushes in large flocks, looking for insects to eat.\nBook: Look around in bushes to get a picture. The Bushtit will fly away when you snap a picture, but there should be plenty more!",
 		"position": {
-			"x": 1398,
-			"y": -928
+			"x": -1251,
+			"y": 433
 		},
 		"colorID": 0
 	},
@@ -794,8 +794,8 @@
 		"tags": "",
 		"body": "Book: American Kestrel (Falco sparverius)\nBook: The Kestrel is the smallest, most common North American falcon.\nBook: They're usually seen perched high up on fence posts and telephone poles.\nBook: They catch their prey by swooping down and scooping up mice.\nBook: If you can follow their trajectory, you'll get lots of photos!",
 		"position": {
-			"x": 1965,
-			"y": -966
+			"x": -684,
+			"y": 395
 		},
 		"colorID": 0
 	},
@@ -804,8 +804,8 @@
 		"tags": "",
 		"body": "Book: Wilson's Snipe (Gallinago delicata)\nBook: The Wilson's Snipe is a pudgy shorebird with short stocky legs and a bill several times longer than its head.\nBook: Snipes love the mud, because they eat by probing the mud with their long bill for worms!\nBook: Snipes fly in a zigzag pattern, so when you're taking a picture, be ready for some erratic movement!\n\n",
 		"position": {
-			"x": 2488,
-			"y": -559
+			"x": -161,
+			"y": 802
 		},
 		"colorID": 0
 	},
@@ -814,8 +814,8 @@
 		"tags": "",
 		"body": "Book: Steller's Jay (Cyanocitta stelleri)\nBook: The Steller's Jay is a large songbird with a prominent triangular crest. It was named after Georg Wilhelm Steller.\nBook: Steller's Jays are bold and curious. They like hop around on the ground, looking for food.\nBook: Try waiting until they fly down to the ground, and then snap lots of photos until they fly away!",
 		"position": {
-			"x": 2783,
-			"y": -561
+			"x": 134,
+			"y": 800
 		},
 		"colorID": 0
 	},
@@ -824,8 +824,8 @@
 		"tags": "",
 		"body": "Book: Evening Grosbeak (Coccothraustes vespertinus)\nBook: Evening Grosbeaks are large, yellow finches. They are also quite social, appearing in flocks.\nBook: Grosbeaks like to fly around trees, looking for bugs, seeds, and berries.\nBook: They move very eratically, so try your best to track them in the trees when taking a picture!",
 		"position": {
-			"x": 3066,
-			"y": -549
+			"x": 417,
+			"y": 812
 		},
 		"colorID": 0
 	},
@@ -834,8 +834,8 @@
 		"tags": "",
 		"body": "Book: Northern Saw-whet Owl (Aegolius acadicus)\nBook: The Northern Saw-whet is the smallest owl in North America. It has a cat-like face and big, bright yellow eyes.\nBook: Saw-whets like to roost in dense conifers during the day and hunt at night. \nBook: If you hear other birds kicking up a fuss, it might be because they found a Saw-whet!\nBook: If you can track the owl in the trees, you'll be able to get plenty of pictures!\n",
 		"position": {
-			"x": 3357,
-			"y": -551
+			"x": 708,
+			"y": 810
 		},
 		"colorID": 0
 	},
@@ -844,8 +844,8 @@
 		"tags": "",
 		"body": "Book: Dark-eyed Junco (Junco hyemalis)\nBook: The Dark-eyed Junco is the most well known species of junco. It lives all across North America.\nBook: They like to hop around on the ground looking for seeds.\nBook: You can easily find Juncos by walking around open, wooded areas and watching the ground.\nBook: If you can track them as they hop around, taking a picture will be a snap!",
 		"position": {
-			"x": 3631,
-			"y": -557
+			"x": 982,
+			"y": 804
 		},
 		"colorID": 0
 	},
@@ -854,8 +854,8 @@
 		"tags": "",
 		"body": "Book: Common Merganser (Mergus merganser)\nBook: The Common Merganser is a large duck that floats along rivers and lakes.\nBook: This duck eats dish as makes nests in hollow trees.\nBook: If you can keep track of it as it floats down the river, you'll get lots of photos.",
 		"position": {
-			"x": 3913,
-			"y": -558
+			"x": 1264,
+			"y": 803
 		},
 		"colorID": 0
 	}
