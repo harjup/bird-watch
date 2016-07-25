@@ -41,10 +41,10 @@ public class PolaroidBox : MonoBehaviour
 
         //_spawnLocation = FindObjectOfType<SnapshotMover>().transform.position;
         
-        var result = Instantiate(_polaroid, birdTransform.position, Quaternion.identity) as GameObject;
+        var result = Instantiate(_polaroid, birdTransform.position.AddZ(-3f), Quaternion.identity) as GameObject;
 
         result.transform.parent = transform.parent;
-
+        
 
         //Possible async problem?
         var target = _polaroidLocations.First().AddZ(-.5f);

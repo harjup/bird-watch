@@ -38,6 +38,7 @@ public class EncounterRunner : MonoBehaviour
 
         var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
         var nightOverlay = GameObject.Find("night-overlay").GetComponent<SpriteRenderer>();
+        var rainOverlay = GameObject.Find("rain-overlay").GetComponent<SpriteRenderer>();
         var day = GameProgress.Instance.CurrentDay;
 
         flashLight.enabled = false;
@@ -49,6 +50,12 @@ public class EncounterRunner : MonoBehaviour
             flashLight.enabled = true;
         }
 
+        if (day == 3)
+        {
+            rainOverlay.enabled = true;
+            //flashLight.enabled = true;
+        }
+
 
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
@@ -57,11 +64,14 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("NS");
+            _bird = new Bird("WS");
             //_bird = new Bird("NS");
         }
         
         Agitation = new Agitation(2.0m, 1.0m);
+
+        Agitation.Decrement(0.5m);
+
         FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
 
@@ -105,7 +115,7 @@ public class EncounterRunner : MonoBehaviour
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
             //yield return StartCoroutine(_actionSelect.Enable());
-            //yield break;
+            //yield N;
         }
 
 
