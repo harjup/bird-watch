@@ -106,7 +106,6 @@ public class BreathBar : MonoBehaviour
             new Bar(.9f, 1f, Bar.Type.Bad),
         };
 
-
         foreach (var bar in bars)
         {
             var result = SpawnCollider(bar.Start, bar.End);
@@ -224,6 +223,19 @@ public class BreathBar : MonoBehaviour
                     ranking -= 2;
                     break;
             }
+
+            // We only want to display the bars that the player's breath bar is heading toward
+            if (!prevMouse)
+            {
+                RatingBars.ForEach(r => r.gameObject.SetActive(true));
+                RatingBars.Skip(5).Take(4).ToList().ForEach(r => r.gameObject.SetActive(false));
+            }
+            else
+            {
+                RatingBars.ForEach(r => r.gameObject.SetActive(true));
+                RatingBars.Take(4).ToList().ForEach(r => r.gameObject.SetActive(false));
+            }
+
 
             // Don't increment on bad if we're doing the tutorial
             if (isTutorial && (bar.BarType == Bar.Type.Bad || bar.BarType == Bar.Type.Clear))

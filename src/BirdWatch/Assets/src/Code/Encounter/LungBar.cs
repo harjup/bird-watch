@@ -8,7 +8,7 @@ public class LungBar : MonoBehaviour
 
     public RatingBar RightmostBar()
     {
-        return RatingBars.OrderByDescending(r => r.transform.position.x).FirstOrDefault();
+        return RatingBars.Where(r => r.gameObject.activeSelf).OrderByDescending(r => r.transform.position.x).FirstOrDefault();
     }
 
     public void Clear()
