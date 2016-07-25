@@ -107,7 +107,22 @@ public class FieldRunner : MonoBehaviour
                 //End of day. Say we're going home and then cut to black where it transaitions to next day.
                 if (gameProgress.EncounterCount >= gameProgress.EncounterMax)
                 {
-                    yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Day"));
+                    if (day.Time == Day.TimeOfDay.Day)
+                    {
+                        yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Day"));
+                    }
+
+                    if (day.Time == Day.TimeOfDay.Night)
+                    {
+                        yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Night"));
+                    }
+
+                    if (day.Time == Day.TimeOfDay.Rain)
+                    {
+                        yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Rain"));
+                    }
+
+
                     LevelLoader.Instance.LoadLevel(Level.Cutscene);
 
                     break;
@@ -121,6 +136,10 @@ public class FieldRunner : MonoBehaviour
                     {
                         BackgroundScroller.Pause();
                         yield return StartCoroutine(runner.StartAwaitableDialogue("Day_Chat_Intro"));
+
+                        BackgroundScroller.Resume();
+
+                        yield return  StartCoroutine(FindObjectOfType<LogoDisplay>().RunLogos());
                     }
                 }
                 else

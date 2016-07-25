@@ -55,6 +55,8 @@ public class FieldCharacters : MonoBehaviour
 
     public void ClearTalk()
     {
+        Init();
+
         _juddEffectAnimator.CrossFade("Hide", 0);
         _gregEffectAnimator.CrossFade("Hide", 0);
     }
