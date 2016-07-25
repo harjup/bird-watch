@@ -72,9 +72,7 @@ public class EncounterRunner : MonoBehaviour
         }
         
         Agitation = new Agitation(2.0m, 1.0m);
-
-        Agitation.Decrement(0.5m);
-
+        
         FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
 
