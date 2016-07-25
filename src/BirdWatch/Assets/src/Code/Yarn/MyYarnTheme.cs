@@ -74,7 +74,7 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         else
         {
             FindObjectOfType<TextCrawlSoundManager>().SetTextCrawlVoice("other");
-            TextDisplayGui.SetName("");
+            TextDisplayGui.SetName("Info");
             yield return StartCoroutine(TextDisplayGui.CrawlText(text, () => { }));
         }
         
