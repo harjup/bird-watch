@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 
 public class BackgroundScroll : MonoBehaviour
@@ -12,8 +13,7 @@ public class BackgroundScroll : MonoBehaviour
         Night,
         Rain
     }
-
-    private Tweener _tween;
+    
     private FootstepsPlayer _footstepsPlayer;
 
     private FootstepsPlayer FootstepsPlayer
@@ -28,19 +28,22 @@ public class BackgroundScroll : MonoBehaviour
         }
     }
 
+    private List<ParallaxScroller> _parallaxScrollers;
+
     public void Awake()
     {
     }
 
     public void Pause()
     {
-        _tween.Pause();
+        _parallaxScrollers.ForEach(p => p.Pause());
+
         FootstepsPlayer.Stop();
     }
 
     public void Resume()
     {
-        _tween.Play();
+        _parallaxScrollers.ForEach(p => p.Resume());
         FootstepsPlayer.Play();
     }
 
@@ -50,15 +53,9 @@ public class BackgroundScroll : MonoBehaviour
 
         bg.transform.parent = transform;
 
-        // night
-        // rain
+        _parallaxScrollers = bg.GetComponentsInChildren<ParallaxScroller>().ToList();
 
-        // -13.5
-        var moveTarget = transform.position.SetX(-11f);
-
-        _tween = transform.DOMove(moveTarget, 1f)
-            .SetEase(Ease.Linear)
-            .SetSpeedBased()
-            .SetLoops(-1, LoopType.Restart);
+        _parallaxScrollers.ForEach(s => s.Setup());
+        _parallaxScrollers.ForEach(s => s.Pause());
     }
 }

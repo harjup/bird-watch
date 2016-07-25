@@ -92,7 +92,7 @@ public class FieldRunner : MonoBehaviour
             new ShowTextEvent("Day_Chat"),
             new BirdEncounterEvent("")
         };
-        
+
         while (true)
         {
             var runner = FindObjectOfType<DialogueRunner>();
