@@ -64,11 +64,18 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
         var splitOnName = text.Split(new char[] {':'}, StringSplitOptions.RemoveEmptyEntries);
         if (splitOnName.Length > 1)
         {
-            TextDisplayGui.SetName(splitOnName[0]);
+            var name = splitOnName[0];
+            TextDisplayGui.SetName(name);
             FindObjectOfType<TextCrawlSoundManager>().SetTextCrawlVoice(splitOnName[0]);
 
-            var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim(); 
-
+            var remainder = string.Join(":", splitOnName.Skip(1).ToArray()).Trim();
+            
+            var fieldCharacters = FindObjectOfType<FieldCharacters>();
+            if (fieldCharacters != null)
+            {
+                fieldCharacters.Talk(name);
+            }
+            
             yield return StartCoroutine(TextDisplayGui.CrawlText(remainder, () => { }));
         }
         else
@@ -168,6 +175,12 @@ public class MyYarnTheme : Yarn.Unity.DialogueUIBehaviour
     public override IEnumerator DialogueComplete()
     {
         yield return StartCoroutine(TextDisplayGui.HideDialogWindow());
+
+        var fieldCharacters = FindObjectOfType<FieldCharacters>();
+        if (fieldCharacters != null)
+        {
+            fieldCharacters.ClearTalk();
+        }
 
         yield return null;
     }

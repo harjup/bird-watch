@@ -13,7 +13,8 @@ public class BackgroundScroll : MonoBehaviour
         Night,
         Rain
     }
-    
+
+    private FieldCharacters _fieldCharacters;
     private FootstepsPlayer _footstepsPlayer;
 
     private FootstepsPlayer FootstepsPlayer
@@ -28,6 +29,19 @@ public class BackgroundScroll : MonoBehaviour
         }
     }
 
+    private FieldCharacters FieldCharacters
+    {
+        get
+        {
+            if (_fieldCharacters == null)
+            {
+                return _fieldCharacters = FindObjectOfType<FieldCharacters>();
+            }
+            return _fieldCharacters;
+        }
+    }
+
+
     private List<ParallaxScroller> _parallaxScrollers;
 
     public void Awake()
@@ -38,12 +52,14 @@ public class BackgroundScroll : MonoBehaviour
     {
         _parallaxScrollers.ForEach(p => p.Pause());
 
+        FieldCharacters.Idle();
         FootstepsPlayer.Stop();
     }
 
     public void Resume()
     {
         _parallaxScrollers.ForEach(p => p.Resume());
+        FieldCharacters.Walk();
         FootstepsPlayer.Play();
     }
 

@@ -48,13 +48,13 @@ public class TextCrawlSoundManager : MonoBehaviour
     public void SetTextCrawlVoice(string voice)
     {
         _currentTalkTick.Stop();
-        if (voice.ToLower() == "greg")
+        if (voice.ToLower() == "judd")
         {
             _currentTalkTick = _talkTickMid;
             return;
         }
 
-        if (voice.ToLower() == "judd")
+        if (voice.ToLower() == "greg")
         {
             _currentTalkTick = _talkTickOld;
             return;
