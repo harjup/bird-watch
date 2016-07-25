@@ -10,9 +10,7 @@ public class PolaroidBox : MonoBehaviour
     private Vector3 _lowerRight;
 
     private Vector3 _spawnLocation;
-
-    public int PhotoMax = 10;
-
+    
     private List<Vector3> _polaroidLocations = new List<Vector3>();
 
     public void InitializePolaroids(int count)
@@ -20,9 +18,16 @@ public class PolaroidBox : MonoBehaviour
         _polaroid = Resources.Load<GameObject>("Prefabs/Battle/Polaroid");
 
         var upperRight = transform.FindChild("box-bg").localPosition;
+        var upperRight02 = transform.FindChild("box-bg-02").localPosition;
         for (int i = 0; i < count; i++)
         {
             var spawnLocation = upperRight.AddX(i * 0.5f).AddY(-.25f);
+
+            if (i >= 10)
+            {
+                spawnLocation = upperRight02.AddX((i - 10) * 0.5f).AddY(-.25f);
+            }
+
             _polaroidLocations.Add(spawnLocation);
 
             var result = Instantiate(_polaroid, Vector3.zero, Quaternion.identity) as GameObject;

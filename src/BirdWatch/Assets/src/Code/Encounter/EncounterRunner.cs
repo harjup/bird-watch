@@ -26,7 +26,7 @@ public class EncounterRunner : MonoBehaviour
     private void Start()
     {
         _bird = EncounterStarter.Instance.Bird;
-
+        
         var audioSources = transform.GetComponentsInChildren<AudioSource>();
         _mainLoop = audioSources.First(a => a.name == "music-main-loop");
         _victoryStart = audioSources.First(a => a.name == "music-victory-start");
@@ -34,7 +34,7 @@ public class EncounterRunner : MonoBehaviour
 
         _mainLoop.Play();
         
-        FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
+        
 
         var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
         var nightOverlay = GameObject.Find("night-overlay").GetComponent<SpriteRenderer>();
@@ -48,14 +48,17 @@ public class EncounterRunner : MonoBehaviour
         {
             nightOverlay.enabled = true;
             flashLight.enabled = true;
+            _birdShotMax = 15;
         }
 
         if (day == 3)
         {
             rainOverlay.enabled = true;
             //flashLight.enabled = true;
+            _birdShotMax = 20;
         }
-
+        
+        FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
 
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
