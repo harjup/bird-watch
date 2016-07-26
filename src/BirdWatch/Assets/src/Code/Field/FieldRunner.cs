@@ -167,6 +167,8 @@ public class FieldRunner : MonoBehaviour
 
                 gameProgress.StartEncounter();
                 EncounterStarter.Instance.Init(bird);
+
+                break;
             }
             
             BackgroundScroller.Resume();
