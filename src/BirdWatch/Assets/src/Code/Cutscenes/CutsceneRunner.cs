@@ -14,6 +14,7 @@ public class CutsceneRunner : MonoBehaviour
         var progress = GameProgress.Instance;
 
         var dialogRoot = "Intermission_";
+
         var dayIndex = progress.CurrentDay.ToString("00");
         var currentNode = dialogRoot + dayIndex;
 
