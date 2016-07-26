@@ -43,23 +43,7 @@ public class EncounterRunner : MonoBehaviour
 
         flashLight.enabled = false;
         nightOverlay.enabled = false;
-
-        if (day == 2)
-        {
-            nightOverlay.enabled = true;
-            flashLight.enabled = true;
-            _birdShotMax = 15;
-        }
-
-        if (day == 3)
-        {
-            rainOverlay.enabled = true;
-            //flashLight.enabled = true;
-            _birdShotMax = 20;
-        }
         
-        FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
-
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
@@ -67,10 +51,28 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("AW").At(Day.TimeOfDay.Night);
+            _bird = new Bird("WS").At(Day.TimeOfDay.Day);
             //_bird = new Bird("NS");
         }
-        
+
+        if (_bird.Time == Day.TimeOfDay.Night)
+        {
+            nightOverlay.enabled = true;
+            flashLight.enabled = true;
+            _birdShotMax = 15;
+        }
+
+        if (_bird.Time == Day.TimeOfDay.Rain)
+        {
+            rainOverlay.enabled = true;
+            //flashLight.enabled = true;
+            _birdShotMax = 20;
+        }
+
+        FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
+
+
+
         Agitation = new Agitation(2.0m, 1.0m);
         
         FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
