@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class Bird
@@ -16,6 +17,21 @@ public class Bird
     public Bird At(Day.TimeOfDay time)
     {
         return new Bird(Id, time);
+    }
+
+    public string GetTimeDescription()
+    {
+        switch (Time)
+        {
+            case Day.TimeOfDay.Day:
+                return "Day";
+            case Day.TimeOfDay.Night:
+                return "Night";
+            case Day.TimeOfDay.Rain:
+                return "Rain";
+        }
+
+        return "Day";
     }
 
 

@@ -67,7 +67,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("WS");
+            _bird = new Bird("AW").At(Day.TimeOfDay.Night);
             //_bird = new Bird("NS");
         }
         
@@ -263,8 +263,8 @@ public class EncounterRunner : MonoBehaviour
         _victoryLoop.PlayDelayed(_victoryStart.clip.length);
 
         yield return new WaitForSeconds(1f);
-
-        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Battle_Exit")));
+        
+        yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetBattleExitNode(runner)));
 
         FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
 
