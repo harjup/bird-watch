@@ -6,6 +6,8 @@ public class SnapshotCollider : MonoBehaviour
 {
     public bool BirdInCollider { get { return Birds.Any(); } }
     
+    public List<SnapshotBird> BirdsInCollider { get { return Birds; } } 
+
     public readonly List<SnapshotBird> Birds = new List<SnapshotBird>();
 
     public void Init()

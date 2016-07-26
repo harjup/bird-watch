@@ -12,9 +12,9 @@ public class GameProgress : Singleton<GameProgress>
     public readonly int EncounterMax = 5;
     public readonly int FinalDay = 3;
 
-    public bool ShowEncounterTutorial = false;
-    public bool ShowCameraTutorialText = false;
-    public bool ShowBreathingTutorialText = false;
+    public bool ShowEncounterTutorial = true;
+    public bool ShowCameraTutorialText = true;
+    public bool ShowBreathingTutorialText = true;
 
 
     private void Awake()

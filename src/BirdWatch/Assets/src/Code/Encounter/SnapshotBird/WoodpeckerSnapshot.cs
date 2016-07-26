@@ -22,16 +22,19 @@ public class WoodpeckerSnapshot : SnapshotBird, ISnapshotBird
 
         _currentLocation = transform.localPosition;
 
-        
-
-        OnPictureTaken();
+        OnPictureTaken(true);
     }
 
     public void OnPictureTaken()
     {
+        OnPictureTaken(false);
+    }
+
+    public void OnPictureTaken(bool force)
+    {
         var distanceFromDestination = (transform.position - _currentLocation).sqrMagnitude;
 
-        if (distanceFromDestination > .5f)
+        if (distanceFromDestination > .5f && !force)
         {
             return;
         }

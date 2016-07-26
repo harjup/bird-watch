@@ -66,6 +66,8 @@ public class CameraMinigame : MonoBehaviour
             {
                 cameraCooldown = true;
                 
+
+                // TODO: Instead of having it be all or nothing, let one bird within bounds get their picture taken??????
                 var colliders = FindObjectsOfType<SnapshotCollider>();
                 var okCollider = colliders
                     .First(c => c.name == "ok-cone");
@@ -74,9 +76,16 @@ public class CameraMinigame : MonoBehaviour
                     .Where(c => c.name == "camera-bounds")
                     .All(c => !c.BirdInCollider);
 
-                if (okCollider.BirdInCollider && isWithinBounds)
+                var birdsOnBorder = colliders
+                    .Where(c => c.name == "camera-bounds")
+                    .SelectMany(b => b.Birds);
+
+                var okBirds = okCollider.Birds.Except(birdsOnBorder).ToList();
+
+                //if (okCollider.BirdInCollider && isWithinBounds)
+                if (okBirds.Any())
                 {
-                    birdShots += okCollider.Birds.Count;
+                    birdShots += okBirds.Count();
 
                     if (birdShots >= birdShotMax)
                     {
@@ -88,17 +97,18 @@ public class CameraMinigame : MonoBehaviour
                     _cameraHit.Play();
                     StartCoroutine(ScreenFlash.Instance.Flash());
 
-                    okCollider.Birds.Cast<ISnapshotBird>().ToList().ForEach(b =>
+                    okBirds.Cast<ISnapshotBird>().ToList().ForEach(b =>
                     {
                         b.OnPictureTaken();
                         FindObjectOfType<PolaroidBox>().SpawnPicture(b.transform);
+
+                        if (bird.Id == "BT")
+                        {
+                            // Remove the birds in the collider that were successfully photographed if they're bushtits
+                            okCollider.Birds.Remove(b as SnapshotBird);
+                        }
+
                     });
-
-                    if (bird.Id == "BT")
-                    {
-                        okCollider.Birds.Clear();
-                    }
-
                 }
                 else
                 {

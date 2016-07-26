@@ -14,7 +14,7 @@ public class SwoopySnapshotBird : SnapshotBird, ISnapshotBird
         var positionsObj = GameObject.Find("bird-fly-positions");
         _availablePositions = positionsObj.transform.Cast<Transform>().ToList();
 
-        OnPictureTaken();
+        //OnPictureTaken();
     }
 
     private Vector3 _currentLocation;
