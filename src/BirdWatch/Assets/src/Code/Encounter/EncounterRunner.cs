@@ -20,6 +20,8 @@ public class EncounterRunner : MonoBehaviour
     private int _birdShotMax = 10;
 
     private AudioSource _mainLoop;
+    private AudioSource _nightLoop;
+    private AudioSource _rainLoop;
     private AudioSource _victoryStart;
     private AudioSource _victoryLoop;
 
@@ -28,13 +30,13 @@ public class EncounterRunner : MonoBehaviour
         _bird = EncounterStarter.Instance.Bird;
         
         var audioSources = transform.GetComponentsInChildren<AudioSource>();
-        _mainLoop = audioSources.First(a => a.name == "music-main-loop");
+        _mainLoop = audioSources.First(a => a.name == "music-main-loop-day");
+        _nightLoop = audioSources.First(a => a.name == "music-main-loop-night");
+        _rainLoop = audioSources.First(a => a.name == "music-main-loop-rain");
+
         _victoryStart = audioSources.First(a => a.name == "music-victory-start");
         _victoryLoop = audioSources.First(a => a.name == "music-victory-loop");
 
-        _mainLoop.Play();
-        
-        
 
         var flashLight = GameObject.Find("flash-light").GetComponent<SpriteRenderer>();
         var nightOverlay = GameObject.Find("night-overlay").GetComponent<SpriteRenderer>();
@@ -51,8 +53,13 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("AW").At(Day.TimeOfDay.Day);
+            _bird = new Bird("AW").At(Day.TimeOfDay.Rain);
             //_bird = new Bird("NS");
+        }
+
+        if (_bird.Time == Day.TimeOfDay.Day)
+        {
+            _mainLoop.Play();
         }
 
         if (_bird.Time == Day.TimeOfDay.Night)
@@ -60,6 +67,8 @@ public class EncounterRunner : MonoBehaviour
             nightOverlay.enabled = true;
             flashLight.enabled = true;
             _birdShotMax = 15;
+
+            _nightLoop.Play();
         }
 
         if (_bird.Time == Day.TimeOfDay.Rain)
@@ -67,6 +76,8 @@ public class EncounterRunner : MonoBehaviour
             rainOverlay.enabled = true;
             //flashLight.enabled = true;
             _birdShotMax = 20;
+
+            _rainLoop.Play();
         }
 
         FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
