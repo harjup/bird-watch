@@ -47,11 +47,11 @@ public class EncounterRunner : MonoBehaviour
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
-//            BirdListing.GetNextDayBird();
+            //BirdListing.GetNextDayBird();
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("WS").At(Day.TimeOfDay.Day);
+            _bird = new Bird("AW").At(Day.TimeOfDay.Day);
             //_bird = new Bird("NS");
         }
 
@@ -260,7 +260,7 @@ public class EncounterRunner : MonoBehaviour
 
         yield return StartCoroutine(ScreenFlash.Instance.Flash(2f, 1f, 1f));
 
-        //TODO: Improve timing
+        //TODO: Improve timing?
         _victoryStart.Play();
         _victoryLoop.PlayDelayed(_victoryStart.clip.length);
 
