@@ -53,7 +53,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("AW").At(Day.TimeOfDay.Rain);
+            _bird = new Bird("AW", Bird.EncounterBg.Redwood).At(Day.TimeOfDay.Rain);
             //_bird = new Bird("NS");
         }
 
@@ -81,7 +81,7 @@ public class EncounterRunner : MonoBehaviour
         }
 
         FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
-
+        FindObjectOfType<EncounterBackground>().SetBackground(_bird.Background);
 
 
         Agitation = new Agitation(2.0m, 1.0m);

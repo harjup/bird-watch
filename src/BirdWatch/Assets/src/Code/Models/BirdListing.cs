@@ -8,16 +8,18 @@ namespace Assets.src.Code.Models
     public static class BirdListing
     {
         //TODO: Should battle stats be modeled here?
-        public static Bird SJ = new Bird("SJ");
-        public static Bird WS = new Bird("WS");
-        public static Bird AW = new Bird("AW");
-        public static Bird AK = new Bird("AK");
-        public static Bird BT = new Bird("BT");
+        
+        public static Bird AK = new Bird("AK", Bird.EncounterBg.Mountain);
+        public static Bird AW = new Bird("AW", Bird.EncounterBg.Redwood);
+        public static Bird BT = new Bird("BT", Bird.EncounterBg.Mountain);
 
-        public static Bird CM = new Bird("CM");
-        public static Bird EG = new Bird("EG");
-        public static Bird JD = new Bird("JD");
-        public static Bird NS = new Bird("NS");
+        public static Bird CM = new Bird("CM", Bird.EncounterBg.Mountain);
+        public static Bird EG = new Bird("EG", Bird.EncounterBg.Redwood);
+        public static Bird JD = new Bird("JD", Bird.EncounterBg.Redwood);
+
+        public static Bird NS = new Bird("NS", Bird.EncounterBg.Redwood);
+        public static Bird SJ = new Bird("SJ", Bird.EncounterBg.Redwood);
+        public static Bird WS = new Bird("WS", Bird.EncounterBg.Mountain);
 
         private static Bird _current;
 

@@ -4,21 +4,31 @@ using System.Collections;
 
 public class Bird
 {
-    public string Id { get; private set; }
-    
-    public Day.TimeOfDay Time { get; private set; }
+    public enum EncounterBg
+    {
+        Mountain,
+        Redwood
+    }
 
-    public Bird(string id, Day.TimeOfDay time = Day.TimeOfDay.Day)
+    public string Id { get; private set; }
+
+    public EncounterBg Background { get; private set; }
+
+    public Day.TimeOfDay Time { get; private set; }
+    
+    public Bird(string id, EncounterBg bg, Day.TimeOfDay time = Day.TimeOfDay.Day)
     {
         Id = id;
+        Background = bg;
         Time = time;
+        
     }
 
     public Bird At(Day.TimeOfDay time)
     {
-        return new Bird(Id, time);
+        return new Bird(Id, Background, time);
     }
-
+    
     public string GetTimeDescription()
     {
         switch (Time)
