@@ -6,16 +6,26 @@ using DG.Tweening;
 public class LogoDisplay : MonoBehaviour
 {
     private SpriteRenderer _logo;
+    private SpriteRenderer _logoBack;
     private SpriteRenderer _teamLogo;
+
+    private AudioSource _cardFlipAudio;
 
     void Start()
     {
         var logos = GetComponentsInChildren<SpriteRenderer>();
 
         _logo     = logos.First(l => l.name == "logo");
+        _logoBack = logos.First(l => l.name == "logo-back");
         _teamLogo = logos.First(l => l.name == "team-logo");
 
-        _logo.enabled = false;
+        _cardFlipAudio = GetComponent<AudioSource>();
+
+
+        _logo.transform.localPosition = _logo.transform.localPosition.SetX(30f);
+        _logoBack.transform.localPosition = _logoBack.transform.localPosition.SetX(30f);
+
+        //_logo.enabled = false;
         _teamLogo.enabled = false;
     }
 
@@ -23,25 +33,27 @@ public class LogoDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        HideAll();
-        ShowTeam();
-        _teamLogo.color = Color.white.SetAlpha(0f);
-        yield return StartCoroutine(FadeSpriteIn(_teamLogo));
-        yield return new WaitForSeconds(4f);
-        yield return StartCoroutine(FadeSprite(_teamLogo));
+//        HideAll();
+//        ShowTeam();
+//        _teamLogo.color = Color.white.SetAlpha(0f);
+//        yield return StartCoroutine(FadeSpriteIn(_teamLogo));
+//        yield return new WaitForSeconds(4f);
+//        yield return StartCoroutine(FadeSprite(_teamLogo));
 
-        yield return new WaitForSeconds(1f);
+//        yield return new WaitForSeconds(1f);
 
-        HideAll();
-        
-        ShowLogo();
-        _logo.color = Color.white.SetAlpha(0f);
-        yield return StartCoroutine(FadeSpriteIn(_logo));
-        yield return new WaitForSeconds(4f);
-        yield return StartCoroutine(FadeSprite(_logo));
+//        HideAll();
 
-
-        HideAll();
+        yield return 
+            DOTween.Sequence()
+            .Append(_logo.transform.DOLocalMoveX(13.4f, .5f))
+            .AppendInterval(4f)
+            .AppendCallback(() => { _cardFlipAudio.Play(); })
+            .Append(_logo.transform.DOLocalMoveX(30f, .5f))
+            .Append(_logoBack.transform.DOLocalMoveX(13.4f, .5f))
+            .AppendInterval(4f)
+            .Append(_logoBack.transform.DOLocalMoveX(30f, .5f))
+            .WaitForCompletion();
 
         yield return new WaitForSeconds(1f);
 
@@ -67,7 +79,6 @@ public class LogoDisplay : MonoBehaviour
     private void HideAll()
     {
         _teamLogo.enabled = false;
-        _logo.enabled = false;
     }
 
     IEnumerator FadeSpriteIn(SpriteRenderer sprite)
