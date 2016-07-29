@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Globalization;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.src.Code.Models;
+using DG.Tweening;
 using Yarn.Unity;
 
 public class FieldRunner : MonoBehaviour
@@ -31,7 +32,8 @@ public class FieldRunner : MonoBehaviour
     }
 
     private BackgroundScroll BackgroundScroller;
-    
+
+    private List<AudioSource> _activeAudioSources = new List<AudioSource>();
 
     void Awake()
     {
@@ -64,17 +66,27 @@ public class FieldRunner : MonoBehaviour
     {
         if (day.Time == Day.TimeOfDay.Day)
         {
-            transform.FindChild("music-daytime").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+            _activeAudioSources = transform.FindChild("music-daytime").GetComponents<AudioSource>().ToList();
         }
 
         if (day.Time == Day.TimeOfDay.Night)
         {
-            transform.FindChild("music-night").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+            _activeAudioSources = transform.FindChild("music-night").GetComponents<AudioSource>().ToList();
         }
 
         if (day.Time == Day.TimeOfDay.Rain)
         {
-            transform.FindChild("music-rain").GetComponents<AudioSource>().ToList().ForEach(a => a.Play());
+            _activeAudioSources = transform.FindChild("music-rain").GetComponents<AudioSource>().ToList();
+        }
+        
+        _activeAudioSources.ForEach(a => a.Play());
+    }
+
+    private void FadeAudio()
+    {
+        foreach (var activeAudioSource in _activeAudioSources)
+        {
+            activeAudioSource.DOFade(0f, .5f);
         }
     }
 
@@ -84,6 +96,8 @@ public class FieldRunner : MonoBehaviour
     
     IEnumerator WalkTheField(Day day)
     {
+        yield return SceneFadeInOut.Instance.StartScene();
+
         var index = 0;
 
         var nodes = new FieldEvent[] 
@@ -122,6 +136,8 @@ public class FieldRunner : MonoBehaviour
                         yield return StartCoroutine(runner.StartAwaitableDialogue("End_Of_Rain"));
                     }
 
+                    FadeAudio();
+                    yield return SceneFadeInOut.Instance.EndScene();
 
                     LevelLoader.Instance.LoadLevel(Level.Cutscene);
 
@@ -166,6 +182,10 @@ public class FieldRunner : MonoBehaviour
                 yield return StartCoroutine(runner.StartAwaitableDialogue("Bird_Found"));
 
                 gameProgress.StartEncounter();
+
+                FadeAudio();
+                yield return SceneFadeInOut.Instance.EndScene();
+
                 EncounterStarter.Instance.Init(bird);
 
                 break;

@@ -19,14 +19,19 @@ public class NorthernSawWhetSnapshot : SnapshotBird, ISnapshotBird
 
         _birdSprite = GetComponentInChildren<BirdSprite>();
 
-        OnPictureTaken();
+        OnPictureTaken(true);
     }
 
     public void OnPictureTaken()
     {
-        var distanceFromDestination = (transform.position - _currentLocation).sqrMagnitude;
+        OnPictureTaken(false);
+    }
 
-        if (distanceFromDestination > .25f)
+    public void OnPictureTaken(bool force)
+    {
+        var distanceFromDestination = (transform.localPosition - _currentLocation).sqrMagnitude;
+
+        if (distanceFromDestination > .25f && !force)
         {
             return;
         }

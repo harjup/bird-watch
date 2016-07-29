@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Assets.src.Code.Models;
+using DG.Tweening;
 using Yarn.Unity;
 
 public class EncounterRunner : MonoBehaviour
@@ -19,9 +20,10 @@ public class EncounterRunner : MonoBehaviour
     private int _birdShots = 0;
     private int _birdShotMax = 10;
 
-    private AudioSource _mainLoop;
-    private AudioSource _nightLoop;
-    private AudioSource _rainLoop;
+    private AudioSource _music;
+    //private AudioSource _mainLoop;
+    //private AudioSource _nightLoop;
+    //private AudioSource _rainLoop;
     private AudioSource _victoryStart;
     private AudioSource _victoryLoop;
 
@@ -30,9 +32,6 @@ public class EncounterRunner : MonoBehaviour
         _bird = EncounterStarter.Instance.Bird;
         
         var audioSources = transform.GetComponentsInChildren<AudioSource>();
-        _mainLoop = audioSources.First(a => a.name == "music-main-loop-day");
-        _nightLoop = audioSources.First(a => a.name == "music-main-loop-night");
-        _rainLoop = audioSources.First(a => a.name == "music-main-loop-rain");
 
         _victoryStart = audioSources.First(a => a.name == "music-victory-start");
         _victoryLoop = audioSources.First(a => a.name == "music-victory-loop");
@@ -53,32 +52,44 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("AW", Bird.EncounterBg.Redwood).At(Day.TimeOfDay.Rain);
+            _bird = new Bird("NS", Bird.EncounterBg.Redwood).At(Day.TimeOfDay.Rain);
             //_bird = new Bird("NS");
         }
 
+        var nightForeground = GameObject.Find("foreground-night").GetComponent<SpriteRenderer>();
+        var rainForeground = GameObject.Find("foreground-rain").GetComponent<SpriteRenderer>();
+
+
+        nightForeground.enabled = false;
+        rainForeground.enabled = false;
+
         if (_bird.Time == Day.TimeOfDay.Day)
         {
-            _mainLoop.Play();
+            _music = audioSources.First(a => a.name == "music-main-loop-day");
         }
 
         if (_bird.Time == Day.TimeOfDay.Night)
         {
             nightOverlay.enabled = true;
             flashLight.enabled = true;
+            nightForeground.enabled = true;
+            
             _birdShotMax = 15;
 
-            _nightLoop.Play();
+            _music = audioSources.First(a => a.name == "music-main-loop-night");
         }
 
         if (_bird.Time == Day.TimeOfDay.Rain)
         {
             rainOverlay.enabled = true;
+            rainForeground.enabled = true;
             //flashLight.enabled = true;
             _birdShotMax = 20;
 
-            _rainLoop.Play();
+            _music = audioSources.First(a => a.name == "music-main-loop-rain");
         }
+
+        _music.Play();
 
         FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
         FindObjectOfType<EncounterBackground>().SetBackground(_bird.Background);
@@ -102,6 +113,8 @@ public class EncounterRunner : MonoBehaviour
     {
         var runner = FindObjectOfType<DialogueRunner>();
         FindObjectOfType<BreathBar>().enabled = false;
+
+        yield return SceneFadeInOut.Instance.StartScene();
 
         // Run through any special bird messages.
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetNode("Start")));
@@ -128,8 +141,6 @@ public class EncounterRunner : MonoBehaviour
         if (!Agitation.IsWithinCameraThresold())
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Too_Agitated"));
-            //yield return StartCoroutine(_actionSelect.Enable());
-            //yield N;
         }
 
 
@@ -160,6 +171,8 @@ public class EncounterRunner : MonoBehaviour
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+            _music.DOFade(0f, .5f);
+            yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
         }
@@ -216,6 +229,8 @@ public class EncounterRunner : MonoBehaviour
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
+            _music.DOFade(0f, .5f);
+            yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
         }
@@ -252,7 +267,8 @@ public class EncounterRunner : MonoBehaviour
         if (choice == 0)
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Run_Away"));
-
+            _music.DOFade(0f, .5f);
+            yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
         }
@@ -262,7 +278,7 @@ public class EncounterRunner : MonoBehaviour
 
     public IEnumerator FinalPhotoTaken()
     {
-        _mainLoop.Stop();
+        _music.Stop();
         
         var runner = FindObjectOfType<DialogueRunner>();
 
@@ -279,6 +295,8 @@ public class EncounterRunner : MonoBehaviour
         
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetBattleExitNode(runner)));
 
+        _victoryLoop.DOFade(0f, .5f);
+        yield return SceneFadeInOut.Instance.EndScene();
         FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
 
         yield return null;

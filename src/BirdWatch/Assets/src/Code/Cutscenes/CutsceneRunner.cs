@@ -13,6 +13,8 @@ public class CutsceneRunner : MonoBehaviour
     {
         var progress = GameProgress.Instance;
 
+        yield return SceneFadeInOut.Instance.StartScene();
+
         var dialogRoot = "Intermission_";
 
         var dayIndex = progress.CurrentDay.ToString("00");
@@ -29,7 +31,9 @@ public class CutsceneRunner : MonoBehaviour
         }
         
         progress.NextDay();
-        
+
+        yield return SceneFadeInOut.Instance.EndScene();
+
         LevelLoader.Instance.LoadLevel(Level.Field);
     }
 }
