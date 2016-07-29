@@ -13,13 +13,13 @@ namespace Assets.src.Code.Models
         public static Bird AW = new Bird("AW", Bird.EncounterBg.Redwood);
         public static Bird BT = new Bird("BT", Bird.EncounterBg.Mountain);
 
-        public static Bird CM = new Bird("CM", Bird.EncounterBg.Mountain);
+        public static Bird CM = new Bird("CM", Bird.EncounterBg.River);
         public static Bird EG = new Bird("EG", Bird.EncounterBg.Redwood);
         public static Bird JD = new Bird("JD", Bird.EncounterBg.Redwood);
 
         public static Bird NS = new Bird("NS", Bird.EncounterBg.Redwood);
         public static Bird SJ = new Bird("SJ", Bird.EncounterBg.Redwood);
-        public static Bird WS = new Bird("WS", Bird.EncounterBg.Mountain);
+        public static Bird WS = new Bird("WS", Bird.EncounterBg.River);
 
         private static Bird _current;
 

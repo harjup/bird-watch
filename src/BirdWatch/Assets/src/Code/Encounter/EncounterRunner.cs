@@ -44,7 +44,8 @@ public class EncounterRunner : MonoBehaviour
 
         flashLight.enabled = false;
         nightOverlay.enabled = false;
-        
+        rainOverlay.enabled = false;
+
         // TODO: Determine how we want to inject the current metadata for testing
         if (_bird == null)
         {
@@ -52,7 +53,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("NS", Bird.EncounterBg.Redwood).At(Day.TimeOfDay.Rain);
+            _bird = new Bird("WS", Bird.EncounterBg.River).At(Day.TimeOfDay.Rain);
             //_bird = new Bird("NS");
         }
 
@@ -83,6 +84,7 @@ public class EncounterRunner : MonoBehaviour
         {
             rainOverlay.enabled = true;
             rainForeground.enabled = true;
+
             //flashLight.enabled = true;
             _birdShotMax = 20;
 

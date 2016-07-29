@@ -7,7 +7,8 @@ public class Bird
     public enum EncounterBg
     {
         Mountain,
-        Redwood
+        Redwood,
+        River
     }
 
     public string Id { get; private set; }
