@@ -37,6 +37,9 @@ public class SceneFadeInOut : Singleton<SceneFadeInOut>
         }
 
         _image.color = Color.black;
+
+        // We need a little extra time to make sure the screen is completely black
+        yield return new WaitForSeconds(.05f);
     }
 
     public void CutToBlack()

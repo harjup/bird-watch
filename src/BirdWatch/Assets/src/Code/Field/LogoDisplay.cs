@@ -51,7 +51,7 @@ public class LogoDisplay : MonoBehaviour
             .AppendCallback(() => { _cardFlipAudio.Play(); })
             .Append(_logo.transform.DOLocalMoveX(30f, .5f))
             .Append(_logoBack.transform.DOLocalMoveX(13.4f, .5f))
-            .AppendInterval(4f)
+            .AppendInterval(5f)
             .Append(_logoBack.transform.DOLocalMoveX(30f, .5f))
             .WaitForCompletion();
 
