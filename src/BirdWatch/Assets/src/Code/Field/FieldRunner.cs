@@ -86,7 +86,7 @@ public class FieldRunner : MonoBehaviour
     {
         foreach (var activeAudioSource in _activeAudioSources)
         {
-            activeAudioSource.DOFade(0f, .5f);
+            activeAudioSource.DOFade(0f, .25f);
         }
     }
 

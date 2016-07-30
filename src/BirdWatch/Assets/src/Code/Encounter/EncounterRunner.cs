@@ -53,7 +53,7 @@ public class EncounterRunner : MonoBehaviour
             //BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
             BirdListing.GetNextDayBird();
-            _bird = new Bird("WS", Bird.EncounterBg.River).At(Day.TimeOfDay.Rain);
+            _bird = new Bird("CM", Bird.EncounterBg.River).At(Day.TimeOfDay.Rain);
             //_bird = new Bird("NS");
         }
 
@@ -95,10 +95,10 @@ public class EncounterRunner : MonoBehaviour
 
         FindObjectOfType<PolaroidBox>().InitializePolaroids(_birdShotMax);
         FindObjectOfType<EncounterBackground>().SetBackground(_bird.Background);
-
+        
 
         Agitation = new Agitation(2.0m, 1.0m);
-        
+
         FindObjectOfType<StatusMeter>().UpdateStatus(Agitation);
 
 
@@ -173,7 +173,7 @@ public class EncounterRunner : MonoBehaviour
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
-            _music.DOFade(0f, .5f);
+            _music.DOFade(0f, .25f);
             yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
@@ -231,7 +231,7 @@ public class EncounterRunner : MonoBehaviour
         if (agitationRating == "AG_LEAVE")
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue(agitationRating));
-            _music.DOFade(0f, .5f);
+            _music.DOFade(0f, .25f);
             yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
@@ -269,7 +269,7 @@ public class EncounterRunner : MonoBehaviour
         if (choice == 0)
         {
             yield return StartCoroutine(runner.StartAwaitableDialogue("Run_Away"));
-            _music.DOFade(0f, .5f);
+            _music.DOFade(0f, .25f);
             yield return SceneFadeInOut.Instance.EndScene();
             FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
             yield break;
@@ -297,7 +297,7 @@ public class EncounterRunner : MonoBehaviour
         
         yield return StartCoroutine(runner.StartAwaitableDialogue(_bird.GetBattleExitNode(runner)));
 
-        _victoryLoop.DOFade(0f, .5f);
+        _victoryLoop.DOFade(0f, .25f);
         yield return SceneFadeInOut.Instance.EndScene();
         FindObjectOfType<LevelLoader>().LoadLevel(Level.Field);
 
