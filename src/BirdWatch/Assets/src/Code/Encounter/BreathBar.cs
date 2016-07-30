@@ -227,13 +227,13 @@ public class BreathBar : MonoBehaviour
             // We only want to display the bars that the player's breath bar is heading toward
             if (!prevMouse)
             {
-                RatingBars.ForEach(r => r.gameObject.SetActive(true));
-                RatingBars.Skip(5).Take(4).ToList().ForEach(r => r.gameObject.SetActive(false));
+                RatingBars.ForEach(r => r.Show());
+                RatingBars.Skip(5).Take(4).ToList().ForEach(r => r.Hide());
             }
             else
             {
-                RatingBars.ForEach(r => r.gameObject.SetActive(true));
-                RatingBars.Take(4).ToList().ForEach(r => r.gameObject.SetActive(false));
+                RatingBars.ForEach(r => r.Show());
+                RatingBars.Take(4).ToList().ForEach(r => r.Hide());
             }
 
 
